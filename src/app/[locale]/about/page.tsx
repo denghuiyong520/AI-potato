@@ -44,7 +44,7 @@ export default async function AboutPage({
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+44-7907-131539',
-      email: 'Andy@prettypotato.com',
+      email: 'sales@potatoapparel.com',
       contactType: 'Sales',
     },
   }

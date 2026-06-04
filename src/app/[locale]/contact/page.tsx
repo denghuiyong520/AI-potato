@@ -33,8 +33,8 @@ export default async function ContactPage({
     {
       icon:  Mail,
       label: t('info.email'),
-      value: 'Andy@prettypotato.com',
-      href:  'mailto:Andy@prettypotato.com',
+      value: 'sales@potatoapparel.com',
+      href:  'mailto:sales@potatoapparel.com',
     },
     {
       icon:  MessageCircle,
