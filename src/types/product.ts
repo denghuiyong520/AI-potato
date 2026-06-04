@@ -12,7 +12,7 @@ export interface ImportedProduct {
   /** URL-safe slug, e.g. "ar002" */
   slug: string
   /** Original folder name or first line of product notes in Chinese */
-  title_zh: string
+  title_zh: string | null
   /** Auto-generated English title */
   title_en: string
   /** Category slug: t-shirts | hoodies | sweatpants | denim | kids-wear | … */
@@ -63,5 +63,5 @@ export interface ImportedProduct {
   /** ISO timestamp when imported */
   importedAt: string
   /** Fields that need manual review */
-  needsReview: string[]
+  needsReview?: boolean | string[]
 }

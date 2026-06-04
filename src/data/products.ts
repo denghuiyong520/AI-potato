@@ -300,7 +300,7 @@ export function getRelatedProducts(currentSlug: string, category: string, limit 
 import type { ImportedProduct } from '@/types/product'
 import importedRaw from './products.json'
 
-export const importedProducts: ImportedProduct[] = importedRaw as ImportedProduct[]
+export const importedProducts: ImportedProduct[] = importedRaw as unknown as ImportedProduct[]
 
 export function getImportedProductBySlug(slug: string): ImportedProduct | null {
   return importedProducts.find((p) => p.slug === slug) ?? null

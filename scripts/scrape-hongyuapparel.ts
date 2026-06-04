@@ -334,7 +334,7 @@ async function main() {
   const withImgs   = products.filter(p => p.mainImages.length > 0).length
   const withDetail = products.filter(p => p.detailImages.length > 0).length
   const withPrice  = products.filter(p => p.price).length
-  const cats       = [...new Set(products.map(p => p.category))].sort()
+  const cats       = Array.from(new Set(products.map(p => p.category))).sort()
   const withSub    = products.filter(p => p.subcategory).length
   console.log(`\n📊  Summary`)
   console.log(`    Total:         ${products.length}`)
