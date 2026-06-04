@@ -157,7 +157,7 @@ export async function POST(req: NextRequest) {
       : `New Contact Inquiry from ${name.trim()}`
 
     resend.emails.send({
-      from:    'Potato Apparel <onboarding@resend.dev>',
+      from:    'Potato Apparel <noreply@potatoapparel.com>',
       to:      [NOTIFY_TO],
       replyTo: email.trim(),
       subject,
