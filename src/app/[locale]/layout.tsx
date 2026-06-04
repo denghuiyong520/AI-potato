@@ -8,6 +8,7 @@ import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import WhatsAppButton from '@/components/layout/WhatsAppButton'
 import AnnouncementBar from '@/components/layout/AnnouncementBar'
+import FloatingCTA from '@/components/shared/FloatingCTA'
 
 export async function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -72,6 +73,7 @@ export default async function LocaleLayout({
       <main>{children}</main>
       <Footer />
       <WhatsAppButton />
+      <FloatingCTA />
     </NextIntlClientProvider>
   )
 }

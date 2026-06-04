@@ -11,6 +11,7 @@ import TestimonialsSection      from '@/components/home/TestimonialsSection'
 import CertificationsSection    from '@/components/home/CertificationsSection'
 import LatestBlogSection        from '@/components/home/LatestBlogSection'
 import BottomCTASection         from '@/components/home/BottomCTASection'
+import VSComparisonSection      from '@/components/home/VSComparisonSection'
 
 export const metadata: Metadata = {
   title: 'Custom Apparel Manufacturer | OEM/ODM Clothing | Potato Apparel',
@@ -123,6 +124,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
       <StatsSection />
       <TestimonialsSection />
       <CertificationsSection />
+      <VSComparisonSection />
       <LatestBlogSection />
       <BottomCTASection />
     </>
