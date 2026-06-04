@@ -1,0 +1,595 @@
+﻿{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "products": "Products",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "blog": "Blog",
+    "contact": "Contact",
+    "getQuote": "Get a Quote",
+    "language": "Language"
+  },
+  "hero": {
+    "headline": "Your Brand,\nManufactured to Perfection",
+    "subheadline": "We partner with independent designers, e-commerce sellers, and emerging labels to bring their clothing vision to life — from first sample to full production run.",
+    "cta1": "Get a Quote",
+    "cta2": "View Our Work",
+    "scrollDown": "Scroll"
+  },
+  "features": {
+    "title": "Why Choose Potato Apparel",
+    "subtitle": "We combine craft, speed, and transparency to help you build a brand worth wearing.",
+    "items": [
+      {
+        "title": "Low MOQ",
+        "description": "Start with as few as 50 pieces per style. Perfect for new labels testing the market without overcommitting capital."
+      },
+      {
+        "title": "Fast Sampling",
+        "description": "Receive your first prototype within 7–10 business days. Iterate quickly, launch with confidence."
+      },
+      {
+        "title": "1-on-1 Service",
+        "description": "Every client gets a dedicated account manager. We're your manufacturing partner, not just a factory."
+      },
+      {
+        "title": "Strict Quality Control",
+        "description": "Multi-stage inspection — inline, semi-final, and final — ensures every garment matches your exact spec."
+      }
+    ]
+  },
+  "categories": {
+    "title": "What We Manufacture",
+    "subtitle": "From basics to statement pieces, we produce across all major apparel categories.",
+    "viewAll": "Explore All Products",
+    "items": [
+      { "name": "T-Shirts & Tops", "description": "Custom cut & sew, screen print, embroidery" },
+      { "name": "Hoodies & Sweatshirts", "description": "Premium fleece, French terry, pullover & zip" },
+      { "name": "Dresses & Skirts", "description": "Woven, knit, casual to formal ranges" },
+      { "name": "Activewear", "description": "4-way stretch, moisture-wicking performance fabrics" },
+      { "name": "Swimwear", "description": "UPF-rated fabrics, custom prints, mix & match sets" },
+      { "name": "Streetwear", "description": "Oversized silhouettes, heavy weight, bold graphics" },
+      { "name": "Outerwear", "description": "Jackets, coats, puffer vests, windbreakers" },
+      { "name": "Accessories", "description": "Hats, bags, socks and coordinating pieces" }
+    ]
+  },
+  "process": {
+    "title": "How It Works",
+    "subtitle": "A clear, collaborative process from concept to delivery — designed to protect your time and investment.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Send Your Design",
+        "description": "Share your tech pack, sketches, or inspiration. We'll review and clarify requirements within 24 hours."
+      },
+      {
+        "number": "02",
+        "title": "Sampling",
+        "description": "Our pattern makers and sewers craft your first prototype within 7–10 business days."
+      },
+      {
+        "number": "03",
+        "title": "Approval & Refinement",
+        "description": "Review your sample, request adjustments. We iterate until every detail is exactly right."
+      },
+      {
+        "number": "04",
+        "title": "Bulk Production",
+        "description": "Once approved, we move to full production — consistent quality across every single unit."
+      },
+      {
+        "number": "05",
+        "title": "Quality Inspection",
+        "description": "Multi-stage QC: inline, semi-final, and final inspection against your approved sample."
+      },
+      {
+        "number": "06",
+        "title": "Worldwide Shipping",
+        "description": "We arrange logistics to your door. Full tracking, all major shipping routes covered."
+      }
+    ]
+  },
+  "stats": {
+    "title": "Built on Experience",
+    "subtitle": "Numbers that reflect a decade of partnership, craft, and commitment.",
+    "items": [
+      { "value": "10+", "label": "Years of Experience" },
+      { "value": "500+", "label": "Brands Served" },
+      { "value": "30+", "label": "Countries Reached" },
+      { "value": "1M+", "label": "Pieces Produced" }
+    ]
+  },
+  "testimonials": {
+    "title": "What Our Clients Say",
+    "subtitle": "From first-time founders to established labels across three continents.",
+    "items": [
+      {
+        "name": "Sarah Mitchell",
+        "role": "Founder, Bloom Athletics",
+        "country": "United States",
+        "rating": "5",
+        "text": "Potato Apparel helped me launch my activewear brand with a MOQ that was actually achievable. The quality exceeded my expectations and their communication was outstanding throughout."
+      },
+      {
+        "name": "James Okonkwo",
+        "role": "Creative Director, JKLS Label",
+        "country": "United Kingdom",
+        "rating": "5",
+        "text": "I've worked with multiple factories and none compare. They understood our streetwear aesthetic from day one. Sampling was fast, quality was impeccable, and they delivered on time."
+      },
+      {
+        "name": "Marie Dubois",
+        "role": "Designer, Maison Lumière",
+        "country": "France",
+        "rating": "5",
+        "text": "Exceptional attention to detail. Our complex construction pieces came out perfectly. I appreciate their transparency and the fact that they never overpromise. Strongly recommended."
+      }
+    ]
+  },
+  "certifications": {
+    "title": "Certified & Compliant",
+    "subtitle": "Industry certifications that reflect our commitment to quality, ethics, and sustainability.",
+    "items": ["ISO 9001:2015", "OEKO-TEX Standard 100", "BSCI Audited", "GOTS Certified", "Sedex Member"]
+  },
+  "latestBlog": {
+    "title": "From Our Blog",
+    "subtitle": "Practical guides and industry insights for building a successful apparel brand.",
+    "viewAll": "View All Articles",
+    "readMore": "Read Article",
+    "minRead": "min read"
+  },
+  "bottomCta": {
+    "title": "Ready to Bring Your Brand to Life?",
+    "subtitle": "Share your idea and we'll respond within 24 hours with a tailored quote.",
+    "cta": "Start Your Project",
+    "or": "or",
+    "whatsapp": "Chat on WhatsApp"
+  },
+  "about": {
+    "meta": {
+      "title": "About Potato Apparel | OEM/ODM Clothing Manufacturer",
+      "description": "Learn about Potato Apparel — a China-based OEM/ODM clothing manufacturer helping global brands since 2014. Our story, values, and facilities."
+    },
+    "hero": {
+      "title": "Crafting Brands\nSince 2014",
+      "subtitle": "We're more than a factory. We're your manufacturing partner — invested in your brand's success from the very first sketch."
+    },
+    "story": {
+      "title": "Our Story",
+      "p1": "Potato Apparel was founded in 2014 with a clear mission: to make professional garment manufacturing accessible to independent designers and emerging brands. We saw too many great ideas stall because MOQs were too high, communication was too poor, and quality was too inconsistent.",
+      "p2": "Starting from a small workshop in Guangzhou, we've grown into a full-service manufacturing partner with a team of over 200 skilled artisans, pattern makers, and quality inspectors. Today, we serve brands across 30+ countries — from solo designers launching a first collection to established labels scaling production.",
+      "p3": "What hasn't changed is our commitment: every client, regardless of order size, receives the same dedicated attention and craftsmanship."
+    },
+    "values": {
+      "title": "Our Values",
+      "items": [
+        {
+          "title": "Transparency",
+          "description": "No hidden fees, no surprise delays. We communicate clearly at every stage of production."
+        },
+        {
+          "title": "Craftsmanship",
+          "description": "We take pride in every stitch. Quality is not a checkbox — it's our reputation."
+        },
+        {
+          "title": "Partnership",
+          "description": "Your success is our success. We invest in understanding your brand vision deeply."
+        },
+        {
+          "title": "Confidentiality",
+          "description": "Your designs and brand details are always protected. We sign NDAs on request."
+        }
+      ]
+    },
+    "facility": {
+      "title": "Our Facility",
+      "subtitle": "State-of-the-art equipment, skilled hands, and rigorous processes under one roof.",
+      "stats": [
+        { "value": "50,000+", "label": "Sq. Ft. Production Floor" },
+        { "value": "200+", "label": "Skilled Artisans" },
+        { "value": "50+", "label": "Industrial Machines" },
+        { "value": "24h", "label": "QC Response Time" }
+      ]
+    }
+  },
+  "serviceTiers": {
+    "eyebrow": "How We Work",
+    "title": "Tailored Solutions For Your Business",
+    "popular": "Most Popular",
+    "cta": "Get a Quote",
+    "labels": {
+      "moq": "MOQ",
+      "sampleTime": "Sample Time",
+      "sampleFee": "Sample Fee",
+      "bulkTime": "Bulk Order Time",
+      "bulkPrice": "Bulk Price"
+    },
+    "blank": {
+      "badge": "For Wholesalers",
+      "title": "Blank Wholesale",
+      "subtitle": "Order ready-made blank clothing",
+      "moq": "50 pcs (mix color & size)",
+      "sampleTime": "3 days",
+      "sampleFee": "$20–25 / piece",
+      "bulkTime": "7–10 days",
+      "bulkPrice": "As shown on product page",
+      "f1": "No design required",
+      "f2": "Ship directly from stock",
+      "f3": "Mix styles & colors freely"
+    },
+    "logo": {
+      "badge": "For Brand Starters",
+      "title": "Logo Customize",
+      "subtitle": "Print, embroider or transfer your brand",
+      "moq": "50 pcs (mix size & color)",
+      "sampleTime": "5–8 days (after design confirmed)",
+      "sampleFee": "$50 / piece",
+      "bulkTime": "12–18 days",
+      "bulkPrice": "Quote after logo & quantity confirmed",
+      "f1": "Screen print, embroidery, DTF",
+      "f2": "Custom label & hangtag available",
+      "f3": "Pantone color matching"
+    },
+    "custom": {
+      "badge": "For Fashion Brand Experts",
+      "title": "Cut & Sew Custom",
+      "subtitle": "Full custom from your tech pack or sketch",
+      "moq": "100 pcs / style / color (4 sizes)",
+      "sampleTime": "8–15 days (after all details confirmed)",
+      "sampleFee": "$50 / piece (varies by technique)",
+      "bulkTime": "24–30 days",
+      "bulkPrice": "Quote based on design, fabric & quantity",
+      "f1": "Your own silhouette & pattern",
+      "f2": "Fabric sourcing included",
+      "f3": "Full NDA & IP protection"
+    }
+  },
+  "products": {
+    "meta": {
+      "title": "Products | Potato Apparel OEM/ODM Manufacturer",
+      "description": "Explore Potato Apparel's full manufacturing range — T-shirts, hoodies, activewear, swimwear, streetwear, dresses, outerwear and accessories."
+    },
+    "hero": {
+      "title": "Our Product Range",
+      "subtitle": "Comprehensive manufacturing capabilities across all major apparel categories — from 50 pieces to unlimited scale."
+    },
+    "cta": {
+      "title": "Don't See Your Category?",
+      "subtitle": "We manufacture far beyond this list. Get in touch and let's discuss your specific needs.",
+      "button": "Contact Us"
+    },
+    "listing": {
+      "filterTitle": "Categories",
+      "allCategories": "All Products",
+      "viewDetails": "View Details",
+      "inquireNow": "Inquire Now",
+      "from": "From",
+      "resultsCount": "{count} products",
+      "priceOnRequest": "Price on request",
+      "categories": {
+        "tshirts": "T-Shirts",
+        "hoodies": "Hoodies",
+        "sweatpants": "Sweatpants",
+        "activewear": "Activewear",
+        "outerwear": "Outerwear",
+        "dresses": "Dresses",
+        "accessories": "Accessories"
+      }
+    },
+    "detail": {
+      "home": "Home",
+      "breadcrumbProducts": "Products",
+      "startingFrom": "Starting From",
+      "priceNote": "MOQ 50 pcs · Ex-factory price",
+      "specsTitle": "Specifications",
+      "material": "Material",
+      "gsm": "GSM",
+      "weight": "Weight",
+      "sizes": "Sizes",
+      "colors": "Colors",
+      "moqTitle": "Minimum Order Quantity",
+      "blankMOQ": "Blank MOQ",
+      "logoMOQ": "Logo MOQ",
+      "customMOQ": "Full Custom MOQ",
+      "description": "Product Description",
+      "features": "Key Features",
+      "related": "You May Also Like",
+      "inquire": "Inquiry Now",
+      "whatsapp": "WhatsApp Us"
+    },
+    "features": "Key Features",
+    "items": [
+      {
+        "name": "T-Shirts & Tops",
+        "description": "From basic tees to premium cut & sew pieces. We handle every detail — fabric sourcing, custom printing, embroidery, and finishing.",
+        "features": ["100% Cotton, Tri-blend, Bamboo options", "Screen printing & DTG available", "Embroidery & heat transfer", "MOQ from 50 pcs per style"]
+      },
+      {
+        "name": "Hoodies & Sweatshirts",
+        "description": "Premium weight fleece and French terry construction. Pullover, zip-up, cropped — every style executed with precision.",
+        "features": ["280–400gsm fleece options", "Brushed & unbrushed interiors", "Custom rib knit available", "Kangaroo & patch pocket styles"]
+      },
+      {
+        "name": "Dresses & Skirts",
+        "description": "From flowing woven maxi dresses to structured mini skirts. Our pattern makers ensure perfect fit and construction.",
+        "features": ["Woven & knit constructions", "Casual to formal range", "Lining & interfacing options", "Custom prints & embroidery"]
+      },
+      {
+        "name": "Activewear",
+        "description": "Performance-engineered sportswear with technical fabrics that move with the body without compromise.",
+        "features": ["4-way stretch fabrics", "Moisture-wicking & quick-dry", "UPF protection options", "Compression & support panels"]
+      },
+      {
+        "name": "Swimwear",
+        "description": "UPF-rated, chlorine-resistant construction with high-quality linings and durable hardware.",
+        "features": ["UPF 50+ fabric options", "Chlorine-resistant variants", "Custom print & solid colorways", "Mix & match separate sets"]
+      },
+      {
+        "name": "Streetwear",
+        "description": "Heavyweight, bold-construction pieces built for the street. Oversized, distressed, printed — we execute every aesthetic.",
+        "features": ["300–400gsm heavy cotton", "Oversized pattern cutting", "Custom dyeing & washing", "Screen print & embroidery"]
+      },
+      {
+        "name": "Outerwear",
+        "description": "From lightweight windbreakers to heavy winter coats — complex multi-layer construction handled with precision.",
+        "features": ["Water-resistant fabrics", "Insulated & shell options", "YKK zippers available", "Custom lining & padding"]
+      },
+      {
+        "name": "Accessories",
+        "description": "Complete your line with coordinating accessories manufactured to the same quality standard as your garments.",
+        "features": ["Structured & unstructured hats", "Tote & crossbody bags", "Custom socks", "Coordinating capsule sets"]
+      }
+    ]
+  },
+  "services": {
+    "meta": {
+      "title": "Services | OEM/ODM Manufacturing Process | Potato Apparel",
+      "description": "Learn about Potato Apparel's full manufacturing services — sampling, MOQ policy, fabric selection, decoration techniques, and QC process."
+    },
+    "hero": {
+      "title": "Full-Service\nManufacturing",
+      "subtitle": "From concept to delivery, we manage every step so you can focus on building your brand."
+    },
+    "moq": {
+      "title": "Flexible MOQ Policy",
+      "subtitle": "We believe great brands deserve a fair start — no matter the size.",
+      "description": "Our minimum order quantity starts at just 50 pieces per style, per colorway — among the lowest in the industry. This allows you to test designs, launch limited editions, and scale gradually without overcommitting capital.",
+      "tiers": [
+        { "qty": "50–200 pcs", "label": "Startup Tier", "note": "Perfect for initial launches and limited editions" },
+        { "qty": "200–500 pcs", "label": "Growth Tier", "note": "Standard bulk pricing, faster turnaround" },
+        { "qty": "500+ pcs", "label": "Scale Tier", "note": "Best pricing, priority production scheduling" }
+      ]
+    },
+    "fabrics": {
+      "title": "Fabric & Materials",
+      "subtitle": "Sourced from certified mills with full material traceability.",
+      "categories": [
+        {
+          "name": "Natural Fibers",
+          "items": ["100% Cotton (various weights)", "Linen & Ramie", "Bamboo", "Silk & Satin"]
+        },
+        {
+          "name": "Performance Fabrics",
+          "items": ["Polyester & Nylon blends", "Spandex / Elastane", "Moisture-wicking tech fabrics", "UV-protective materials"]
+        },
+        {
+          "name": "Sustainable Options",
+          "items": ["Organic Cotton (GOTS certified)", "Recycled Polyester (rPET)", "Tencel / Lyocell", "Hemp blends"]
+        }
+      ]
+    },
+    "techniques": {
+      "title": "Decoration Techniques",
+      "subtitle": "From embroidery to sublimation — every method we offer is executed to the highest standard.",
+      "items": [
+        { "name": "Screen Printing", "description": "Multi-color prints for large runs. Vivid, durable, cost-effective at volume." },
+        { "name": "Embroidery", "description": "Adds premium texture and depth. Ideal for logos, badges, and fine details." },
+        { "name": "DTG Printing", "description": "Direct-to-garment for complex, photo-quality designs with no setup fees." },
+        { "name": "Heat Transfer", "description": "Versatile application for detailed designs and special effects." },
+        { "name": "Sublimation", "description": "All-over print on polyester. Unlimited color, zero feel on the garment." },
+        { "name": "Garment Washing", "description": "Acid wash, enzyme wash, stone wash, and custom aging techniques." }
+      ]
+    }
+  },
+  "portfolio": {
+    "meta": {
+      "title": "Portfolio | Clothing Manufacturing Work | Potato Apparel",
+      "description": "Browse Potato Apparel's portfolio of OEM/ODM clothing manufacturing projects for brands worldwide."
+    },
+    "hero": {
+      "title": "Our Work",
+      "subtitle": "A curated selection of garments produced for brands around the world."
+    },
+    "filter": {
+      "all": "All Projects",
+      "tshirts": "T-Shirts",
+      "hoodies": "Hoodies",
+      "activewear": "Activewear",
+      "streetwear": "Streetwear",
+      "dresses": "Dresses",
+      "swimwear": "Swimwear"
+    },
+    "cta": {
+      "title": "Love What You See?",
+      "subtitle": "Let's create something equally impressive for your brand.",
+      "button": "Start Your Project"
+    }
+  },
+  "blog": {
+    "meta": {
+      "title": "Blog | Apparel Brand Guides & Manufacturing Tips",
+      "description": "Practical guides, manufacturing tips, and industry insights for building a successful clothing brand from Potato Apparel."
+    },
+    "hero": {
+      "title": "The Apparel Brand Blog",
+      "subtitle": "Practical guides, manufacturing tips, and industry insights for building a brand that lasts."
+    },
+    "filter": {
+      "all": "All Articles",
+      "brandBuilding": "Brand Building",
+      "manufacturing": "Manufacturing",
+      "design": "Design & Tech Pack",
+      "trends": "Industry Insights"
+    },
+    "readMore": "Read Article",
+    "minRead": "min read",
+    "noResults": "No articles found in this category.",
+    "publishedOn": "Published",
+    "by": "by",
+    "relatedArticles": "Related Articles",
+    "ctaTitle": "Ready to Start Your Brand?",
+    "ctaSubtitle": "Get a free consultation and quote from our manufacturing team.",
+    "ctaButton": "Get a Free Quote",
+    "backToBlog": "Back to Blog"
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact Us | Get a Quote | Potato Apparel",
+      "description": "Contact Potato Apparel for a custom clothing manufacturing quote. OEM/ODM services with low MOQ. We respond within 24 hours."
+    },
+    "hero": {
+      "title": "Get in Touch",
+      "subtitle": "Tell us about your project. We'll get back to you within 24 hours."
+    },
+    "info": {
+      "title": "Contact Information",
+      "email": "Email",
+      "whatsapp": "WhatsApp",
+      "address": "Address",
+      "addressValue": "Haizhu District, Guangzhou, Guangdong, China",
+      "hours": "Business Hours",
+      "hoursValue": "Monday – Friday, 9:00 AM – 6:00 PM CST"
+    },
+    "form": {
+      "title": "Get in Touch",
+      "name": "Name",
+      "namePlaceholder": "Your full name",
+      "nameRequired": "Name is required",
+      "email": "Email",
+      "emailPlaceholder": "example@domain.com",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email address",
+      "phone": "Phone",
+      "phonePlaceholder": "phone number",
+      "budget": "What is your estimated budget?",
+      "budgetPlaceholder": "Select Estimated Budget",
+      "budgetOptions": {
+        "under1k": "Under $1,000",
+        "1k5k": "$1,000 – $5,000",
+        "5k20k": "$5,000 – $20,000",
+        "20kPlus": "$20,000+"
+      },
+      "company": "Company Name",
+      "companyPlaceholder": "Your company or brand name",
+      "platform": "Your Selling Platform",
+      "platformPlaceholder": "Choose Your Platform",
+      "platformOptions": {
+        "shopify": "Shopify",
+        "amazon": "Amazon",
+        "tiktok": "TikTok Shop",
+        "offline": "Offline Retail",
+        "other": "Other"
+      },
+      "details": "More Details",
+      "detailsPlaceholder": "Send us the design, and how many pieces you want? Let's start with a sample first!",
+      "detailsRequired": "Please tell us more about your project",
+      "upload": "Attach Files",
+      "uploadText": "Click or drag files to this area to upload.",
+      "uploadHint": "You can upload up to 10 files.",
+      "submit": "Send Inquiry",
+      "submitting": "Sending...",
+      "successTitle": "Message Sent!",
+      "successText": "Thank you for your inquiry. We'll get back to you within 24 hours.",
+      "errorText": "Something went wrong. Please try again or contact us directly.",
+      "required": "Required"
+    }
+  },
+  "footer": {
+    "tagline": "Professional OEM/ODM apparel manufacturer based in China, serving emerging brands and established labels worldwide since 2014.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact Us",
+    "followUs": "Follow Us",
+    "address": "Address",
+    "addressValue": "Haizhu District, Guangzhou, China",
+    "hoursValue": "Mon – Fri, 9:00 AM – 6:00 PM CST",
+    "ctaTitle": "Ready to start your project?",
+    "ctaSubtitle": "Get a free quote in 24 hours.",
+    "ctaButton": "Get a Quote",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "whatsapp": {
+    "tooltip": "Chat with us on WhatsApp"
+  },
+  "common": {
+    "readMore": "Read More",
+    "viewAll": "View All",
+    "getQuote": "Get a Quote",
+    "learnMore": "Learn More",
+    "startProject": "Start Your Project",
+    "loading": "Loading..."
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "empty": "Your cart is empty",
+    "emptyHint": "Looks like you haven't added anything yet.",
+    "browseProducts": "Browse Products",
+    "image": "Image",
+    "product": "Product",
+    "price": "Price",
+    "quantity": "Qty",
+    "subtotalCol": "Subtotal",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "shippingNote": "Confirmed after order",
+    "total": "Total",
+    "proceedToCheckout": "Proceed to Checkout",
+    "continueShopping": "Continue Shopping",
+    "requestQuoteAll": "Request Quote for All Items",
+    "priceOnRequest": "Price on request",
+    "summary": "Order Summary",
+    "addToCart": "Add to Cart",
+    "addedToCart": "Added ✓"
+  },
+  "checkout": {
+    "checkout": "Checkout",
+    "cart": "Cart",
+    "secureCheckout": "Secure Checkout",
+    "orderSummary": "Order Summary",
+    "paymentMethod": "Payment Method",
+    "emptyCart": "Your cart is empty",
+    "qty": "Qty",
+    "each": "each",
+    "priceOnRequest": "Price on request",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "shippingNote": "Confirmed after order",
+    "total": "Total",
+    "bankTransfer": "Bank Transfer",
+    "creditCard": "Pay with Card",
+    "bankAccountName": "Account Name",
+    "bankAddress": "Bank Address",
+    "confirmOrder": "Confirm Order",
+    "bankTransferNote": "Your order will be confirmed once payment is received.",
+    "orPayDirect": "Or pay directly via:",
+    "cardComingSoon": "Card Payments Coming Soon",
+    "cardComingSoonNote": "We're integrating Stripe. In the meantime, pay via PayPal or bank transfer."
+  },
+  "orderSuccess": {
+    "title": "Thank You for Your Order!",
+    "subtitle": "We've received your order and will be in touch shortly.",
+    "orderId": "Order Reference",
+    "saveOrderId": "Please save this reference number.",
+    "paypalConfirmed": "Payment received via PayPal — we'll process your order shortly.",
+    "bankInstructions": "Please complete your bank transfer to confirm the order.",
+    "accountName": "Account Name",
+    "transferRef": "Reference / Note",
+    "bankRefNote": "Important: include the order reference number in your transfer notes.",
+    "yourOrder": "Your Order",
+    "continueShopping": "Continue Shopping",
+    "contactUs": "Contact Us"
+  }
+}
+

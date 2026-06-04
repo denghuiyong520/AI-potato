@@ -1,0 +1,594 @@
+{
+  "nav": {
+    "home": "首页",
+    "about": "关于我们",
+    "products": "产品",
+    "services": "服务",
+    "portfolio": "案例展示",
+    "blog": "博客",
+    "contact": "联系我们",
+    "getQuote": "获取报价",
+    "language": "语言"
+  },
+  "hero": {
+    "headline": "您的品牌，\n精工制造",
+    "subheadline": "我们与独立设计师、电商卖家及新兴品牌合作，将服装创意变为现实——从第一件样衣到批量生产全程陪伴。",
+    "cta1": "获取报价",
+    "cta2": "查看案例",
+    "scrollDown": "向下滚动"
+  },
+  "features": {
+    "title": "为什么选择 Potato Apparel",
+    "subtitle": "我们将工艺、速度与透明度融为一体，助您打造值得被穿着的品牌。",
+    "items": [
+      {
+        "title": "低起订量",
+        "description": "每款最低50件起订，非常适合初创品牌在不过度投入资金的情况下测试市场。"
+      },
+      {
+        "title": "快速打样",
+        "description": "7–10个工作日内收到首件样衣，快速迭代，自信上市。"
+      },
+      {
+        "title": "一对一服务",
+        "description": "每位客户均配备专属客户经理，我们是您的制造合作伙伴，而不只是一家工厂。"
+      },
+      {
+        "title": "严格质量管控",
+        "description": "多阶段检验——在线检验、半成品检验及终检——确保每件服装均符合您的精确规格。"
+      }
+    ]
+  },
+  "categories": {
+    "title": "我们的生产品类",
+    "subtitle": "从基础款到设计款，我们覆盖所有主要服装品类。",
+    "viewAll": "浏览全部产品",
+    "items": [
+      { "name": "T恤及上衣", "description": "定制裁剪缝制、丝网印刷、刺绣" },
+      { "name": "卫衣及运动衫", "description": "优质摇粒绒、法式毛圈，套头款及拉链款" },
+      { "name": "连衣裙及半裙", "description": "梭织、针织，休闲到正式全系列" },
+      { "name": "运动服", "description": "四向弹力、速干吸湿功能面料" },
+      { "name": "泳装", "description": "UPF防晒面料、定制印花、混搭套装" },
+      { "name": "街头服饰", "description": "宽松版型、厚重面料、大胆图案" },
+      { "name": "外套", "description": "夹克、大衣、棉马甲、风衣" },
+      { "name": "配饰", "description": "帽子、包袋、袜子及系列搭配单品" }
+    ]
+  },
+  "process": {
+    "title": "合作流程",
+    "subtitle": "从创意到交付，清晰透明的协作流程——旨在保护您的时间与投资。",
+    "steps": [
+      {
+        "number": "01",
+        "title": "发送您的设计",
+        "description": "分享您的技术包、草图或灵感，我们将在24小时内审核并确认需求。"
+      },
+      {
+        "number": "02",
+        "title": "打样",
+        "description": "我们的版师和缝制团队将在7–10个工作日内制作您的首件样衣。"
+      },
+      {
+        "number": "03",
+        "title": "确认与修改",
+        "description": "审核样衣，提出修改意见，我们反复调整直到每个细节都完美呈现。"
+      },
+      {
+        "number": "04",
+        "title": "批量生产",
+        "description": "样衣确认后进入批量生产，每一件产品保持稳定一致的品质。"
+      },
+      {
+        "number": "05",
+        "title": "质量检验",
+        "description": "多阶段质检：在线检验、半成品检验及最终验货，对标您的确认样衣。"
+      },
+      {
+        "number": "06",
+        "title": "全球发货",
+        "description": "我们负责物流安排，直达您的仓库，全程跟踪，覆盖所有主要航线。"
+      }
+    ]
+  },
+  "stats": {
+    "title": "经验铸就实力",
+    "subtitle": "这些数字体现了十年间我们的合作诚意、工艺水平与坚定承诺。",
+    "items": [
+      { "value": "10+", "label": "年行业经验" },
+      { "value": "500+", "label": "服务品牌数量" },
+      { "value": "30+", "label": "覆盖国家地区" },
+      { "value": "1M+", "label": "累计生产件数" }
+    ]
+  },
+  "testimonials": {
+    "title": "客户评价",
+    "subtitle": "来自三大洲的首次创业者及成熟品牌的真实反馈。",
+    "items": [
+      {
+        "name": "Sarah Mitchell",
+        "role": "创始人，Bloom Athletics",
+        "country": "美国",
+        "rating": "5",
+        "text": "Potato Apparel 帮助我以真正可实现的起订量推出了我的运动服品牌。产品质量超出预期，整个过程中的沟通也非常出色。"
+      },
+      {
+        "name": "James Okonkwo",
+        "role": "创意总监，JKLS Label",
+        "country": "英国",
+        "rating": "5",
+        "text": "我与多家工厂合作过，但没有一家能与之相比。他们从第一天就理解了我们的街头服饰美学。打样速度快，品质无可挑剔，而且按时交货。"
+      },
+      {
+        "name": "Marie Dubois",
+        "role": "设计师，Maison Lumière",
+        "country": "法国",
+        "rating": "5",
+        "text": "对细节的把控令人叹服。我们复杂结构的服装完美呈现。他们的透明度和从不夸大承诺的态度让我印象深刻，强烈推荐。"
+      }
+    ]
+  },
+  "certifications": {
+    "title": "认证与合规",
+    "subtitle": "行业认证体现了我们对品质、道德和可持续发展的承诺。",
+    "items": ["ISO 9001:2015", "OEKO-TEX Standard 100", "BSCI审计认证", "GOTS有机认证", "Sedex会员"]
+  },
+  "latestBlog": {
+    "title": "最新文章",
+    "subtitle": "助您打造成功服装品牌的实用指南与行业洞见。",
+    "viewAll": "查看全部文章",
+    "readMore": "阅读文章",
+    "minRead": "分钟阅读"
+  },
+  "bottomCta": {
+    "title": "准备好让您的品牌落地了吗？",
+    "subtitle": "分享您的想法，我们将在24小时内提供定制报价。",
+    "cta": "开启您的项目",
+    "or": "或",
+    "whatsapp": "WhatsApp 咨询"
+  },
+  "about": {
+    "meta": {
+      "title": "关于我们 | Potato Apparel OEM/ODM服装制造商",
+      "description": "了解Potato Apparel——一家总部位于中国的OEM/ODM服装制造商，自2014年起服务全球品牌。我们的故事、价值观与生产设施。"
+    },
+    "hero": {
+      "title": "匠心制造\n始于2014",
+      "subtitle": "我们不仅是一家工厂，更是您的制造合作伙伴——从第一张草图开始，全心投入您品牌的成功。"
+    },
+    "story": {
+      "title": "我们的故事",
+      "p1": "Potato Apparel 创立于2014年，使命明确：让专业服装制造对独立设计师和新兴品牌触手可及。我们看到太多好的创意因起订量过高、沟通不畅、质量不稳而受阻。",
+      "p2": "从广州一间小工坊起步，我们已成长为一家全方位服务的制造合作伙伴，拥有逾200名技艺精湛的工匠、版师和品检人员。如今，我们服务遍布30多个国家的品牌——从推出首个系列的独立设计师，到扩大生产规模的成熟品牌。",
+      "p3": "不变的是我们的承诺：每一位客户，无论订单大小，都享有同等的专注与精湛工艺。"
+    },
+    "values": {
+      "title": "我们的价值观",
+      "items": [
+        {
+          "title": "透明",
+          "description": "无隐藏费用，无意外延误。我们在生产每个阶段都保持清晰沟通。"
+        },
+        {
+          "title": "工艺",
+          "description": "我们为每一针每一线而自豪。品质不是一项指标——而是我们的声誉。"
+        },
+        {
+          "title": "伙伴关系",
+          "description": "您的成功就是我们的成功。我们深入了解您的品牌愿景。"
+        },
+        {
+          "title": "保密",
+          "description": "您的设计和品牌信息始终受到保护，如有需要我们可签署保密协议。"
+        }
+      ]
+    },
+    "facility": {
+      "title": "我们的工厂",
+      "subtitle": "先进设备、精熟匠手与严格工序，尽在同一屋檐之下。",
+      "stats": [
+        { "value": "50,000+", "label": "平方英尺生产车间" },
+        { "value": "200+", "label": "技能工匠" },
+        { "value": "50+", "label": "工业设备" },
+        { "value": "24小时", "label": "质检响应时间" }
+      ]
+    }
+  },
+  "serviceTiers": {
+    "eyebrow": "合作方式",
+    "title": "为您的业务量身定制方案",
+    "popular": "最受欢迎",
+    "cta": "获取报价",
+    "labels": {
+      "moq": "起订量",
+      "sampleTime": "打样周期",
+      "sampleFee": "样衣费用",
+      "bulkTime": "批量交期",
+      "bulkPrice": "批量价格"
+    },
+    "blank": {
+      "badge": "适合批发商",
+      "title": "素色批发",
+      "subtitle": "订购现货素色服装",
+      "moq": "50件（可混色混码）",
+      "sampleTime": "3天",
+      "sampleFee": "20–25美元/件",
+      "bulkTime": "7–10天",
+      "bulkPrice": "以产品页面标价为准",
+      "f1": "无需设计",
+      "f2": "现货直发",
+      "f3": "款式颜色自由混搭"
+    },
+    "logo": {
+      "badge": "适合品牌初创者",
+      "title": "LOGO定制",
+      "subtitle": "印刷、刺绣或烫印您的品牌",
+      "moq": "50件（可混码混色）",
+      "sampleTime": "5–8天（设计确认后）",
+      "sampleFee": "50美元/件",
+      "bulkTime": "12–18天",
+      "bulkPrice": "LOGO及数量确认后报价",
+      "f1": "丝印、刺绣、DTF",
+      "f2": "可定制标签及吊牌",
+      "f3": "潘通色号精准匹配"
+    },
+    "custom": {
+      "badge": "适合专业服装品牌",
+      "title": "全定制裁缝",
+      "subtitle": "根据您的技术包或草图完全定制",
+      "moq": "100件/款/色（4个尺码）",
+      "sampleTime": "8–15天（所有细节确认后）",
+      "sampleFee": "50美元/件（因工艺而异）",
+      "bulkTime": "24–30天",
+      "bulkPrice": "根据设计、面料及数量报价",
+      "f1": "专属版型与纸样",
+      "f2": "含面料采购服务",
+      "f3": "完整保密协议及知识产权保护"
+    }
+  },
+  "products": {
+    "meta": {
+      "title": "产品 | Potato Apparel OEM/ODM制造商",
+      "description": "浏览Potato Apparel的完整制造范围——T恤、卫衣、运动服、泳装、街头服饰、连衣裙、外套及配饰。"
+    },
+    "hero": {
+      "title": "我们的产品系列",
+      "subtitle": "覆盖所有主要服装品类的综合制造能力——从50件到无限量产。"
+    },
+    "cta": {
+      "title": "没有找到您需要的品类？",
+      "subtitle": "我们的制造范围远不止于此，欢迎联系我们，探讨您的具体需求。",
+      "button": "联系我们"
+    },
+    "listing": {
+      "filterTitle": "品类",
+      "allCategories": "全部产品",
+      "viewDetails": "查看详情",
+      "inquireNow": "立即询价",
+      "from": "起",
+      "resultsCount": "{count} 件产品",
+      "priceOnRequest": "价格面议",
+      "categories": {
+        "tshirts": "T恤",
+        "hoodies": "卫衣",
+        "sweatpants": "运动裤",
+        "activewear": "运动服",
+        "outerwear": "外套",
+        "dresses": "连衣裙",
+        "accessories": "配饰"
+      }
+    },
+    "detail": {
+      "home": "首页",
+      "breadcrumbProducts": "产品",
+      "startingFrom": "价格起",
+      "priceNote": "起订量50件 · 出厂价格",
+      "specsTitle": "规格参数",
+      "material": "材质",
+      "gsm": "克重",
+      "weight": "重量",
+      "sizes": "尺码",
+      "colors": "颜色",
+      "moqTitle": "最低起订量",
+      "blankMOQ": "素色起订量",
+      "logoMOQ": "LOGO定制起订量",
+      "customMOQ": "全定制起订量",
+      "description": "产品描述",
+      "features": "主要特点",
+      "related": "您可能还喜欢",
+      "inquire": "立即询价",
+      "whatsapp": "WhatsApp咨询"
+    },
+    "features": "主要特点",
+    "items": [
+      {
+        "name": "T恤及上衣",
+        "description": "从基础款到高端裁剪缝制款，每个细节我们都悉心处理——面料采购、定制印花、刺绣及后整理。",
+        "features": ["100%棉、三混纺、竹纤维可选", "可丝网印刷及数码直喷", "刺绣及烫转印工艺", "每款最低50件起订"]
+      },
+      {
+        "name": "卫衣及运动衫",
+        "description": "优质重磅摇粒绒与法式毛圈布构造，套头款、拉链款、裁剪款——每种款式精准呈现。",
+        "features": ["280–400克重摇粒绒可选", "拉绒与未拉绒内里", "可定制螺纹针织", "袋鼠口袋及贴袋款式"]
+      },
+      {
+        "name": "连衣裙及半裙",
+        "description": "从飘逸梭织长裙到结构挺括迷你裙，我们的版师确保完美合身与精良做工。",
+        "features": ["梭织及针织结构", "休闲至正式全系列", "里布及衬料可选", "定制印花及刺绣"]
+      },
+      {
+        "name": "运动服",
+        "description": "采用功能性技术面料的专业运动服，随身体律动，性能毫不妥协。",
+        "features": ["四向弹力面料", "吸湿速干", "可选UPF防晒保护", "压缩及支撑面板"]
+      },
+      {
+        "name": "泳装",
+        "description": "UPF防晒、抗氯面料构造，优质内里与耐用五金配件。",
+        "features": ["UPF 50+面料可选", "抗氯版本可选", "定制印花及纯色", "混搭分体套装"]
+      },
+      {
+        "name": "街头服饰",
+        "description": "重磅、大廓形，专为街头而生。宽松版型、做旧、印花——各种美学我们都能诠释。",
+        "features": ["300–400克重棉", "宽松版型裁剪", "定制染色及水洗", "丝网印刷及刺绣"]
+      },
+      {
+        "name": "外套",
+        "description": "从轻薄风衣到厚重冬大衣——复杂多层结构精准处理。",
+        "features": ["防泼水面料", "保暖款及壳层款可选", "YKK拉链可选", "定制里布及填充"]
+      },
+      {
+        "name": "配饰",
+        "description": "以同等品质标准制造的配套配饰，让您的系列更加完整。",
+        "features": ["有结构及无结构帽子", "托特包及斜挎包", "定制袜子", "系列搭配胶囊单品"]
+      }
+    ]
+  },
+  "services": {
+    "meta": {
+      "title": "服务 | OEM/ODM制造流程 | Potato Apparel",
+      "description": "了解Potato Apparel的完整制造服务——打样、起订量政策、面料选择、装饰工艺及质量控制流程。"
+    },
+    "hero": {
+      "title": "全方位\n制造服务",
+      "subtitle": "从创意到交付，我们管理每一个环节，让您专注于品牌建设。"
+    },
+    "moq": {
+      "title": "灵活起订量政策",
+      "subtitle": "我们相信优质品牌值得公平的起点——无论规模大小。",
+      "description": "我们的最低起订量仅为每款每色50件——在行业内属于最低水平之一。这让您可以在不过度占用资金的情况下测试设计、推出限量版并逐步扩大规模。",
+      "tiers": [
+        { "qty": "50–200件", "label": "初创档", "note": "适合初次上市及限量版" },
+        { "qty": "200–500件", "label": "成长档", "note": "标准批量定价，交期更快" },
+        { "qty": "500件以上", "label": "规模档", "note": "最优价格，优先排产" }
+      ]
+    },
+    "fabrics": {
+      "title": "面料与材质",
+      "subtitle": "采购自认证织造厂，具备完整的材料溯源体系。",
+      "categories": [
+        {
+          "name": "天然纤维",
+          "items": ["100%棉（多种克重）", "亚麻及苎麻", "竹纤维", "真丝及缎面"]
+        },
+        {
+          "name": "功能性面料",
+          "items": ["涤纶及尼龙混纺", "氨纶/弹性纤维", "吸湿排汗技术面料", "防紫外线材料"]
+        },
+        {
+          "name": "可持续选择",
+          "items": ["有机棉（GOTS认证）", "再生涤纶（rPET）", "天丝/莱赛尔", "大麻混纺"]
+        }
+      ]
+    },
+    "techniques": {
+      "title": "装饰工艺",
+      "subtitle": "从刺绣到升华印刷——我们提供的每一种工艺均以最高标准执行。",
+      "items": [
+        { "name": "丝网印刷", "description": "适合大批量多色印花，色彩鲜艳，耐久性强，批量成本效益高。" },
+        { "name": "刺绣", "description": "增添高端质感与层次感，适合LOGO、徽章及精细细节。" },
+        { "name": "数码直喷", "description": "直接喷印至布料，实现复杂相片品质设计，无需制版费。" },
+        { "name": "烫转印", "description": "适用于详细设计与特殊效果的多功能工艺。" },
+        { "name": "升华印刷", "description": "涤纶面料满幅印花，颜色无限，成衣手感无异。" },
+        { "name": "服装水洗", "description": "酸洗、酶洗、石磨洗及各种定制做旧工艺。" }
+      ]
+    }
+  },
+  "portfolio": {
+    "meta": {
+      "title": "案例展示 | 服装制造作品 | Potato Apparel",
+      "description": "浏览Potato Apparel为全球品牌制造的OEM/ODM服装案例展示。"
+    },
+    "hero": {
+      "title": "我们的作品",
+      "subtitle": "为全球品牌制造的精选服装展示。"
+    },
+    "filter": {
+      "all": "全部项目",
+      "tshirts": "T恤",
+      "hoodies": "卫衣",
+      "activewear": "运动服",
+      "streetwear": "街头服饰",
+      "dresses": "连衣裙",
+      "swimwear": "泳装"
+    },
+    "cta": {
+      "title": "喜欢我们的作品？",
+      "subtitle": "让我们为您的品牌创造同样出色的产品。",
+      "button": "开启您的项目"
+    }
+  },
+  "blog": {
+    "meta": {
+      "title": "博客 | 服装品牌指南与制造技巧",
+      "description": "来自Potato Apparel的实用指南、制造技巧与行业洞见，助您打造成功的服装品牌。"
+    },
+    "hero": {
+      "title": "服装品牌博客",
+      "subtitle": "实用指南、制造技巧与行业洞见，助您打造经久不衰的品牌。"
+    },
+    "filter": {
+      "all": "全部文章",
+      "brandBuilding": "品牌建设",
+      "manufacturing": "制造工艺",
+      "design": "设计与技术包",
+      "trends": "行业洞见"
+    },
+    "readMore": "阅读文章",
+    "minRead": "分钟阅读",
+    "noResults": "暂无文章",
+    "publishedOn": "发布于",
+    "by": "作者",
+    "relatedArticles": "相关文章",
+    "ctaTitle": "准备好创建您的品牌了吗？",
+    "ctaSubtitle": "从我们的制造团队获取免费咨询与报价。",
+    "ctaButton": "获取免费报价",
+    "backToBlog": "返回博客"
+  },
+  "contact": {
+    "meta": {
+      "title": "联系我们 | 获取报价 | Potato Apparel",
+      "description": "联系Potato Apparel获取定制服装制造报价。OEM/ODM服务，低起订量，24小时内回复。"
+    },
+    "hero": {
+      "title": "联系我们",
+      "subtitle": "告诉我们您的项目，我们将在24小时内回复。"
+    },
+    "info": {
+      "title": "联系方式",
+      "email": "电子邮件",
+      "whatsapp": "WhatsApp",
+      "address": "地址",
+      "addressValue": "中国广东省广州市海珠区",
+      "hours": "工作时间",
+      "hoursValue": "周一至周五，上午9:00 – 下午6:00（北京时间）"
+    },
+    "form": {
+      "title": "联系我们",
+      "name": "姓名",
+      "namePlaceholder": "您的全名",
+      "nameRequired": "请填写姓名",
+      "email": "电子邮件",
+      "emailPlaceholder": "example@domain.com",
+      "emailRequired": "请填写电子邮件",
+      "emailInvalid": "请输入有效的电子邮件地址",
+      "phone": "电话",
+      "phonePlaceholder": "手机号码",
+      "budget": "您的预估预算是多少？",
+      "budgetPlaceholder": "选择预估预算",
+      "budgetOptions": {
+        "under1k": "1,000美元以下",
+        "1k5k": "1,000 – 5,000美元",
+        "5k20k": "5,000 – 20,000美元",
+        "20kPlus": "20,000美元以上"
+      },
+      "company": "公司名称",
+      "companyPlaceholder": "您的公司或品牌名称",
+      "platform": "销售平台",
+      "platformPlaceholder": "选择您的平台",
+      "platformOptions": {
+        "shopify": "Shopify",
+        "amazon": "亚马逊",
+        "tiktok": "TikTok小店",
+        "offline": "线下零售",
+        "other": "其他"
+      },
+      "details": "更多详情",
+      "detailsPlaceholder": "请告诉我们您的设计和所需数量，我们可以先从样衣开始！",
+      "detailsRequired": "请详细描述您的项目",
+      "upload": "上传文件",
+      "uploadText": "点击或拖拽文件到此处上传。",
+      "uploadHint": "最多可上传10个文件。",
+      "submit": "发送询盘",
+      "submitting": "发送中...",
+      "successTitle": "消息已发送！",
+      "successText": "感谢您的询盘，我们将在24小时内回复您。",
+      "errorText": "发送失败，请重试或直接联系我们。",
+      "required": "必填"
+    }
+  },
+  "footer": {
+    "tagline": "总部位于中国的专业OEM/ODM服装制造商，自2014年起服务全球新兴品牌和成熟品牌。",
+    "quickLinks": "快速链接",
+    "contact": "联系我们",
+    "followUs": "关注我们",
+    "address": "地址",
+    "addressValue": "中国广东省广州市海珠区",
+    "hoursValue": "周一至周五，上午9:00 – 下午6:00（北京时间）",
+    "ctaTitle": "准备好开始您的项目了吗？",
+    "ctaSubtitle": "24小时内获取免费报价。",
+    "ctaButton": "获取报价",
+    "rights": "版权所有。",
+    "privacy": "隐私政策",
+    "terms": "服务条款"
+  },
+  "whatsapp": {
+    "tooltip": "通过WhatsApp与我们联系"
+  },
+  "common": {
+    "readMore": "阅读更多",
+    "viewAll": "查看全部",
+    "getQuote": "获取报价",
+    "learnMore": "了解更多",
+    "startProject": "开启您的项目",
+    "loading": "加载中..."
+  },
+  "cart": {
+    "title": "购物车",
+    "empty": "购物车为空",
+    "emptyHint": "您还没有添加任何商品。",
+    "browseProducts": "浏览产品",
+    "image": "图片",
+    "product": "产品",
+    "price": "单价",
+    "quantity": "数量",
+    "subtotalCol": "小计",
+    "subtotal": "小计",
+    "shipping": "运费",
+    "shippingNote": "确认订单后核实",
+    "total": "合计",
+    "proceedToCheckout": "前往结账",
+    "continueShopping": "继续购物",
+    "requestQuoteAll": "为所有商品申请报价",
+    "priceOnRequest": "价格面议",
+    "summary": "订单摘要",
+    "addToCart": "加入购物车",
+    "addedToCart": "已添加 ✓"
+  },
+  "checkout": {
+    "checkout": "结账",
+    "cart": "购物车",
+    "secureCheckout": "安全结账",
+    "orderSummary": "订单摘要",
+    "paymentMethod": "支付方式",
+    "emptyCart": "购物车为空",
+    "qty": "数量",
+    "each": "件",
+    "priceOnRequest": "价格面议",
+    "subtotal": "小计",
+    "shipping": "运费",
+    "shippingNote": "确认订单后核实",
+    "total": "合计",
+    "bankTransfer": "银行转账",
+    "creditCard": "信用卡支付",
+    "bankAccountName": "账户名",
+    "bankAddress": "银行地址",
+    "confirmOrder": "确认订单",
+    "bankTransferNote": "收到付款后将确认您的订单。",
+    "orPayDirect": "或直接通过以下方式支付：",
+    "cardComingSoon": "信用卡支付即将上线",
+    "cardComingSoonNote": "我们正在接入 Stripe。在此之前，请通过 PayPal 或银行转账支付。"
+  },
+  "orderSuccess": {
+    "title": "感谢您的订购！",
+    "subtitle": "我们已收到您的订单，将尽快与您联系。",
+    "orderId": "订单编号",
+    "saveOrderId": "请保存此编号以便查询。",
+    "paypalConfirmed": "PayPal 付款已收到，我们将尽快处理您的订单。",
+    "bankInstructions": "请完成银行转账以确认订单。",
+    "accountName": "账户名",
+    "transferRef": "转账备注",
+    "bankRefNote": "重要：请在转账备注中填写订单编号。",
+    "yourOrder": "您的订单",
+    "continueShopping": "继续购物",
+    "contactUs": "联系我们"
+  }
+}

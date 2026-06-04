@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Design Tokens ─────────────────────────────────────────────────── */
+:root {
+  /* Backgrounds */
+  --bg-base:    #FAFAF8;
+  --bg-surface: #F5F3EE;
+  --bg-muted:   #EDE9E1;
+
+  /* Text */
+  --text-primary:   #1A1A1A;
+  --text-secondary: #6B6560;
+  --text-muted:     #9E9992;
+
+  /* Borders */
+  --border-subtle: #E5E2DC;
+  --border-default: #D5D0C8;
+
+  /* Accent (violet) */
+  --accent:       #6D4AFF;
+  --accent-hover: #5939E0;
+  --accent-light: #EDE9FF;
+
+  /* WhatsApp */
+  --whatsapp: #25D366;
+}
+
+/* ─── Base ────────────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+/* ─── Typography ──────────────────────────────────────────────────────── */
+.font-display {
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+h1, h2, h3 {
+  letter-spacing: -0.02em;
+}
+
+/* ─── Layout Utilities ────────────────────────────────────────────────── */
+.container-site {
+  @apply max-w-7xl mx-auto px-5 sm:px-8 lg:px-12;
+}
+
+.section-padding {
+  @apply py-20 lg:py-28;
+}
+
+.section-padding-sm {
+  @apply py-14 lg:py-20;
+}
+
+/* ─── Blog Prose Styles ───────────────────────────────────────────────── */
+.prose-article {
+  @apply text-[1.0625rem] leading-[1.85] text-ink-light;
+}
+
+.prose-article h1,
+.prose-article h2,
+.prose-article h3,
+.prose-article h4 {
+  @apply font-display font-bold text-ink tracking-tight;
+}
+
+.prose-article h2 {
+  @apply text-2xl lg:text-3xl mt-12 mb-5 pb-3 border-b border-cream-300;
+}
+
+.prose-article h3 {
+  @apply text-xl lg:text-2xl mt-8 mb-4;
+}
+
+.prose-article p {
+  @apply mb-6;
+}
+
+.prose-article ul,
+.prose-article ol {
+  @apply mb-6 pl-6 space-y-2;
+}
+
+.prose-article ul {
+  @apply list-disc;
+}
+
+.prose-article ol {
+  @apply list-decimal;
+}
+
+.prose-article li {
+  @apply text-ink-light;
+}
+
+.prose-article strong {
+  @apply font-semibold text-ink;
+}
+
+.prose-article a {
+  @apply text-violet-600 underline underline-offset-2 hover:text-violet-800 transition-colors;
+}
+
+.prose-article blockquote {
+  @apply border-l-4 border-violet-300 bg-violet-50/50 pl-6 pr-4 py-4 my-8 rounded-r-lg italic text-ink-muted;
+}
+
+.prose-article img {
+  @apply rounded-xl my-8 w-full object-cover shadow-card;
+}
+
+.prose-article code {
+  @apply bg-cream-200 text-ink px-1.5 py-0.5 rounded text-sm font-mono;
+}
+
+.prose-article pre {
+  @apply bg-ink text-cream-100 p-5 rounded-xl overflow-x-auto my-6;
+}
+
+.prose-article pre code {
+  @apply bg-transparent p-0 text-cream-100;
+}
+
+.prose-article hr {
+  @apply border-cream-300 my-10;
+}
+
+/* ─── Form Styles ─────────────────────────────────────────────────────── */
+.form-input {
+  @apply w-full px-4 py-3 bg-white border border-cream-300 rounded-lg
+         text-ink placeholder:text-cream-500 text-sm
+         focus:outline-none focus:ring-2 focus:ring-violet-400 focus:border-transparent
+         transition-all duration-200;
+}
+
+.form-input-error {
+  @apply border-red-400 focus:ring-red-300;
+}
+
+/* ─── Scrollbar ───────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-default);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* ─── Scrollbar hide utility ─────────────────────────────────────────── */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* ─── Selection ───────────────────────────────────────────────────────── */
+::selection {
+  background: var(--accent-light);
+  color: var(--accent);
+}

@@ -1,0 +1,595 @@
+﻿{
+  "nav": {
+    "home": "Startseite",
+    "about": "Über Uns",
+    "products": "Produkte",
+    "services": "Leistungen",
+    "portfolio": "Portfolio",
+    "blog": "Blog",
+    "contact": "Kontakt",
+    "getQuote": "Angebot Anfragen",
+    "language": "Sprache"
+  },
+  "hero": {
+    "headline": "Ihre Marke,\nPerfekt Gefertigt",
+    "subheadline": "Wir unterstützen unabhängige Designer, E-Commerce-Verkäufer und aufstrebende Labels dabei, ihre Bekleidungsvision zum Leben zu erwecken — vom ersten Muster bis zur Serienproduktion.",
+    "cta1": "Angebot Anfragen",
+    "cta2": "Unsere Arbeiten Ansehen",
+    "scrollDown": "Scrollen"
+  },
+  "features": {
+    "title": "Warum Potato Apparel Wählen",
+    "subtitle": "Wir verbinden Handwerk, Geschwindigkeit und Transparenz, damit Sie eine Marke aufbauen können, die es wert ist, getragen zu werden.",
+    "items": [
+      {
+        "title": "Niedrige Mindestbestellmenge",
+        "description": "Starten Sie mit nur 50 Stück pro Modell. Perfekt für neue Marken, die den Markt testen möchten."
+      },
+      {
+        "title": "Schnelle Musterung",
+        "description": "Erhalten Sie Ihr erstes Muster innerhalb von 7–10 Werktagen. Schnell iterieren, selbstsicher launchen."
+      },
+      {
+        "title": "Persönlicher Service",
+        "description": "Jeder Kunde erhält einen dedizierten Ansprechpartner. Wir sind Ihr Fertigungspartner, nicht nur eine Fabrik."
+      },
+      {
+        "title": "Strenge Qualitätskontrolle",
+        "description": "Mehrstufige Inspektion — laufend, semifinal und final — stellt sicher, dass jedes Kleidungsstück Ihren Vorgaben entspricht."
+      }
+    ]
+  },
+  "categories": {
+    "title": "Was Wir Fertigen",
+    "subtitle": "Von Basics bis zu Statements — wir produzieren in allen wichtigen Bekleidungskategorien.",
+    "viewAll": "Alle Produkte Ansehen",
+    "items": [
+      { "name": "T-Shirts & Tops", "description": "Maßschneiderei, Siebdruck, Stickerei" },
+      { "name": "Hoodies & Sweatshirts", "description": "Premium Fleece, French Terry, Pullover & Zip" },
+      { "name": "Kleider & Röcke", "description": "Gewebt, gestrickt, casual bis formal" },
+      { "name": "Sportbekleidung", "description": "4-Wege-Stretch, feuchtigkeitsableitende Funktionsstoffe" },
+      { "name": "Badebekleidung", "description": "UPF-zertifizierte Stoffe, individuelle Drucke, koordinierte Sets" },
+      { "name": "Streetwear", "description": "Oversized Silhouetten, schweres Material, markante Grafiken" },
+      { "name": "Oberbekleidung", "description": "Jacken, Mäntel, Steppwesten, Windbreaker" },
+      { "name": "Accessoires", "description": "Mützen, Taschen, Socken und koordinierte Teile" }
+    ]
+  },
+  "process": {
+    "title": "So Funktioniert Es",
+    "subtitle": "Ein klarer, kollaborativer Prozess vom Konzept bis zur Lieferung — zum Schutz Ihrer Zeit und Ihres Investments.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Design Einsenden",
+        "description": "Teilen Sie Ihr Tech Pack, Skizzen oder Inspirationen. Wir prüfen und klären Anforderungen innerhalb von 24 Stunden."
+      },
+      {
+        "number": "02",
+        "title": "Musterung",
+        "description": "Unsere Schnitttechniker und Näherinnen fertigen Ihr erstes Muster in 7–10 Werktagen."
+      },
+      {
+        "number": "03",
+        "title": "Freigabe & Anpassung",
+        "description": "Prüfen Sie Ihr Muster, beantragen Sie Änderungen. Wir iterieren, bis jedes Detail stimmt."
+      },
+      {
+        "number": "04",
+        "title": "Serienproduktion",
+        "description": "Nach Freigabe starten wir die Vollproduktion — gleichbleibende Qualität in jedem einzelnen Stück."
+      },
+      {
+        "number": "05",
+        "title": "Qualitätsprüfung",
+        "description": "Mehrstufige QK: laufende, semifinale und finale Inspektion anhand Ihres freigegebenen Musters."
+      },
+      {
+        "number": "06",
+        "title": "Weltweiter Versand",
+        "description": "Wir organisieren die Logistik bis zu Ihrer Tür. Vollständiges Tracking, alle wichtigen Versandrouten."
+      }
+    ]
+  },
+  "stats": {
+    "title": "Aufgebaut auf Erfahrung",
+    "subtitle": "Zahlen, die ein Jahrzehnt der Partnerschaft, des Handwerks und des Engagements widerspiegeln.",
+    "items": [
+      { "value": "10+", "label": "Jahre Erfahrung" },
+      { "value": "500+", "label": "Bediente Marken" },
+      { "value": "30+", "label": "Erreichte Länder" },
+      { "value": "1M+", "label": "Produzierte Stücke" }
+    ]
+  },
+  "testimonials": {
+    "title": "Was Unsere Kunden Sagen",
+    "subtitle": "Von Erstgründern bis zu etablierten Labels auf drei Kontinenten.",
+    "items": [
+      {
+        "name": "Sarah Mitchell",
+        "role": "Gründerin, Bloom Athletics",
+        "country": "USA",
+        "rating": "5",
+        "text": "Potato Apparel hat mir geholfen, meine Sportmarke mit einer wirklich erreichbaren MOQ zu launchen. Die Qualität hat meine Erwartungen übertroffen und die Kommunikation war während des gesamten Prozesses hervorragend."
+      },
+      {
+        "name": "James Okonkwo",
+        "role": "Creative Director, JKLS Label",
+        "country": "Vereinigtes Königreich",
+        "rating": "5",
+        "text": "Ich habe mit mehreren Herstellern gearbeitet und keiner ist vergleichbar. Sie haben unsere Streetwear-Ästhetik vom ersten Tag an verstanden. Schnelle Musterung, makellose Qualität, pünktliche Lieferung."
+      },
+      {
+        "name": "Marie Dubois",
+        "role": "Designerin, Maison Lumière",
+        "country": "Frankreich",
+        "rating": "5",
+        "text": "Außergewöhnliche Liebe zum Detail. Unsere komplexen Konstruktionsstücke kamen perfekt heraus. Ich schätze ihre Transparenz und dass sie nie zu viel versprechen. Sehr zu empfehlen."
+      }
+    ]
+  },
+  "certifications": {
+    "title": "Zertifiziert & Konform",
+    "subtitle": "Branchenzertifizierungen, die unser Engagement für Qualität, Ethik und Nachhaltigkeit widerspiegeln.",
+    "items": ["ISO 9001:2015", "OEKO-TEX Standard 100", "BSCI Auditiert", "GOTS Zertifiziert", "Sedex Mitglied"]
+  },
+  "latestBlog": {
+    "title": "Aus Unserem Blog",
+    "subtitle": "Praktische Leitfäden und Brancheneinblicke für den Aufbau einer erfolgreichen Modemarke.",
+    "viewAll": "Alle Artikel Ansehen",
+    "readMore": "Artikel Lesen",
+    "minRead": "Min. Lesezeit"
+  },
+  "bottomCta": {
+    "title": "Bereit, Ihre Marke zum Leben zu Erwecken?",
+    "subtitle": "Teilen Sie Ihre Idee mit uns — wir antworten innerhalb von 24 Stunden mit einem maßgeschneiderten Angebot.",
+    "cta": "Projekt Starten",
+    "or": "oder",
+    "whatsapp": "Via WhatsApp Chatten"
+  },
+  "about": {
+    "meta": {
+      "title": "Über Uns | Potato Apparel OEM/ODM Hersteller",
+      "description": "Erfahren Sie mehr über Potato Apparel — ein in China ansässiger OEM/ODM-Bekleidungshersteller, der seit 2014 globale Marken unterstützt."
+    },
+    "hero": {
+      "title": "Marken Aufbauen\nSeit 2014",
+      "subtitle": "Wir sind mehr als eine Fabrik. Wir sind Ihr Fertigungspartner — engagiert für den Erfolg Ihrer Marke vom ersten Entwurf an."
+    },
+    "story": {
+      "title": "Unsere Geschichte",
+      "p1": "Potato Apparel wurde 2014 mit einer klaren Mission gegründet: professionelle Bekleidungsfertigung für unabhängige Designer und aufstrebende Marken zugänglich zu machen.",
+      "p2": "Ausgehend von einer kleinen Werkstatt in Guangzhou sind wir zu einem Full-Service-Fertigungspartner mit über 200 qualifizierten Handwerkern gewachsen. Heute bedienen wir Marken in über 30 Ländern.",
+      "p3": "Was sich nicht verändert hat, ist unser Engagement: Jeder Kunde, unabhängig von der Bestellgröße, erhält die gleiche engagierte Aufmerksamkeit und Handwerkskunst."
+    },
+    "values": {
+      "title": "Unsere Werte",
+      "items": [
+        {
+          "title": "Transparenz",
+          "description": "Keine versteckten Kosten, keine überraschenden Verzögerungen. Wir kommunizieren klar in jeder Phase."
+        },
+        {
+          "title": "Handwerkskunst",
+          "description": "Wir sind stolz auf jeden Stich. Qualität ist kein Checkbox — es ist unser Ruf."
+        },
+        {
+          "title": "Partnerschaft",
+          "description": "Ihr Erfolg ist unser Erfolg. Wir investieren in das Verständnis Ihrer Markenvision."
+        },
+        {
+          "title": "Vertraulichkeit",
+          "description": "Ihre Designs und Markeninformationen sind stets geschützt. Wir unterzeichnen auf Anfrage NDAs."
+        }
+      ]
+    },
+    "facility": {
+      "title": "Unsere Anlage",
+      "subtitle": "Modernste Ausstattung, erfahrene Hände und rigorose Prozesse unter einem Dach.",
+      "stats": [
+        { "value": "50.000+", "label": "m² Produktionsfläche" },
+        { "value": "200+", "label": "Qualifizierte Handwerker" },
+        { "value": "50+", "label": "Industriemaschinen" },
+        { "value": "24h", "label": "QK-Reaktionszeit" }
+      ]
+    }
+  },
+  "serviceTiers": {
+    "eyebrow": "So Arbeiten Wir",
+    "title": "Maßgeschneiderte Lösungen Für Ihr Unternehmen",
+    "popular": "Am Beliebtesten",
+    "cta": "Angebot Anfragen",
+    "labels": {
+      "moq": "MOQ",
+      "sampleTime": "Musterzeit",
+      "sampleFee": "Mustergebühr",
+      "bulkTime": "Produktionszeit",
+      "bulkPrice": "Großhandelspreis"
+    },
+    "blank": {
+      "badge": "Für Großhändler",
+      "title": "Blanko-Großhandel",
+      "subtitle": "Fertige Blanko-Kleidung bestellen",
+      "moq": "50 Stk. (Mix Farbe & Größe)",
+      "sampleTime": "3 Tage",
+      "sampleFee": "20–25 $ / Stück",
+      "bulkTime": "7–10 Tage",
+      "bulkPrice": "Wie auf der Produktseite angegeben",
+      "f1": "Kein Design erforderlich",
+      "f2": "Direktversand aus dem Lager",
+      "f3": "Stile & Farben frei mischen"
+    },
+    "logo": {
+      "badge": "Für Marken-Starter",
+      "title": "Logo-Anpassung",
+      "subtitle": "Logo drucken, sticken oder übertragen",
+      "moq": "50 Stk. (Mix Größe & Farbe)",
+      "sampleTime": "5–8 Tage (nach Design-Bestätigung)",
+      "sampleFee": "50 $ / Stück",
+      "bulkTime": "12–18 Tage",
+      "bulkPrice": "Angebot nach Logo & Menge",
+      "f1": "Siebdruck, Stickerei, DTF",
+      "f2": "Eigenes Label & Hangtag möglich",
+      "f3": "Pantone-Farbabgleich"
+    },
+    "custom": {
+      "badge": "Für Fashion-Experten",
+      "title": "Cut & Sew Maßanfertigung",
+      "subtitle": "Vollständig individuell nach Ihrem Tech Pack",
+      "moq": "100 Stk. / Stil / Farbe (4 Größen)",
+      "sampleTime": "8–15 Tage (nach vollständiger Bestätigung)",
+      "sampleFee": "50 $ / Stück (je nach Technik)",
+      "bulkTime": "24–30 Tage",
+      "bulkPrice": "Angebot nach Design, Stoff & Menge",
+      "f1": "Eigene Silhouette & Schnittmuster",
+      "f2": "Stoffbeschaffung inklusive",
+      "f3": "Vollständiges NDA & IP-Schutz"
+    }
+  },
+  "products": {
+    "meta": {
+      "title": "Produkte | Potato Apparel OEM/ODM Hersteller",
+      "description": "Entdecken Sie das vollständige Fertigungsspektrum von Potato Apparel — T-Shirts, Hoodies, Sportbekleidung, Badebekleidung, Streetwear, Kleider und Accessoires."
+    },
+    "hero": {
+      "title": "Unser Produktsortiment",
+      "subtitle": "Umfassende Fertigungskapazitäten in allen wichtigen Bekleidungskategorien — von 50 Stück bis unbegrenzt."
+    },
+    "cta": {
+      "title": "Ihre Kategorie Nicht Gefunden?",
+      "subtitle": "Wir fertigen weit über diese Liste hinaus. Kontaktieren Sie uns für Ihre spezifischen Anforderungen.",
+      "button": "Kontakt Aufnehmen"
+    },
+    "listing": {
+      "filterTitle": "Kategorien",
+      "allCategories": "Alle Produkte",
+      "viewDetails": "Details ansehen",
+      "inquireNow": "Anfrage senden",
+      "from": "Ab",
+      "resultsCount": "{count} Produkte",
+      "priceOnRequest": "Preis auf Anfrage",
+      "categories": {
+        "tshirts": "T-Shirts",
+        "hoodies": "Hoodies",
+        "sweatpants": "Jogginghosen",
+        "activewear": "Sportbekleidung",
+        "outerwear": "Oberbekleidung",
+        "dresses": "Kleider",
+        "accessories": "Accessoires"
+      }
+    },
+    "detail": {
+      "home": "Startseite",
+      "breadcrumbProducts": "Produkte",
+      "startingFrom": "Ab",
+      "priceNote": "MOQ 50 Stk · Ab-Werk-Preis",
+      "specsTitle": "Spezifikationen",
+      "material": "Material",
+      "gsm": "GSM",
+      "weight": "Gewicht",
+      "sizes": "Größen",
+      "colors": "Farben",
+      "moqTitle": "Mindestbestellmenge",
+      "blankMOQ": "Blank MOQ",
+      "logoMOQ": "Logo MOQ",
+      "customMOQ": "Full Custom MOQ",
+      "description": "Produktbeschreibung",
+      "features": "Hauptmerkmale",
+      "related": "Das könnte Ihnen auch gefallen",
+      "inquire": "Anfrage senden",
+      "whatsapp": "WhatsApp schreiben"
+    },
+    "features": "Hauptmerkmale",
+    "items": [
+      {
+        "name": "T-Shirts & Tops",
+        "description": "Von einfachen Shirts bis zu Premium Cut & Sew Stücken. Wir kümmern uns um jedes Detail.",
+        "features": ["100% Baumwolle, Tri-blend, Bambus", "Siebdruck & DTG verfügbar", "Stickerei & Transferdruck", "MOQ ab 50 Stück"]
+      },
+      {
+        "name": "Hoodies & Sweatshirts",
+        "description": "Premium Fleece und French Terry. Pullover, Zip, Crop — jeder Stil mit Präzision ausgeführt.",
+        "features": ["280–400 g/m² Fleece-Optionen", "Gebürstete und ungebürstete Innenseiten", "Individuelles Rippenstrickwerk", "Känguru- & Aufnähtaschen"]
+      },
+      {
+        "name": "Kleider & Röcke",
+        "description": "Von fließenden Maxikleidern bis zu strukturierten Miniröcken — perfekte Passform garantiert.",
+        "features": ["Gewebte und gestrickte Konstruktionen", "Casual bis formal", "Futter & Einlage-Optionen", "Individuelle Drucke & Stickereien"]
+      },
+      {
+        "name": "Sportbekleidung",
+        "description": "Leistungsorientierte Sportswear mit Funktionsstoffen, die sich mit dem Körper bewegen.",
+        "features": ["4-Wege-Stretch-Stoffe", "Feuchtigkeitsableitend & schnelltrocknend", "UV-Schutz-Optionen", "Kompressions- & Stützpaneele"]
+      },
+      {
+        "name": "Badebekleidung",
+        "description": "Chlorresistente UPF-Konstruktion mit hochwertigen Futtern und langlebiger Hardware.",
+        "features": ["UPF 50+ Stoffoptionen", "Chlorresistente Varianten", "Individuelle Drucke & Unifarben", "Koordinierte Separates-Sets"]
+      },
+      {
+        "name": "Streetwear",
+        "description": "Schwere, kühne Konstruktionsstücke für die Straße. Oversized, Distressed, Bedruckt — jede Ästhetik.",
+        "features": ["300–400 g/m² schwere Baumwolle", "Oversized Schnittmuster", "Individuelle Färbung & Wäsche", "Siebdruck & Stickerei"]
+      },
+      {
+        "name": "Oberbekleidung",
+        "description": "Vom leichten Windbreaker bis zum schweren Wintermantel — komplexe Mehrlagenkonstruktion.",
+        "features": ["Wasserabweisende Stoffe", "Isoliert & Shell-Optionen", "YKK-Reißverschlüsse verfügbar", "Individuelles Futter & Polsterung"]
+      },
+      {
+        "name": "Accessoires",
+        "description": "Komplettieren Sie Ihre Linie mit koordinierten Accessoires nach demselben Qualitätsstandard.",
+        "features": ["Strukturierte und unstrukturierte Mützen", "Tote & Umhängetaschen", "Individuelle Socken", "Koordinierte Kapselsets"]
+      }
+    ]
+  },
+  "services": {
+    "meta": {
+      "title": "Leistungen | OEM/ODM Fertigungsprozess | Potato Apparel",
+      "description": "Erfahren Sie mehr über die Fertigungsleistungen von Potato Apparel — Musterung, MOQ-Richtlinie, Stoffauswahl, Dekorationstechniken und QK-Prozess."
+    },
+    "hero": {
+      "title": "Full-Service\nFertigung",
+      "subtitle": "Vom Konzept bis zur Lieferung managen wir jeden Schritt, damit Sie sich auf den Aufbau Ihrer Marke konzentrieren können."
+    },
+    "moq": {
+      "title": "Flexible MOQ-Richtlinie",
+      "subtitle": "Wir glauben, dass großartige Marken einen fairen Start verdienen — unabhängig von ihrer Größe.",
+      "description": "Unsere Mindestbestellmenge beginnt bei nur 50 Stück pro Modell und Farbe — unter den niedrigsten der Branche.",
+      "tiers": [
+        { "qty": "50–200 Stück", "label": "Startup-Stufe", "note": "Ideal für erste Launches und limitierte Editionen" },
+        { "qty": "200–500 Stück", "label": "Wachstums-Stufe", "note": "Standard-Großhandelspreis, kürzere Lieferzeit" },
+        { "qty": "500+ Stück", "label": "Scale-Stufe", "note": "Bester Preis, Produktionsplanung mit Priorität" }
+      ]
+    },
+    "fabrics": {
+      "title": "Stoffe & Materialien",
+      "subtitle": "Bezogen von zertifizierten Spinnereien mit vollständiger Materialrückverfolgbarkeit.",
+      "categories": [
+        {
+          "name": "Naturfasern",
+          "items": ["100% Baumwolle (verschiedene Gewichte)", "Leinen & Ramie", "Bambus", "Seide & Satin"]
+        },
+        {
+          "name": "Funktionsstoffe",
+          "items": ["Polyester- & Nylonmischungen", "Spandex / Elasthan", "Feuchtigkeitsableitende Funktionsstoffe", "UV-Schutzmaterialien"]
+        },
+        {
+          "name": "Nachhaltige Optionen",
+          "items": ["Biobaumwolle (GOTS-zertifiziert)", "Recyceltes Polyester (rPET)", "Tencel / Lyocell", "Hanfmischungen"]
+        }
+      ]
+    },
+    "techniques": {
+      "title": "Dekorationstechniken",
+      "subtitle": "Von Stickerei bis Sublimation — jede angebotene Methode wird nach höchsten Standards ausgeführt.",
+      "items": [
+        { "name": "Siebdruck", "description": "Mehrfarbige Drucke für große Auflagen. Leuchtend, langlebig, kosteneffizient in der Menge." },
+        { "name": "Stickerei", "description": "Verleiht Premium-Textur und Tiefe. Ideal für Logos, Patches und feine Details." },
+        { "name": "DTG-Druck", "description": "Direktdruck für komplexe, fotoqualitative Designs ohne Einrichtungsgebühren." },
+        { "name": "Transferdruck", "description": "Vielseitige Anwendung für detaillierte Designs und Spezialeffekte." },
+        { "name": "Sublimation", "description": "Ganzkörperdruck auf Polyester. Unbegrenzte Farben, kein Griff auf dem Kleidungsstück." },
+        { "name": "Wäschebehandlung", "description": "Säurewäsche, Enzymwäsche, Steinwäsche und individuelle Alterungstechniken." }
+      ]
+    }
+  },
+  "portfolio": {
+    "meta": {
+      "title": "Portfolio | Fertigungsarbeiten | Potato Apparel",
+      "description": "Durchstöbern Sie das Portfolio von Potato Apparel — OEM/ODM-Fertigungsprojekte für Marken weltweit."
+    },
+    "hero": {
+      "title": "Unsere Arbeiten",
+      "subtitle": "Eine kuratierte Auswahl von Kleidungsstücken, die für Marken weltweit produziert wurden."
+    },
+    "filter": {
+      "all": "Alle Projekte",
+      "tshirts": "T-Shirts",
+      "hoodies": "Hoodies",
+      "activewear": "Sport",
+      "streetwear": "Streetwear",
+      "dresses": "Kleider",
+      "swimwear": "Bademode"
+    },
+    "cta": {
+      "title": "Gefällt Ihnen Was Sie Sehen?",
+      "subtitle": "Lassen Sie uns etwas ebenso Beeindruckendes für Ihre Marke schaffen.",
+      "button": "Projekt Starten"
+    }
+  },
+  "blog": {
+    "meta": {
+      "title": "Blog | Markenratgeber & Fertigungstipps",
+      "description": "Praktische Leitfäden, Fertigungstipps und Brancheneinblicke für den Aufbau einer erfolgreichen Modemarke."
+    },
+    "hero": {
+      "title": "Der Modemarken-Blog",
+      "subtitle": "Praktische Ratgeber, Fertigungstipps und Brancheneinblicke für den Aufbau einer dauerhaften Marke."
+    },
+    "filter": {
+      "all": "Alle Artikel",
+      "brandBuilding": "Markenaufbau",
+      "manufacturing": "Fertigung",
+      "design": "Design & Tech Pack",
+      "trends": "Branchentrends"
+    },
+    "readMore": "Artikel Lesen",
+    "minRead": "Min. Lesezeit",
+    "noResults": "Keine Artikel in dieser Kategorie gefunden.",
+    "publishedOn": "Veröffentlicht",
+    "by": "von",
+    "relatedArticles": "Verwandte Artikel",
+    "ctaTitle": "Bereit, Ihre Marke zu Starten?",
+    "ctaSubtitle": "Erhalten Sie eine kostenlose Beratung und ein Angebot von unserem Team.",
+    "ctaButton": "Kostenloses Angebot",
+    "backToBlog": "Zurück zum Blog"
+  },
+  "contact": {
+    "meta": {
+      "title": "Kontakt | Angebot Anfragen | Potato Apparel",
+      "description": "Kontaktieren Sie Potato Apparel für ein individuelles Fertigungsangebot. OEM/ODM-Services mit niedriger MOQ. Antwort innerhalb von 24 Stunden."
+    },
+    "hero": {
+      "title": "Kontakt Aufnehmen",
+      "subtitle": "Erzählen Sie uns von Ihrem Projekt. Wir melden uns innerhalb von 24 Stunden."
+    },
+    "info": {
+      "title": "Kontaktinformationen",
+      "email": "E-Mail",
+      "whatsapp": "WhatsApp",
+      "address": "Adresse",
+      "addressValue": "Haizhu-Bezirk, Guangzhou, Guangdong, China",
+      "hours": "Geschäftszeiten",
+      "hoursValue": "Montag – Freitag, 9:00 – 18:00 Uhr CST"
+    },
+    "form": {
+      "title": "Kontakt Aufnehmen",
+      "name": "Name",
+      "namePlaceholder": "Ihr vollständiger Name",
+      "nameRequired": "Name ist erforderlich",
+      "email": "E-Mail",
+      "emailPlaceholder": "beispiel@domain.com",
+      "emailRequired": "E-Mail ist erforderlich",
+      "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+      "phone": "Telefon",
+      "phonePlaceholder": "Telefonnummer",
+      "budget": "Was ist Ihr geschätztes Budget?",
+      "budgetPlaceholder": "Budget Auswählen",
+      "budgetOptions": {
+        "under1k": "Unter 1.000 $",
+        "1k5k": "1.000 $ – 5.000 $",
+        "5k20k": "5.000 $ – 20.000 $",
+        "20kPlus": "20.000 $+"
+      },
+      "company": "Firmenname",
+      "companyPlaceholder": "Ihr Firmen- oder Markenname",
+      "platform": "Ihre Verkaufsplattform",
+      "platformPlaceholder": "Plattform Auswählen",
+      "platformOptions": {
+        "shopify": "Shopify",
+        "amazon": "Amazon",
+        "tiktok": "TikTok Shop",
+        "offline": "Stationärer Handel",
+        "other": "Sonstiges"
+      },
+      "details": "Weitere Details",
+      "detailsPlaceholder": "Senden Sie uns das Design und die gewünschte Stückzahl. Fangen wir mit einem Muster an!",
+      "detailsRequired": "Bitte teilen Sie uns mehr über Ihr Projekt mit",
+      "upload": "Dateien Anhängen",
+      "uploadText": "Klicken oder Dateien hier ablegen.",
+      "uploadHint": "Sie können bis zu 10 Dateien hochladen.",
+      "submit": "Anfrage Senden",
+      "submitting": "Wird gesendet...",
+      "successTitle": "Nachricht Gesendet!",
+      "successText": "Vielen Dank für Ihre Anfrage. Wir melden uns innerhalb von 24 Stunden.",
+      "errorText": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt.",
+      "required": "Pflichtfeld"
+    }
+  },
+  "footer": {
+    "tagline": "Professioneller OEM/ODM-Bekleidungshersteller mit Sitz in China, der seit 2014 aufstrebende und etablierte Marken weltweit bedient.",
+    "quickLinks": "Schnelllinks",
+    "contact": "Kontakt",
+    "followUs": "Folgen Sie Uns",
+    "address": "Adresse",
+    "addressValue": "Haizhu-Bezirk, Guangzhou, China",
+    "hoursValue": "Mo – Fr, 9:00 – 18:00 Uhr (CST)",
+    "ctaTitle": "Bereit, Ihr Projekt zu starten?",
+    "ctaSubtitle": "Kostenloses Angebot in 24 Stunden.",
+    "ctaButton": "Angebot Anfragen",
+    "rights": "Alle Rechte vorbehalten.",
+    "privacy": "Datenschutzrichtlinie",
+    "terms": "Nutzungsbedingungen"
+  },
+  "whatsapp": {
+    "tooltip": "Chatten Sie mit uns auf WhatsApp"
+  },
+  "common": {
+    "readMore": "Mehr Lesen",
+    "viewAll": "Alle Ansehen",
+    "getQuote": "Angebot Anfragen",
+    "learnMore": "Mehr Erfahren",
+    "startProject": "Projekt Starten",
+    "loading": "Laden..."
+  },
+  "cart": {
+    "title": "Warenkorb",
+    "empty": "Ihr Warenkorb ist leer",
+    "emptyHint": "Sie haben noch nichts hinzugefügt.",
+    "browseProducts": "Produkte Durchsuchen",
+    "image": "Bild",
+    "product": "Produkt",
+    "price": "Preis",
+    "quantity": "Menge",
+    "subtotalCol": "Zwischensumme",
+    "subtotal": "Zwischensumme",
+    "shipping": "Versand",
+    "shippingNote": "Nach Bestellung bestätigt",
+    "total": "Gesamt",
+    "proceedToCheckout": "Zur Kasse",
+    "continueShopping": "Weiter Einkaufen",
+    "requestQuoteAll": "Angebot für alle Artikel anfragen",
+    "priceOnRequest": "Preis auf Anfrage",
+    "summary": "Bestellübersicht",
+    "addToCart": "In den Warenkorb",
+    "addedToCart": "Hinzugefügt ✓"
+  },
+  "checkout": {
+    "checkout": "Kasse",
+    "cart": "Warenkorb",
+    "secureCheckout": "Sicherer Checkout",
+    "orderSummary": "Bestellübersicht",
+    "paymentMethod": "Zahlungsmethode",
+    "emptyCart": "Ihr Warenkorb ist leer",
+    "qty": "Menge",
+    "each": "pro Stück",
+    "priceOnRequest": "Preis auf Anfrage",
+    "subtotal": "Zwischensumme",
+    "shipping": "Versand",
+    "shippingNote": "Nach Bestellung bestätigt",
+    "total": "Gesamt",
+    "bankTransfer": "Banküberweisung",
+    "creditCard": "Mit Karte bezahlen",
+    "bankAccountName": "Kontoinhaber",
+    "bankAddress": "Bankadresse",
+    "confirmOrder": "Bestellung Bestätigen",
+    "bankTransferNote": "Ihre Bestellung wird nach Zahlungseingang bestätigt.",
+    "orPayDirect": "Oder direkt bezahlen über:",
+    "cardComingSoon": "Kartenzahlung Demnächst Verfügbar",
+    "cardComingSoonNote": "Wir integrieren Stripe. In der Zwischenzeit zahlen Sie bitte per PayPal oder Banküberweisung."
+  },
+  "orderSuccess": {
+    "title": "Vielen Dank für Ihre Bestellung!",
+    "subtitle": "Wir haben Ihre Bestellung erhalten und melden uns in Kürze.",
+    "orderId": "Bestellreferenz",
+    "saveOrderId": "Bitte speichern Sie diese Referenznummer.",
+    "paypalConfirmed": "Zahlung über PayPal eingegangen — wir bearbeiten Ihre Bestellung.",
+    "bankInstructions": "Bitte führen Sie die Banküberweisung durch, um die Bestellung zu bestätigen.",
+    "accountName": "Kontoinhaber",
+    "transferRef": "Verwendungszweck",
+    "bankRefNote": "Wichtig: Geben Sie die Bestellreferenz im Verwendungszweck Ihrer Überweisung an.",
+    "yourOrder": "Ihre Bestellung",
+    "continueShopping": "Weiter Einkaufen",
+    "contactUs": "Kontakt Aufnehmen"
+  }
+}
+

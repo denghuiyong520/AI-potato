@@ -1,0 +1,30 @@
+# Next.js
+.next/
+out/
+
+# Dependencies
+node_modules/
+
+# Environment variables (may contain secrets)
+.env.local
+.env*.local
+
+# ⚠  INTERNAL DATA — never commit; contains supplier names and cost prices
+src/data/products-internal.json
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
