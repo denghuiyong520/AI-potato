@@ -248,9 +248,36 @@ export default function InquiryForm() {
     e.preventDefault()
     if (!validate()) return
     setStatus('loading')
-    console.log('Inquiry submitted:', { ...form, files: files.map((f) => f.name) })
-    await new Promise((r) => setTimeout(r, 1200))
-    setStatus('success')
+
+    try {
+      const res = await fetch('/api/inquiries', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          type:         isFromProduct ? 'product' : 'contact',
+          name:         form.name,
+          email:        form.email,
+          phone:        form.phone,
+          countryIso:   form.countryIso,
+          company:      form.company,
+          platform:     form.platform,
+          budget:       form.budget,
+          message:      form.details,
+          productSku:   skuParam     || undefined,
+          productTitle: productParam || undefined,
+        }),
+      })
+
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}))
+        throw new Error(body.error ?? `HTTP ${res.status}`)
+      }
+
+      setStatus('success')
+    } catch (err) {
+      console.error('Inquiry submit error:', err)
+      setStatus('error')
+    }
   }
 
   // ── File handling ───────────────────────────────────────────────────
