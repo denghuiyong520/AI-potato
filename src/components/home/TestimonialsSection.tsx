@@ -4,8 +4,32 @@ import { useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react'
-import Image from 'next/image'
 import SectionTitle from '@/components/shared/SectionTitle'
+
+// Palette cycles per testimonial index — keeps consistent colour regardless of animation
+const AVATAR_PALETTES = [
+  { bg: 'bg-violet-600', text: 'text-white' },
+  { bg: 'bg-sky-600',    text: 'text-white' },
+  { bg: 'bg-rose-600',   text: 'text-white' },
+]
+
+function TestimonialAvatar({ name, index }: { name: string; index: number }) {
+  const initials = name
+    .split(' ')
+    .slice(0, 2)
+    .map((n) => n[0])
+    .join('')
+    .toUpperCase()
+  const { bg, text } = AVATAR_PALETTES[index % AVATAR_PALETTES.length]
+  return (
+    <div
+      className={`w-12 h-12 rounded-full shrink-0 flex items-center justify-center font-bold text-sm select-none ${bg} ${text}`}
+      aria-label={name}
+    >
+      {initials}
+    </div>
+  )
+}
 
 export default function TestimonialsSection() {
   const t = useTranslations('testimonials')
@@ -60,15 +84,7 @@ export default function TestimonialsSection() {
                 {/* Author */}
                 <div className="flex items-center gap-4">
                   {/* TODO: Replace with real client avatar photos */}
-                  <div className="w-12 h-12 rounded-full overflow-hidden bg-cream-200 shrink-0">
-                    <Image
-                      src={`https://picsum.photos/seed/${items[active].name.replace(' ', '')}/100/100`}
-                      alt={items[active].name}
-                      width={48}
-                      height={48}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
+                  <TestimonialAvatar name={items[active].name} index={active} />
                   <div>
                     <p className="font-semibold text-ink text-sm">{items[active].name}</p>
                     <p className="text-xs text-ink-muted">

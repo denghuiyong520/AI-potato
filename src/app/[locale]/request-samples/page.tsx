@@ -168,8 +168,8 @@ export default function RequestSamplesPage() {
                 {/* Factory photo */}
                 <div className="relative rounded-2xl overflow-hidden aspect-video">
                   <Image
-                    src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=340&fit=crop&q=80&auto=format"
-                    alt="Potato Apparel manufacturing facility"
+                    src="https://images.unsplash.com/photo-1593250816874-8edf4f732edb?w=600&h=340&fit=crop&q=80&auto=format"
+                    alt="Potato Apparel — fabric and textile quality close-up"
                     fill
                     className="object-cover"
                   />

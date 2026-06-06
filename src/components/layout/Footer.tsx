@@ -187,10 +187,10 @@ export default function Footer() {
             <Link href="/quality-guarantee" className="text-xs text-cream-600 hover:text-cream-300 transition-colors">
               Quality Guarantee
             </Link>
-            <Link href="/contact" className="text-xs text-cream-600 hover:text-cream-300 transition-colors">
+            <Link href="/privacy-policy" className="text-xs text-cream-600 hover:text-cream-300 transition-colors">
               {t('privacy')}
             </Link>
-            <Link href="/contact" className="text-xs text-cream-600 hover:text-cream-300 transition-colors">
+            <Link href="/terms-of-service" className="text-xs text-cream-600 hover:text-cream-300 transition-colors">
               {t('terms')}
             </Link>
           </div>

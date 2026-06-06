@@ -20,8 +20,9 @@ export const metadata: Metadata = {
       'AQL 2.5 standard. 3-stage QC. Full inspection report with every order. If your garments don\'t match the approved sample, we rework or refund.',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=630&fit=crop',
-        width: 1200,
+        // grQh_x_vZKM — person inspecting/fixing machine, quality-control vibe
+        url:    'https://images.unsplash.com/photo-1607718330023-64d147bac374?w=1200&h=630&fit=crop&q=85&auto=format',
+        width:  1200,
         height: 630,
       },
     ],

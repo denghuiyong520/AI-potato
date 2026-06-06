@@ -38,17 +38,19 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=630&fit=crop&q=80&auto=format',
-        width: 1200,
+        // EqualStock — workers sewing textiles in large factory setting (2025)
+        url:    'https://images.unsplash.com/photo-1741176505800-caaa3a52631a?w=1200&h=630&fit=crop&q=85&auto=format',
+        width:  1200,
         height: 630,
-        alt: 'Potato Apparel Custom Clothing Manufacturer',
+        alt:    'Potato Apparel — garment workers at sewing stations in our manufacturing facility',
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Custom Apparel Manufacturer | Potato Apparel',
+    card:        'summary_large_image',
+    title:       'Custom Apparel Manufacturer | Potato Apparel',
     description: 'OEM/ODM clothing manufacturer. MOQ 50 pcs, 7-day sampling, worldwide shipping.',
+    images:      ['https://images.unsplash.com/photo-1741176505800-caaa3a52631a?w=1200&h=630&fit=crop&q=85&auto=format'],
   },
   alternates: {
     canonical: 'https://potatoapparel.com/en',

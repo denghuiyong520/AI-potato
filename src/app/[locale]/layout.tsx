@@ -28,12 +28,18 @@ export async function generateMetadata(): Promise<Metadata> {
       siteName:    'Potato Apparel',
       title:       'Potato Apparel | OEM/ODM Clothing Manufacturer',
       description: 'Professional OEM/ODM apparel manufacturer in China. Low MOQ, fast sampling, quality guaranteed.',
-      // TODO: replace with real OG image
-      images: [{ url: 'https://picsum.photos/seed/potato-og/1200/630', width: 1200, height: 630 }],
+      images: [{
+        url:    'https://images.unsplash.com/photo-1741176505800-caaa3a52631a?w=1200&h=630&fit=crop&q=85&auto=format',
+        width:  1200,
+        height: 630,
+        alt:    'Potato Apparel — garment manufacturing facility with workers at sewing stations',
+      }],
     },
     twitter: {
-      card:  'summary_large_image',
-      title: 'Potato Apparel | OEM/ODM Clothing Manufacturer',
+      card:        'summary_large_image',
+      title:       'Potato Apparel | OEM/ODM Clothing Manufacturer',
+      description: 'Professional OEM/ODM apparel manufacturer in China. Low MOQ, fast sampling, quality guaranteed.',
+      images:      ['https://images.unsplash.com/photo-1741176505800-caaa3a52631a?w=1200&h=630&fit=crop&q=85&auto=format'],
     },
     alternates: {
       languages: {

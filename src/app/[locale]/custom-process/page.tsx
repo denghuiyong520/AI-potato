@@ -23,8 +23,9 @@ export const metadata: Metadata = {
       'Clear, transparent process from your first inquiry to delivery at your door. Low MOQ from 50 pcs, 7-day sampling, 20–30 day bulk production.',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=630&fit=crop',
-        width: 1200,
+        // kuyumG6hKWk — textile workers sorting fabric (process/production vibe)
+        url:    'https://images.unsplash.com/photo-1684259499086-93cb3e555803?w=1200&h=630&fit=crop&q=85&auto=format',
+        width:  1200,
         height: 630,
       },
     ],
@@ -228,7 +229,7 @@ export default function CustomProcessPage() {
         <div
           className="absolute inset-0 opacity-15"
           style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&fit=crop)',
+            backgroundImage: 'url(https://images.unsplash.com/photo-1684259499086-93cb3e555803?w=1400&fit=crop&q=85&auto=format)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}

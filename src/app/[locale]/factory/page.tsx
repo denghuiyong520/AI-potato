@@ -9,7 +9,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Apparel Manufacturing Factory | Potato Apparel',
     description: 'See inside our Guangzhou factory — 15,000 m², 300+ workers, ISO quality control. OEM & ODM manufacturing for global brands.',
-    images: [{ url: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=630&fit=crop', width: 1200, height: 630 }],
+    images: [{
+      // dh1EDCiQ6lg / EqualStock — workers sewing textiles in large factory setting
+      url:    'https://images.unsplash.com/photo-1741176505800-caaa3a52631a?w=1200&h=630&fit=crop&q=85&auto=format',
+      width:  1200,
+      height: 630,
+      alt:    'Potato Apparel garment manufacturing facility in Guangzhou',
+    }],
   },
 }
 
@@ -72,7 +78,7 @@ export default function FactoryPage() {
 
       {/* Hero */}
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 bg-gray-950 text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&fit=crop)', backgroundSize: 'cover', backgroundPosition: 'center' }} />
+        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1741176505800-caaa3a52631a?w=1400&fit=crop&q=85&auto=format)', backgroundSize: 'cover', backgroundPosition: 'center' }} />
         <div className="relative container-site max-w-4xl text-center">
           <span className="inline-block bg-violet-600 text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-widest">Guangzhou, China</span>
           <h1 className="font-display font-bold text-4xl lg:text-6xl mb-6 leading-tight">
