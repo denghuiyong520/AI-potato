@@ -1,7 +1,16 @@
+import createMiddleware from 'next-intl/middleware'
+import { routing } from './src/i18n/routing'
 import { NextRequest, NextResponse } from 'next/server'
 
+const intlMiddleware = createMiddleware(routing)
+
 export default function middleware(request: NextRequest) {
-  return NextResponse.next()
+  try {
+    return intlMiddleware(request)
+  } catch (e) {
+    const msg = e instanceof Error ? e.message + '\n' + e.stack : String(e)
+    return new NextResponse(msg, { status: 500, headers: { 'content-type': 'text/plain' } })
+  }
 }
 
 export const config = {
