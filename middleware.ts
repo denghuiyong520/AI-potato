@@ -2,10 +2,9 @@ import createMiddleware from 'next-intl/middleware'
 import { routing } from './src/i18n/routing'
 import { NextRequest, NextResponse } from 'next/server'
 
-const intlMiddleware = createMiddleware(routing)
-
 export default function middleware(request: NextRequest) {
   try {
+    const intlMiddleware = createMiddleware(routing)
     return intlMiddleware(request)
   } catch (e) {
     const msg = e instanceof Error ? e.message + '\n' + e.stack : String(e)
