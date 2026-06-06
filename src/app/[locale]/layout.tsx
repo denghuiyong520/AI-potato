@@ -33,9 +33,7 @@ export async function generateMetadata(): Promise<Metadata> {
     //      NEXT_PUBLIC_GSC_VERIFICATION in your environment variables
     // ─────────────────────────────────────────────────────────────────────────
     verification: {
-      google: process.env.NEXT_PUBLIC_GSC_VERIFICATION ?? '',
-      // yandex: '',   // optional: Yandex Webmaster
-      // other: [],    // optional: other search engines
+      google: 'Mqc33_1ZXLqVqUMDqRz1gJuPpP99tKgjsb6lkMdoXCU',
     },
     openGraph: {
       type:        'website',
