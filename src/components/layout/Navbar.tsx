@@ -145,11 +145,11 @@ export default function Navbar() {
           className="shrink-0 mr-8 flex items-center opacity-95 hover:opacity-100 transition-opacity duration-200"
         >
           <Image
-            src="/logo-transparent.png"
+            src="/logo-nav.png"
             alt="Potato Apparel"
-            width={160}
-            height={70}
-            className="h-11 w-auto object-contain"
+            width={212}
+            height={48}
+            className="h-12 w-auto object-contain"
             priority
           />
         </Link>
