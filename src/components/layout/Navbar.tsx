@@ -10,6 +10,7 @@ import { cn } from '@/lib/utils'
 import { CATEGORIES } from '@/data/products'
 import { CATEGORY_TREE } from '@/data/categories'
 import CartIcon from '@/components/cart/CartIcon'
+import Image from 'next/image'
 
 // ─── constants ────────────────────────────────────────────────────────────────
 const LOCALES      = ['en', 'zh', 'fr', 'de', 'es'] as const
@@ -140,9 +141,14 @@ export default function Navbar() {
 
         {/* Logo */}
         <Link href="/" className="shrink-0 mr-6">
-          <span className="font-display font-bold tracking-[0.12em] text-[13px] uppercase text-white select-none whitespace-nowrap">
-            Potato Apparel
-          </span>
+          <Image
+            src="/logo-transparent.png"
+            alt="Potato Apparel"
+            width={120}
+            height={52}
+            className="h-8 w-auto object-contain"
+            priority
+          />
         </Link>
 
         {/* ── Desktop nav — visible at 960px+ ────────────────────────────── */}

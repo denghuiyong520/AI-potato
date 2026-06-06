@@ -45,11 +45,10 @@ export async function generateMetadata({
       type: 'website',
       images: [
         {
-          // EqualStock — workers sewing textiles in large factory setting (2025)
-          url:    'https://images.unsplash.com/photo-1741176505800-caaa3a52631a?w=1200&h=630&fit=crop&q=85&auto=format',
+          url:    'https://www.potatoapparel.com/og-default.jpg',
           width:  1200,
           height: 630,
-          alt:    'Potato Apparel — garment workers at sewing stations in our manufacturing facility',
+          alt:    'Potato Apparel — Custom OEM/ODM Clothing Manufacturer',
         },
       ],
     },
@@ -57,7 +56,7 @@ export async function generateMetadata({
       card:        'summary_large_image',
       title:       'Custom Apparel Manufacturer | Potato Apparel',
       description: 'OEM/ODM clothing manufacturer. MOQ 50 pcs, 7-day sampling, worldwide shipping.',
-      images:      ['https://images.unsplash.com/photo-1741176505800-caaa3a52631a?w=1200&h=630&fit=crop&q=85&auto=format'],
+      images:      ['https://www.potatoapparel.com/og-default.jpg'],
     },
   }
 }
@@ -67,7 +66,7 @@ const organizationSchema = {
   '@type': 'Organization',
   name: 'Potato Apparel',
   url: 'https://www.potatoapparel.com',
-  logo: 'https://www.potatoapparel.com/logo.png',
+  logo: 'https://www.potatoapparel.com/logo-112.png',
   description:
     'Professional OEM/ODM apparel manufacturer based in Guangzhou, China. Custom t-shirts, hoodies, streetwear, activewear and more. Low MOQ from 50 pieces.',
   foundingDate: '2014',

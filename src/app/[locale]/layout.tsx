@@ -41,17 +41,17 @@ export async function generateMetadata(): Promise<Metadata> {
       title:       'Potato Apparel | OEM/ODM Clothing Manufacturer',
       description: 'Professional OEM/ODM apparel manufacturer in China. Low MOQ, fast sampling, quality guaranteed.',
       images: [{
-        url:    'https://images.unsplash.com/photo-1741176505800-caaa3a52631a?w=1200&h=630&fit=crop&q=85&auto=format',
+        url:    'https://www.potatoapparel.com/og-default.jpg',
         width:  1200,
         height: 630,
-        alt:    'Potato Apparel — garment manufacturing facility with workers at sewing stations',
+        alt:    'Potato Apparel — Custom OEM/ODM Clothing Manufacturer',
       }],
     },
     twitter: {
       card:        'summary_large_image',
       title:       'Potato Apparel | OEM/ODM Clothing Manufacturer',
       description: 'Professional OEM/ODM apparel manufacturer in China. Low MOQ, fast sampling, quality guaranteed.',
-      images:      ['https://images.unsplash.com/photo-1741176505800-caaa3a52631a?w=1200&h=630&fit=crop&q=85&auto=format'],
+      images:      ['https://www.potatoapparel.com/og-default.jpg'],
     },
     // NOTE: per-locale canonical + hreflang are set on each page via
     // buildAlternates() in '@/lib/seo'. We intentionally do NOT set
