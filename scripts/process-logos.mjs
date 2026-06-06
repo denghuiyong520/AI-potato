@@ -42,17 +42,17 @@ async function generateOG(outputPath) {
   const W = 1200, H = 630
 
   // Inline the logo2 as base64 so we don't need a separate read step
-  const logoBytes = readFileSync(path.join(pub, 'logo2.png'))
-  const logoB64   = logoBytes.toString('base64')
+  // Use the transparent-background version so logo blends into the black bg
+  const logoSrc = path.join(pub, 'logo-square-transparent.png')
 
-  // Resize logo2 to fit nicely in the center (max 240px wide, keeping AR)
-  const logoMeta  = await sharp(path.join(pub, 'logo2.png')).metadata()
-  const logoScale = Math.min(240 / logoMeta.width, 220 / logoMeta.height)
+  // Resize to fit nicely in the center (max 220px, keeping AR)
+  const logoMeta  = await sharp(logoSrc).metadata()
+  const logoScale = Math.min(220 / logoMeta.width, 200 / logoMeta.height)
   const lW = Math.round(logoMeta.width  * logoScale)
   const lH = Math.round(logoMeta.height * logoScale)
 
-  const logoResized = await sharp(path.join(pub, 'logo2.png'))
-    .resize(lW, lH, { fit: 'contain', background: { r: 17, g: 17, b: 17, alpha: 1 } })
+  const logoResized = await sharp(logoSrc)
+    .resize(lW, lH, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
     .png()
     .toBuffer()
 
