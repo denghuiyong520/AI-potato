@@ -5,6 +5,7 @@ import SectionTitle from '@/components/shared/SectionTitle'
 import AnimatedSection, { StaggerContainer, StaggerItem } from '@/components/shared/AnimatedSection'
 import ProcessSection from '@/components/home/ProcessSection'
 import BottomCTASection from '@/components/home/BottomCTASection'
+import { buildAlternates } from '@/lib/seo'
 
 export async function generateMetadata({
   params: { locale },
@@ -12,7 +13,11 @@ export async function generateMetadata({
   params: { locale: string }
 }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'services.meta' })
-  return { title: t('title'), description: t('description') }
+  return {
+    title: t('title'),
+    description: t('description'),
+    alternates: buildAlternates(locale, '/services'),
+  }
 }
 
 export default async function ServicesPage({

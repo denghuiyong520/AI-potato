@@ -4,6 +4,7 @@ import { getTranslations } from 'next-intl/server'
 import { Mail, MessageCircle, MapPin, Clock } from 'lucide-react'
 import AnimatedSection from '@/components/shared/AnimatedSection'
 import InquiryForm from '@/components/contact/InquiryForm'
+import { buildAlternates } from '@/lib/seo'
 
 export async function generateMetadata({
   params: { locale },
@@ -11,7 +12,11 @@ export async function generateMetadata({
   params: { locale: string }
 }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'contact.meta' })
-  return { title: t('title'), description: t('description') }
+  return {
+    title: t('title'),
+    description: t('description'),
+    alternates: buildAlternates(locale, '/contact'),
+  }
 }
 
 export default async function ContactPage({

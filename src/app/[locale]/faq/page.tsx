@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import FAQContent from '@/components/faq/FAQContent'
+import { buildAlternates } from '@/lib/seo'
 
-export const metadata: Metadata = {
+const baseMetadata: Metadata = {
   title: 'FAQ | Custom Apparel Manufacturing Questions | Potato Apparel',
   description:
     'Answers to the most common questions about ordering custom apparel — MOQ, sampling, pricing, production timelines, printing, embroidery, shipping, and quality guarantees.',
@@ -18,6 +19,14 @@ export const metadata: Metadata = {
     description:
       'MOQ, sampling, pricing, production timelines, printing methods, shipping, and quality guarantees — all your questions answered.',
   },
+}
+
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string }
+}): Promise<Metadata> {
+  return { ...baseMetadata, alternates: buildAlternates(locale, '/faq') }
 }
 
 export default function FAQPage() {

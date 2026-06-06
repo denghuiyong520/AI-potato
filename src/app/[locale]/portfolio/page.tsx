@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
 import PortfolioGrid from '@/components/portfolio/PortfolioGrid'
+import { buildAlternates } from '@/lib/seo'
 
 export async function generateMetadata({
   params: { locale },
@@ -11,6 +12,7 @@ export async function generateMetadata({
   return {
     title: t('title'),
     description: t('description'),
+    alternates: buildAlternates(locale, '/portfolio'),
     keywords: [
       'custom clothing portfolio',
       'apparel manufacturing samples',

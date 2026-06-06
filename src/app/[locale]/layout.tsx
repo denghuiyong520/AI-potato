@@ -22,7 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     description:
       'Professional OEM/ODM apparel manufacturer in China. Low MOQ, fast sampling, 1-on-1 service. Serving global brands since 2014.',
-    metadataBase: new URL('https://potatoapparel.com'),
+    metadataBase: new URL('https://www.potatoapparel.com'),
 
     // ─── Google Search Console verification ──────────────────────────────────
     // How to get your code:
@@ -53,15 +53,10 @@ export async function generateMetadata(): Promise<Metadata> {
       description: 'Professional OEM/ODM apparel manufacturer in China. Low MOQ, fast sampling, quality guaranteed.',
       images:      ['https://images.unsplash.com/photo-1741176505800-caaa3a52631a?w=1200&h=630&fit=crop&q=85&auto=format'],
     },
-    alternates: {
-      languages: {
-        'en': '/en',
-        'zh': '/zh',
-        'fr': '/fr',
-        'de': '/de',
-        'es': '/es',
-      },
-    },
+    // NOTE: per-locale canonical + hreflang are set on each page via
+    // buildAlternates() in '@/lib/seo'. We intentionally do NOT set
+    // alternates here — a layout-level languages map without params produces
+    // an incomplete hreflang set (no self-canonical) that pages would inherit.
   }
 }
 

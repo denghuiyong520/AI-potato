@@ -5,8 +5,9 @@ import {
   Truck, ShieldCheck, Clock, CreditCard, Headphones,
 } from 'lucide-react'
 import BottomCTASection from '@/components/home/BottomCTASection'
+import { buildAlternates } from '@/lib/seo'
 
-export const metadata: Metadata = {
+const baseMetadata: Metadata = {
   title: 'Custom Apparel Manufacturing Process | How to Order | Potato Apparel',
   description:
     'Step-by-step guide to ordering custom apparel with Potato Apparel. From inquiry to delivery — sampling, production, QC, and worldwide shipping. Start in 24 hours.',
@@ -30,6 +31,14 @@ export const metadata: Metadata = {
       },
     ],
   },
+}
+
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string }
+}): Promise<Metadata> {
+  return { ...baseMetadata, alternates: buildAlternates(locale, '/custom-process') }
 }
 
 const steps = [

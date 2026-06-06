@@ -1,12 +1,18 @@
 import type { MetadataRoute } from 'next'
 import { getAllPosts } from '@/lib/blog'
 import { importedProducts } from '@/data/products'
+import { SITE_URL, LOCALES, DEFAULT_LOCALE } from '@/lib/seo'
 
-const BASE_URL = 'https://potatoapparel.com'
-const LOCALES  = ['en', 'zh', 'fr', 'de', 'es']
-
-function url(locale: string, path = ''): string {
-  return `${BASE_URL}/${locale}${path}`
+// Build the hreflang alternates map for a given path (after the locale
+// segment). Every URL in a hreflang cluster must reference every other URL
+// including itself, so each per-locale <url> carries the full set.
+function languagesFor(path: string): Record<string, string> {
+  const languages: Record<string, string> = {}
+  for (const locale of LOCALES) {
+    languages[locale] = `${SITE_URL}/${locale}${path}`
+  }
+  languages['x-default'] = `${SITE_URL}/${DEFAULT_LOCALE}${path}`
+  return languages
 }
 
 const STATIC_ROUTES: Array<{ path: string; priority: number; freq: MetadataRoute.Sitemap[number]['changeFrequency'] }> = [
@@ -25,40 +31,53 @@ const STATIC_ROUTES: Array<{ path: string; priority: number; freq: MetadataRoute
   { path: '/privacy-policy',    priority: 0.3, freq: 'yearly'  },
   { path: '/terms-of-service',  priority: 0.3, freq: 'yearly'  },
   { path: '/request-samples',   priority: 0.8, freq: 'monthly' },
-  { path: '/seo-roadmap',       priority: 0.2, freq: 'monthly' },
+  // NOTE: /seo-roadmap is intentionally excluded — it is noindex and must
+  // never appear in the sitemap (conflicting signal + wasted crawl budget).
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const posts    = getAllPosts()
+  const posts   = getAllPosts()
   const entries: MetadataRoute.Sitemap = []
-  const now      = new Date()
+  const now     = new Date()
 
-  // ── Static pages × all locales ────────────────────────────────────────────
+  // ── Static pages × all locales (with full hreflang cluster) ───────────────
   for (const { path, priority, freq } of STATIC_ROUTES) {
-    for (const locale of LOCALES) {
-      entries.push({ url: url(locale, path), lastModified: now, changeFrequency: freq, priority })
-    }
-  }
-
-  // ── Product pages × all locales ───────────────────────────────────────────
-  for (const product of importedProducts) {
+    const languages = languagesFor(path)
     for (const locale of LOCALES) {
       entries.push({
-        url:             url(locale, `/products/${product.slug}`),
-        lastModified:    new Date(product.importedAt),
-        changeFrequency: 'monthly',
-        priority:        product.mainImages.length > 0 ? 0.8 : 0.6,
+        url:             `${SITE_URL}/${locale}${path}`,
+        lastModified:    now,
+        changeFrequency: freq,
+        priority,
+        alternates:      { languages },
       })
     }
   }
 
-  // ── Blog posts (English-first; add translations as they are created) ──────
+  // ── Product pages × all locales (with full hreflang cluster) ──────────────
+  for (const product of importedProducts) {
+    const path      = `/products/${product.slug}`
+    const languages = languagesFor(path)
+    for (const locale of LOCALES) {
+      entries.push({
+        url:             `${SITE_URL}/${locale}${path}`,
+        lastModified:    new Date(product.importedAt),
+        changeFrequency: 'monthly',
+        priority:        product.mainImages.length > 0 ? 0.8 : 0.6,
+        alternates:      { languages },
+      })
+    }
+  }
+
+  // ── Blog posts (English-only content — no non-EN locale entries) ──────────
   for (const post of posts) {
+    const en = `${SITE_URL}/${DEFAULT_LOCALE}/blog/${post.slug}`
     entries.push({
-      url:             url('en', `/blog/${post.slug}`),
+      url:             en,
       lastModified:    new Date(post.date),
       changeFrequency: 'monthly',
       priority:        0.6,
+      alternates:      { languages: { en, 'x-default': en } },
     })
   }
 

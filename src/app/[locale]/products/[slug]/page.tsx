@@ -15,7 +15,7 @@ import {
   getImportedRelated,
 } from '@/data/products'
 
-const BASE_URL = 'https://potatoapparel.com'
+const BASE_URL = 'https://www.potatoapparel.com'
 const LOCALES  = ['en', 'zh', 'fr', 'de', 'es']
 
 // ─── SEO helpers ─────────────────────────────────────────────────────────────

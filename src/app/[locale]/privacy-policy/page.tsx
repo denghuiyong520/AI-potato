@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
 import { Shield, Eye, Cookie, Mail, Lock, Globe, UserCheck, AlertCircle } from 'lucide-react'
+import { buildAlternates } from '@/lib/seo'
 
-export const metadata: Metadata = {
+const baseMetadata: Metadata = {
   title: 'Privacy Policy | Potato Apparel',
   description:
     'Learn how Potato Apparel collects, uses, and protects your personal data. GDPR-compliant privacy policy for our clothing manufacturing services.',
@@ -12,6 +13,14 @@ export const metadata: Metadata = {
       'How Potato Apparel handles your personal data, cookies, and privacy rights under GDPR and applicable law.',
   },
   robots: { index: true, follow: true },
+}
+
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string }
+}): Promise<Metadata> {
+  return { ...baseMetadata, alternates: buildAlternates(locale, '/privacy-policy') }
 }
 
 const EFFECTIVE_DATE = 'June 1, 2025'

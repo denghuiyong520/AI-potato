@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
 import { Truck, Package, Clock, Globe, ShieldCheck, ArrowRight, CheckCircle, AlertCircle } from 'lucide-react'
 import BottomCTASection from '@/components/home/BottomCTASection'
+import { buildAlternates } from '@/lib/seo'
 
-export const metadata: Metadata = {
+const baseMetadata: Metadata = {
   title: 'Shipping Policy | Worldwide Apparel Delivery | Potato Apparel',
   description:
     'Potato Apparel ships to 150+ countries. Express delivery in 5–7 days or sea freight in 25–35 days. Amazon FBA direct shipping, DDP available. Full tracking on every order.',
@@ -26,6 +27,14 @@ export const metadata: Metadata = {
       },
     ],
   },
+}
+
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string }
+}): Promise<Metadata> {
+  return { ...baseMetadata, alternates: buildAlternates(locale, '/shipping-policy') }
 }
 
 const shippingMethods = [

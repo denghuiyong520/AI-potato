@@ -11,6 +11,7 @@ import { getPostBySlug, getRelatedPosts, getAllPosts } from '@/lib/blog'
 import { formatDate } from '@/lib/utils'
 import AnimatedSection from '@/components/shared/AnimatedSection'
 import BlogCard from '@/components/blog/BlogCard'
+import { buildEnglishOnlyAlternates } from '@/lib/seo'
 
 export async function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }))
@@ -39,9 +40,7 @@ export async function generateMetadata({
       title:       post.title,
       description: post.description,
     },
-    alternates: {
-      canonical: `/blog/${params.slug}`,
-    },
+    alternates: buildEnglishOnlyAlternates(`/blog/${params.slug}`),
   }
 }
 

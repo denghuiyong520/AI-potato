@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
 import { FileText, ShoppingBag, AlertCircle, Scale, Mail, Shield, Clock, RefreshCw } from 'lucide-react'
+import { buildAlternates } from '@/lib/seo'
 
-export const metadata: Metadata = {
+const baseMetadata: Metadata = {
   title: 'Terms of Service | Potato Apparel',
   description:
     'Terms and conditions governing the use of Potato Apparel\'s website and custom clothing manufacturing services. Read before placing an order.',
@@ -12,6 +13,14 @@ export const metadata: Metadata = {
       'Terms governing orders, payments, intellectual property, liability, and dispute resolution for Potato Apparel manufacturing services.',
   },
   robots: { index: true, follow: true },
+}
+
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string }
+}): Promise<Metadata> {
+  return { ...baseMetadata, alternates: buildAlternates(locale, '/terms-of-service') }
 }
 
 const EFFECTIVE_DATE = 'June 1, 2025'

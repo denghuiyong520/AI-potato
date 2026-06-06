@@ -13,6 +13,7 @@ import { CATEGORY_TREE, SUB_TO_CATEGORY } from '@/data/categories'
 import CategorySidebar from '@/components/products/CategorySidebar'
 import MobileFilterPanel from '@/components/products/MobileFilterPanel'
 import ProductGrid from '@/components/products/ProductGrid'
+import { buildAlternates } from '@/lib/seo'
 
 export async function generateMetadata({
   params: { locale },
@@ -20,7 +21,11 @@ export async function generateMetadata({
   params: { locale: string }
 }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'products.meta' })
-  return { title: t('title'), description: t('description') }
+  return {
+    title: t('title'),
+    description: t('description'),
+    alternates: buildAlternates(locale, '/products'),
+  }
 }
 
 export default async function ProductsPage({

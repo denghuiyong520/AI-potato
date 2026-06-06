@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
 import { CheckCircle, Factory, Layers, Settings, ShieldCheck, Zap, ArrowRight } from 'lucide-react'
 import BottomCTASection from '@/components/home/BottomCTASection'
+import { buildAlternates } from '@/lib/seo'
 
-export const metadata: Metadata = {
+const baseMetadata: Metadata = {
   title: 'Our Factory | Custom Apparel Manufacturing Facility | Potato Apparel',
   description: 'Tour our 15,000 m² apparel manufacturing facility in Guangzhou, China. 200+ machines, 300+ skilled workers, ISO-certified quality control. Custom t-shirts, hoodies, and streetwear at scale.',
   openGraph: {
@@ -17,6 +18,14 @@ export const metadata: Metadata = {
       alt:    'Potato Apparel garment manufacturing facility in Guangzhou',
     }],
   },
+}
+
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string }
+}): Promise<Metadata> {
+  return { ...baseMetadata, alternates: buildAlternates(locale, '/factory') }
 }
 
 const steps = [

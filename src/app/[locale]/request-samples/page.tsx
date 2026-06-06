@@ -3,8 +3,9 @@ import SampleRequestForm from '@/components/leads/SampleRequestForm'
 import { CheckCircle, Star, Clock, Package, Shield, ArrowRight } from 'lucide-react'
 import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
+import { buildAlternates } from '@/lib/seo'
 
-export const metadata: Metadata = {
+const baseMetadata: Metadata = {
   title: 'Request Free Samples | Custom Apparel Manufacturer | Potato Apparel',
   description:
     'Request samples from Potato Apparel — custom t-shirts, hoodies, and streetwear. Sample credit on first bulk order. 7-day turnaround. MOQ from 50 pcs.',
@@ -13,6 +14,14 @@ export const metadata: Metadata = {
     description:
       'Get physical samples of our custom t-shirts, hoodies, and streetwear in 7–10 days. Sample cost credited against your first bulk order.',
   },
+}
+
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string }
+}): Promise<Metadata> {
+  return { ...baseMetadata, alternates: buildAlternates(locale, '/request-samples') }
 }
 
 const trustSignals = [

@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
 import { ShieldCheck, CheckCircle, ArrowRight, Award, FileText, RefreshCw, AlertCircle, Microscope } from 'lucide-react'
 import BottomCTASection from '@/components/home/BottomCTASection'
+import { buildAlternates } from '@/lib/seo'
 
-export const metadata: Metadata = {
+const baseMetadata: Metadata = {
   title: 'Quality Guarantee | AQL 2.5 Inspection | Potato Apparel',
   description:
     'Every Potato Apparel order ships with an AQL 2.5 quality inspection report. 3-stage QC, photo evidence, and a written guarantee against defects. Learn exactly what we promise.',
@@ -27,6 +28,14 @@ export const metadata: Metadata = {
       },
     ],
   },
+}
+
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string }
+}): Promise<Metadata> {
+  return { ...baseMetadata, alternates: buildAlternates(locale, '/quality-guarantee') }
 }
 
 const qcStages = [

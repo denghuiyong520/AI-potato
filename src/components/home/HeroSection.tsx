@@ -41,21 +41,23 @@ export default function HeroSection() {
             OEM / ODM Clothing Manufacturer
           </motion.div>
 
-          {/* Headline */}
-          <div className="overflow-hidden mb-6">
+          {/* Headline — single H1 with animated lines (one H1 per page for SEO) */}
+          <h1
+            className="overflow-hidden mb-6 font-display font-bold text-white leading-[1.05]"
+            style={{ fontSize: 'clamp(2.5rem, 5.5vw, 5rem)' }}
+          >
             {headline.map((line, i) => (
-              <motion.h1
+              <motion.span
                 key={i}
                 initial={{ y: '110%', opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.35 + i * 0.12, ease: [0.22, 1, 0.36, 1] }}
-                className="font-display font-bold text-white leading-[1.05] block"
-                style={{ fontSize: 'clamp(2.5rem, 5.5vw, 5rem)' }}
+                className="block"
               >
                 {line}
-              </motion.h1>
+              </motion.span>
             ))}
-          </div>
+          </h1>
 
           {/* Subheadline */}
           <motion.p

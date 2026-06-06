@@ -4,6 +4,7 @@ import { getAllPosts, getAllCategories } from '@/lib/blog'
 import AnimatedSection from '@/components/shared/AnimatedSection'
 import BlogListClient from '@/components/blog/BlogListClient'
 import BottomCTASection from '@/components/home/BottomCTASection'
+import { buildAlternates } from '@/lib/seo'
 
 export async function generateMetadata({
   params: { locale },
@@ -11,7 +12,11 @@ export async function generateMetadata({
   params: { locale: string }
 }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'blog.meta' })
-  return { title: t('title'), description: t('description') }
+  return {
+    title: t('title'),
+    description: t('description'),
+    alternates: buildAlternates(locale, '/blog'),
+  }
 }
 
 export default async function BlogPage({

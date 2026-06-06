@@ -6,6 +6,7 @@ import { ArrowRight, BadgeCheck } from 'lucide-react'
 import SectionTitle from '@/components/shared/SectionTitle'
 import AnimatedSection, { StaggerContainer, StaggerItem } from '@/components/shared/AnimatedSection'
 import BottomCTASection from '@/components/home/BottomCTASection'
+import { buildAlternates } from '@/lib/seo'
 
 export async function generateMetadata({
   params: { locale },
@@ -13,7 +14,11 @@ export async function generateMetadata({
   params: { locale: string }
 }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'about.meta' })
-  return { title: t('title'), description: t('description') }
+  return {
+    title: t('title'),
+    description: t('description'),
+    alternates: buildAlternates(locale, '/about'),
+  }
 }
 
 export default async function AboutPage({
@@ -38,7 +43,7 @@ export default async function AboutPage({
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'Potato Apparel',
-    url: 'https://potatoapparel.com', // TODO: replace with real domain
+    url: 'https://www.potatoapparel.com',
     foundingDate: '2014',
     description: 'Professional OEM/ODM apparel manufacturer based in China.',
     contactPoint: {
