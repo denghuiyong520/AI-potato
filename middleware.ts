@@ -1,7 +1,17 @@
 import createMiddleware from 'next-intl/middleware'
 import { routing } from './src/i18n/routing'
+import { NextRequest } from 'next/server'
 
-export default createMiddleware(routing)
+const intlMiddleware = createMiddleware(routing)
+
+export default function middleware(request: NextRequest) {
+  try {
+    return intlMiddleware(request)
+  } catch (e) {
+    console.error('[middleware error]', e)
+    throw e
+  }
+}
 
 export const config = {
   matcher: ['/((?!api|_next/static|_next/image|favicon\\.ico).*)'],
