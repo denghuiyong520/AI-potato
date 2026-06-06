@@ -254,7 +254,8 @@
   "products": {
     "meta": {
       "title": "产品 | Potato Apparel OEM/ODM制造商",
-      "description": "浏览Potato Apparel的完整制造范围——T恤、卫衣、运动服、泳装、街头服饰、连衣裙、外套及配饰。"
+      "description": "浏览Potato Apparel的完整制造范围——T恤、卫衣、运动服、泳装、街头服饰、连衣裙、外套及配饰。",
+      "productTitleSuffix": "批发起订量 50 件"
     },
     "hero": {
       "title": "我们的产品系列",

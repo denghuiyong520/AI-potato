@@ -77,6 +77,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const product = getImportedProductBySlug(slug)
   if (!product) return {}
+  const t = await getTranslations({ locale, namespace: 'products.meta' })
   const description = buildEnDescription(product)
   const ogImage = product.mainImages[0]
     ? `${BASE_URL}${product.mainImages[0]}`
@@ -85,7 +86,7 @@ export async function generateMetadata({
     LOCALES.map((l) => [l, `${BASE_URL}/${l}/products/${slug}`])
   )
   return {
-    title:       `${product.title_en} | Wholesale MOQ 50 pcs`,
+    title:       `${product.title_en} | ${t('productTitleSuffix')}`,
     description,
     alternates: {
       canonical: `${BASE_URL}/${locale}/products/${slug}`,

@@ -13,12 +13,14 @@ export default function HeroSection() {
 
   return (
     <section className="relative h-screen min-h-[600px] max-h-[1000px] flex items-center overflow-hidden">
-      {/* Hero background — high-end fashion atelier */}
+      {/* Hero background — self-hosted (LCP element; same-origin for fast LCP) */}
       <Image
-        src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=1920&h=1080&fit=crop&q=85&auto=format"
-        alt="Potato Apparel clothing manufacturing"
+        src="/hero.jpg"
+        alt="Potato Apparel custom clothing manufacturing facility"
         fill
         priority
+        fetchPriority="high"
+        quality={82}
         className="object-cover object-center"
         sizes="100vw"
       />
