@@ -140,13 +140,16 @@ export default function Navbar() {
       <div className="container-site flex items-center h-16">
 
         {/* Logo */}
-        <Link href="/" className="shrink-0 mr-6">
+        <Link
+          href="/"
+          className="shrink-0 mr-8 flex items-center opacity-95 hover:opacity-100 transition-opacity duration-200"
+        >
           <Image
             src="/logo-transparent.png"
             alt="Potato Apparel"
-            width={120}
-            height={52}
-            className="h-8 w-auto object-contain"
+            width={160}
+            height={70}
+            className="h-11 w-auto object-contain"
             priority
           />
         </Link>
