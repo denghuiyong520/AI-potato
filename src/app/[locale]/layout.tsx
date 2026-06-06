@@ -22,7 +22,21 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     description:
       'Professional OEM/ODM apparel manufacturer in China. Low MOQ, fast sampling, 1-on-1 service. Serving global brands since 2014.',
-    metadataBase: new URL('https://potatoapparel.com'), // TODO: replace with real domain
+    metadataBase: new URL('https://potatoapparel.com'),
+
+    // ─── Google Search Console verification ──────────────────────────────────
+    // How to get your code:
+    //   1. Open Google Search Console → Add property → URL prefix
+    //   2. Choose "HTML tag" verification method
+    //   3. Copy the content value from the <meta> tag shown
+    //   4. Paste it below (replace the empty string) or set
+    //      NEXT_PUBLIC_GSC_VERIFICATION in your environment variables
+    // ─────────────────────────────────────────────────────────────────────────
+    verification: {
+      google: process.env.NEXT_PUBLIC_GSC_VERIFICATION ?? '',
+      // yandex: '',   // optional: Yandex Webmaster
+      // other: [],    // optional: other search engines
+    },
     openGraph: {
       type:        'website',
       siteName:    'Potato Apparel',

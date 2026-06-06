@@ -22,6 +22,10 @@ const STATIC_ROUTES: Array<{ path: string; priority: number; freq: MetadataRoute
   { path: '/blog',              priority: 0.7, freq: 'weekly'  },
   { path: '/faq',               priority: 0.7, freq: 'monthly' },
   { path: '/contact',           priority: 0.6, freq: 'monthly' },
+  { path: '/privacy-policy',    priority: 0.3, freq: 'yearly'  },
+  { path: '/terms-of-service',  priority: 0.3, freq: 'yearly'  },
+  { path: '/request-samples',   priority: 0.8, freq: 'monthly' },
+  { path: '/seo-roadmap',       priority: 0.2, freq: 'monthly' },
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
