@@ -1,16 +1,7 @@
-import createMiddleware from 'next-intl/middleware'
-import { routing } from './src/i18n/routing'
-import { NextRequest } from 'next/server'
-
-const intlMiddleware = createMiddleware(routing)
+import { NextRequest, NextResponse } from 'next/server'
 
 export default function middleware(request: NextRequest) {
-  try {
-    return intlMiddleware(request)
-  } catch (e) {
-    console.error('[middleware error]', e)
-    throw e
-  }
+  return NextResponse.next()
 }
 
 export const config = {
