@@ -1,7 +1,16 @@
 import type { Metadata } from 'next'
 import React from 'react'
-import { setRequestLocale } from 'next-intl/server'
+import { setRequestLocale, getTranslations } from 'next-intl/server'
 import { SITE_URL, buildAlternates } from '@/lib/seo'
+
+// Map next-intl locale → Open Graph locale (BCP-47-ish, region-qualified)
+const OG_LOCALE: Record<string, string> = {
+  en: 'en_US',
+  zh: 'zh_CN',
+  fr: 'fr_FR',
+  de: 'de_DE',
+  es: 'es_ES',
+}
 import HeroSection              from '@/components/home/HeroSection'
 import FeaturesSection          from '@/components/home/FeaturesSection'
 import ServiceTiersSection      from '@/components/home/ServiceTiersSection'
@@ -19,10 +28,12 @@ export async function generateMetadata({
 }: {
   params: { locale: string }
 }): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: 'home.meta' })
+  const title = t('title')
+  const description = t('description')
   return {
-    title: 'Custom Apparel Manufacturer | OEM/ODM Clothing | Potato Apparel',
-    description:
-      'Professional custom apparel manufacturer in China. T-shirts, hoodies, streetwear & more. MOQ from 50 pcs, 7-day sampling, AQL 2.5 QC. Serving USA, UK, AU, EU & Middle East.',
+    title: { absolute: title },
+    description,
     keywords: [
       'custom apparel manufacturer',
       'OEM clothing manufacturer',
@@ -36,12 +47,11 @@ export async function generateMetadata({
     ],
     alternates: buildAlternates(locale, ''),
     openGraph: {
-      title: 'Potato Apparel | Custom Clothing Manufacturer — MOQ from 50 pcs',
-      description:
-        'OEM/ODM apparel manufacturing with low MOQ, fast 7-day sampling, and AQL 2.5 quality control. T-shirts, hoodies, streetwear, activewear and more.',
+      title,
+      description,
       url: `${SITE_URL}/${locale}`,
       siteName: 'Potato Apparel',
-      locale: 'en_US',
+      locale: OG_LOCALE[locale] ?? 'en_US',
       type: 'website',
       images: [
         {
@@ -54,8 +64,8 @@ export async function generateMetadata({
     },
     twitter: {
       card:        'summary_large_image',
-      title:       'Custom Apparel Manufacturer | Potato Apparel',
-      description: 'OEM/ODM clothing manufacturer. MOQ 50 pcs, 7-day sampling, worldwide shipping.',
+      title,
+      description,
       images:      ['https://www.potatoapparel.com/og-default.jpg'],
     },
   }

@@ -1,4 +1,10 @@
 ﻿{
+  "home": {
+    "meta": {
+      "title": "Custom Apparel Manufacturer | OEM/ODM Clothing | Potato Apparel",
+      "description": "Professional custom apparel manufacturer in China. T-shirts, hoodies, streetwear & more. MOQ from 50 pcs, 7-day sampling, AQL 2.5 QC. Serving USA, UK, AU, EU & Middle East."
+    }
+  },
   "nav": {
     "home": "Home",
     "about": "About",
