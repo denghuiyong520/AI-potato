@@ -758,5 +758,53 @@
     "why3Title": "AQL 2.5 Quality Control",
     "why3Desc": "Every shipment goes through multi-stage inspection — inline, semi-final, and final — with a detailed report sent before delivery.",
     "guidesSection": "Related Guides"
+  },
+  "tools": {
+    "meta": {
+      "title": "Free Apparel Cost & Margin Calculator | Potato Apparel",
+      "description": "Free calculator for clothing brands: enter your unit cost, freight, duty and retail price to instantly see landed cost, gross margin and profit per piece.",
+      "h1": "Apparel Cost & Margin Calculator"
+    },
+    "breadcrumbHome": "Home",
+    "intro": "Work out the real economics of your clothing order in seconds. Enter your numbers below to see your landed unit cost, gross margin, and profit per piece — so you can price with confidence before you commit to production.",
+    "howTitle": "How this calculator works",
+    "how1": "Landed unit cost is your ex-factory price plus import duty (calculated on the ex-factory value), plus freight per unit and any other per-unit fees. This is the true cost to get one finished piece into your warehouse — always price off this number, not the factory price alone.",
+    "how2": "Gross margin is profit per unit divided by retail price, shown as a percentage. As a rough guide, apparel brands target 50%+ gross margin to leave room for marketing, returns, and platform fees. Markup shows how many times your landed cost the retail price is.",
+    "how3": "These figures are gross — they do not include marketing spend, payment processing, returns, or overheads. Use them as a starting point for your pricing, then layer in your operating costs.",
+    "ctaTitle": "Ready to get a real quote?",
+    "getQuote": "Get a Quote",
+    "relatedPrefix": "New to import costs? Read our guide:",
+    "calc": {
+      "inputsTitle": "Your numbers",
+      "resultsTitle": "Your results",
+      "in": {
+        "unitCost": "Ex-factory unit cost",
+        "unitCostHint": "Price per piece from the manufacturer",
+        "qty": "Order quantity",
+        "qtyHint": "Number of pieces in this order",
+        "freight": "Freight per unit",
+        "freightHint": "Shipping cost divided by quantity",
+        "duty": "Import duty",
+        "dutyHint": "Duty rate for your country & product",
+        "otherFee": "Other fees per unit",
+        "otherFeeHint": "Customs, brokerage, etc. per piece",
+        "retail": "Your retail price",
+        "retailHint": "What you sell one piece for"
+      },
+      "out": {
+        "landed": "Landed cost / unit",
+        "profitUnit": "Gross profit / unit",
+        "margin": "Gross margin",
+        "markup": "Markup multiple",
+        "totalOrder": "Total order cost",
+        "totalProfit": "Total gross profit"
+      },
+      "verdict": {
+        "good": "Healthy margin. 50%+ gross typically leaves room for marketing, returns and fees.",
+        "ok": "Workable margin, but tight. Below ~50% gross, marketing and returns eat profit fast — look for ways to lower landed cost or raise price.",
+        "low": "Margin is low. After marketing, fees and returns this may not be profitable. Consider a higher retail price, a larger order for a lower unit cost, or a lighter spec."
+      },
+      "disclaimer": "Estimates only. Gross figures exclude marketing, payment fees, returns and overheads. Duty rates vary by country and product — confirm with your customs authority or broker."
+    }
   }
 }

@@ -758,5 +758,53 @@
     "why3Title": "Control de calidad AQL 2.5",
     "why3Desc": "Inspección multietapa — en línea, semifinal y final — con informe detallado antes del envío.",
     "guidesSection": "Guías relacionadas"
+  },
+  "tools": {
+    "meta": {
+      "title": "Calculadora gratuita de costo y margen textil | Potato Apparel",
+      "description": "Calculadora gratuita para marcas de ropa: ingresa costo unitario, flete, arancel y precio de venta para ver costo en destino, margen bruto y ganancia por pieza.",
+      "h1": "Calculadora de costo y margen textil"
+    },
+    "breadcrumbHome": "Inicio",
+    "intro": "Calcula la economía real de tu pedido en segundos. Ingresa tus cifras para ver el costo unitario en destino, el margen bruto y la ganancia por pieza — y fija precios con confianza antes de producir.",
+    "howTitle": "Cómo funciona la calculadora",
+    "how1": "Costo en destino por unidad = precio ex fábrica + arancel de importación (sobre el valor ex fábrica) + flete por unidad + otros cargos por unidad. Es el costo real de llevar una pieza terminada a tu almacén — fija precios con esta cifra, no solo con el precio de fábrica.",
+    "how2": "Margen bruto = ganancia por unidad ÷ precio de venta, en porcentaje. Como guía, las marcas de ropa apuntan a 50 %+ de margen bruto para cubrir marketing, devoluciones y comisiones. El múltiplo muestra cuántas veces el precio de venta cubre el costo en destino.",
+    "how3": "Estas cifras son brutas — no incluyen marketing, comisiones de pago, devoluciones ni gastos generales. Úsalas como punto de partida y suma tus costos operativos.",
+    "ctaTitle": "¿Listo para una cotización real?",
+    "getQuote": "Obtener cotización",
+    "relatedPrefix": "¿Nuevo en costos de importación? Lee nuestra guía:",
+    "calc": {
+      "inputsTitle": "Tus cifras",
+      "resultsTitle": "Tus resultados",
+      "in": {
+        "unitCost": "Costo unitario ex fábrica",
+        "unitCostHint": "Precio por pieza del fabricante",
+        "qty": "Cantidad del pedido",
+        "qtyHint": "Número de piezas",
+        "freight": "Flete por unidad",
+        "freightHint": "Costo de envío dividido entre la cantidad",
+        "duty": "Arancel de importación",
+        "dutyHint": "Tasa para tu país y producto",
+        "otherFee": "Otros cargos por unidad",
+        "otherFeeHint": "Aduana, agente, etc. por pieza",
+        "retail": "Tu precio de venta",
+        "retailHint": "Precio de venta por pieza"
+      },
+      "out": {
+        "landed": "Costo en destino / unidad",
+        "profitUnit": "Ganancia bruta / unidad",
+        "margin": "Margen bruto",
+        "markup": "Múltiplo de margen",
+        "totalOrder": "Costo total del pedido",
+        "totalProfit": "Ganancia bruta total"
+      },
+      "verdict": {
+        "good": "Margen saludable. 50 %+ suele dejar espacio para marketing, devoluciones y comisiones.",
+        "ok": "Margen viable pero ajustado. Por debajo de ~50 %, marketing y devoluciones consumen la ganancia rápido.",
+        "low": "Margen bajo. Tras marketing, comisiones y devoluciones podría no ser rentable. Considera subir el precio o aumentar el pedido."
+      },
+      "disclaimer": "Solo estimaciones. Cifras brutas sin marketing, comisiones de pago, devoluciones ni gastos generales. Los aranceles varían — confirma con tu aduana."
+    }
   }
 }

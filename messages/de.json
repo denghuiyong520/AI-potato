@@ -758,5 +758,53 @@
     "why3Title": "Qualitätskontrolle nach AQL 2.5",
     "why3Desc": "Mehrstufige Kontrolle — Inline, Halbfertig und Final — mit Bericht vor dem Versand.",
     "guidesSection": "Verwandte Leitfäden"
+  },
+  "tools": {
+    "meta": {
+      "title": "Kostenloser Bekleidungs-Kosten- & Margenrechner | Potato Apparel",
+      "description": "Kostenloser Rechner für Modemarken: Stückkosten, Fracht, Zoll und VK eingeben und sofort Landed Cost, Bruttomarge und Gewinn pro Stück sehen.",
+      "h1": "Bekleidungs-Kosten- & Margenrechner"
+    },
+    "breadcrumbHome": "Startseite",
+    "intro": "Berechnen Sie die echte Wirtschaftlichkeit Ihrer Bestellung in Sekunden. Geben Sie Ihre Zahlen ein und sehen Sie Landed Cost pro Stück, Bruttomarge und Gewinn pro Teil — für sichere Preise vor der Produktion.",
+    "howTitle": "So funktioniert der Rechner",
+    "how1": "Landed Cost je Stück = Ab-Werk-Preis + Einfuhrzoll (auf den Ab-Werk-Wert) + Fracht je Stück + sonstige Stückkosten. Das sind die echten Kosten, ein fertiges Teil ins Lager zu bringen — kalkulieren Sie damit, nicht nur mit dem Werkspreis.",
+    "how2": "Bruttomarge = Gewinn pro Stück ÷ Verkaufspreis, in Prozent. Als Faustregel zielen Modemarken auf 50 %+ Bruttomarge, um Marketing, Retouren und Plattformgebühren abzudecken. Das Vielfache zeigt, wie oft der VK die Landed Cost deckt.",
+    "how3": "Diese Werte sind brutto — ohne Marketing, Zahlungsgebühren, Retouren und Gemeinkosten. Nutzen Sie sie als Ausgangspunkt und addieren Sie Ihre Betriebskosten.",
+    "ctaTitle": "Bereit für ein echtes Angebot?",
+    "getQuote": "Angebot anfordern",
+    "relatedPrefix": "Neu bei Importkosten? Lesen Sie unseren Leitfaden:",
+    "calc": {
+      "inputsTitle": "Ihre Zahlen",
+      "resultsTitle": "Ihre Ergebnisse",
+      "in": {
+        "unitCost": "Ab-Werk-Stückkosten",
+        "unitCostHint": "Preis pro Stück vom Hersteller",
+        "qty": "Bestellmenge",
+        "qtyHint": "Anzahl der Teile",
+        "freight": "Fracht pro Stück",
+        "freightHint": "Versandkosten geteilt durch Menge",
+        "duty": "Einfuhrzoll",
+        "dutyHint": "Zollsatz für Ihr Land & Produkt",
+        "otherFee": "Sonstige Kosten je Stück",
+        "otherFeeHint": "Zoll, Brokerage usw. pro Teil",
+        "retail": "Ihr Verkaufspreis",
+        "retailHint": "Verkaufspreis pro Teil"
+      },
+      "out": {
+        "landed": "Landed Cost / Stück",
+        "profitUnit": "Bruttogewinn / Stück",
+        "margin": "Bruttomarge",
+        "markup": "Aufschlag-Faktor",
+        "totalOrder": "Gesamtbestellkosten",
+        "totalProfit": "Bruttogewinn gesamt"
+      },
+      "verdict": {
+        "good": "Gesunde Marge. 50 %+ lässt Raum für Marketing, Retouren und Gebühren.",
+        "ok": "Tragfähige, aber knappe Marge. Unter ~50 % zehren Marketing und Retouren schnell den Gewinn auf.",
+        "low": "Niedrige Marge. Nach Marketing, Gebühren und Retouren evtl. nicht profitabel. Höherer VK oder größere Menge erwägen."
+      },
+      "disclaimer": "Nur Schätzwerte. Bruttozahlen ohne Marketing, Zahlungsgebühren, Retouren und Gemeinkosten. Zollsätze variieren — beim Zoll bestätigen."
+    }
   }
 }

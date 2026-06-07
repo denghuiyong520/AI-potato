@@ -758,5 +758,53 @@
     "why3Title": "Contrôle qualité AQL 2.5",
     "why3Desc": "Inspection en plusieurs étapes avec rapport complet avant livraison.",
     "guidesSection": "Guides associés"
+  },
+  "tools": {
+    "meta": {
+      "title": "Calculateur gratuit de coût et marge textile | Potato Apparel",
+      "description": "Calculateur gratuit pour marques de mode : entrez coût unitaire, fret, douane et prix de vente pour voir coût rendu, marge brute et profit par pièce.",
+      "h1": "Calculateur de coût et marge textile"
+    },
+    "breadcrumbHome": "Accueil",
+    "intro": "Calculez l’économie réelle de votre commande en quelques secondes. Entrez vos chiffres pour voir le coût rendu unitaire, la marge brute et le profit par pièce — et fixez vos prix en confiance avant de produire.",
+    "howTitle": "Comment fonctionne ce calculateur",
+    "how1": "Le coût rendu unitaire = prix départ usine + droits de douane (sur la valeur départ usine) + fret par unité + autres frais unitaires. C’est le vrai coût pour amener une pièce finie en entrepôt — fixez vos prix sur ce chiffre.",
+    "how2": "La marge brute = profit par unité ÷ prix de vente, en pourcentage. En règle générale, visez 50 %+ de marge brute pour couvrir marketing, retours et frais de plateforme. Le multiple montre combien de fois le prix de vente couvre le coût rendu.",
+    "how3": "Ces chiffres sont bruts — hors marketing, frais de paiement, retours et frais généraux. Utilisez-les comme point de départ, puis ajoutez vos coûts d’exploitation.",
+    "ctaTitle": "Prêt à obtenir un vrai devis ?",
+    "getQuote": "Obtenir un devis",
+    "relatedPrefix": "Nouveau dans l’import ? Lisez notre guide :",
+    "calc": {
+      "inputsTitle": "Vos chiffres",
+      "resultsTitle": "Vos résultats",
+      "in": {
+        "unitCost": "Coût unitaire départ usine",
+        "unitCostHint": "Prix par pièce du fabricant",
+        "qty": "Quantité commandée",
+        "qtyHint": "Nombre de pièces",
+        "freight": "Fret par unité",
+        "freightHint": "Coût d’expédition divisé par la quantité",
+        "duty": "Droits de douane",
+        "dutyHint": "Taux pour votre pays et produit",
+        "otherFee": "Autres frais par unité",
+        "otherFeeHint": "Douane, courtage, etc. par pièce",
+        "retail": "Votre prix de vente",
+        "retailHint": "Prix de vente d’une pièce"
+      },
+      "out": {
+        "landed": "Coût rendu / unité",
+        "profitUnit": "Profit brut / unité",
+        "margin": "Marge brute",
+        "markup": "Multiple de marge",
+        "totalOrder": "Coût total commande",
+        "totalProfit": "Profit brut total"
+      },
+      "verdict": {
+        "good": "Marge saine. 50 %+ laisse de la place pour le marketing, les retours et les frais.",
+        "ok": "Marge viable mais serrée. Sous ~50 %, le marketing et les retours rognent vite le profit.",
+        "low": "Marge faible. Après marketing, frais et retours, ce n’est peut-être pas rentable. Augmentez le prix ou la quantité."
+      },
+      "disclaimer": "Estimations uniquement. Chiffres bruts hors marketing, frais de paiement, retours et frais généraux. Les taux de douane varient — confirmez auprès des douanes."
+    }
   }
 }
