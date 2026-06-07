@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound }        from 'next/navigation'
 import Image               from 'next/image'
-import { ChevronRight, ArrowRight, Package, Clock, MessageCircle } from 'lucide-react'
+import { ChevronRight, ArrowRight, Package, Clock, MessageCircle, BookOpen } from 'lucide-react'
 import { Link }            from '@/i18n/navigation'
 import { getTranslations } from 'next-intl/server'
 import BottomCTASection    from '@/components/home/BottomCTASection'
@@ -399,6 +399,29 @@ export default async function ManufacturingCategoryPage({
           </AnimatedSection>
         </div>
       </section>
+
+      {/* ── Related Guides (blog) ─────────────────────────────────────────────── */}
+      {cat.guides && cat.guides.length > 0 && (
+        <section className="pb-4 bg-[var(--bg-base)]">
+          <div className="container-site max-w-3xl">
+            <h2 className="font-display font-bold text-ink text-xl mb-6">{t('guidesSection')}</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {cat.guides.map((guide) => (
+                <Link
+                  key={guide.slug}
+                  href={`/blog/${guide.slug}`}
+                  className="group flex items-center gap-4 rounded-xl border border-cream-200 bg-white p-4 hover:border-violet-200 hover:shadow-card transition-all duration-300"
+                >
+                  <div className="w-9 h-9 rounded-full bg-violet-50 group-hover:bg-violet-100 flex items-center justify-center shrink-0 transition-colors">
+                    <BookOpen size={15} className="text-violet-500" />
+                  </div>
+                  <p className="text-sm font-semibold text-ink leading-snug">{guide.title}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ── Related Categories ────────────────────────────────────────────────── */}
       {cat.related.length > 0 && (

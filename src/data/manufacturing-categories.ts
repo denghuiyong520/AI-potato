@@ -44,6 +44,8 @@ export interface ManufacturingCategory {
   productSubcategory?: string | null
   /** Related manufacturing category slugs (internal links) */
   related: string[]
+  /** Related blog guides (slug + display title) — completes hub & spoke */
+  guides?: { slug: string; title: string }[]
   /** Sitemap priority (default 0.85) */
   priority?: number
 }
@@ -95,6 +97,10 @@ We ship globally via DDP (delivered, duties paid) to the USA, UK, Australia, EU,
     ],
     productCategory: 't-shirts',
     related: ['custom-hoodies', 'custom-sweatshirts', 'custom-polo-shirts', 'custom-streetwear'],
+    guides: [
+      { slug: 'custom-t-shirt-manufacturer-guide', title: 'Custom T-Shirt Manufacturer: The Complete Guide' },
+      { slug: 'screen-printing-vs-embroidery',     title: 'Screen Printing vs Embroidery: Which to Choose' },
+    ],
     priority: 0.9,
   },
 
@@ -144,6 +150,10 @@ Final inspection follows AQL 2.5 protocol with a detailed report and pre-shipmen
     ],
     productCategory: 'hoodies',
     related: ['custom-sweatshirts', 'custom-t-shirts', 'custom-streetwear', 'custom-joggers-sweatpants'],
+    guides: [
+      { slug: 'hoodie-fabric-weights-gsm-guide',   title: 'Hoodie Fabric Weights Explained: The GSM Guide' },
+      { slug: 'custom-hoodie-manufacturer-guide',   title: 'Custom Hoodie Manufacturer: The Complete Guide' },
+    ],
     priority: 0.9,
   },
 
@@ -188,6 +198,9 @@ Fabrics include 100% cotton French terry, cotton/polyester blend fleece, and hea
     productCategory: 'hoodies',
     productSubcategory: 'sweatshirt',
     related: ['custom-hoodies', 'custom-t-shirts', 'custom-joggers-sweatpants'],
+    guides: [
+      { slug: 'hoodie-fabric-weights-gsm-guide', title: 'Sweatshirt & Hoodie Fabric Weights: The GSM Guide' },
+    ],
     priority: 0.85,
   },
 
@@ -233,6 +246,10 @@ Fabric weights we specialize in for streetwear: 280–320GSM for premium tees, 3
     ],
     productCategory: ['t-shirts', 'hoodies'],
     related: ['custom-t-shirts', 'custom-hoodies', 'y2k-clothing', 'custom-sweatshirts'],
+    guides: [
+      { slug: 'streetwear-manufacturer-guide',                  title: 'Streetwear Manufacturer: The Complete Guide' },
+      { slug: 'printful-alternative-cut-and-sew-manufacturer',  title: 'Printful Alternative: Cut-and-Sew for Real Margins' },
+    ],
     priority: 0.85,
   },
 
