@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
-import { CheckCircle, Layers } from 'lucide-react'
+import { CheckCircle, Layers, ArrowRight } from 'lucide-react'
+import { Link } from '@/i18n/navigation'
 import SectionTitle from '@/components/shared/SectionTitle'
 import AnimatedSection, { StaggerContainer, StaggerItem } from '@/components/shared/AnimatedSection'
 import ProcessSection from '@/components/home/ProcessSection'
 import BottomCTASection from '@/components/home/BottomCTASection'
 import { buildAlternates } from '@/lib/seo'
+import { AUDIENCE_PAGES } from '@/data/audience-pages'
 
 export async function generateMetadata({
   params: { locale },
@@ -25,7 +27,8 @@ export default async function ServicesPage({
 }: {
   params: { locale: string }
 }) {
-  const t = await getTranslations({ locale, namespace: 'services' })
+  const t  = await getTranslations({ locale, namespace: 'services' })
+  const ta = await getTranslations({ locale, namespace: 'audience' })
 
   const moqTiers = [0, 1, 2].map((i) => ({
     qty:   t(`moq.tiers.${i}.qty`),
@@ -140,6 +143,26 @@ export default async function ServicesPage({
                   <h3 className="font-semibold text-ink mb-2">{name}</h3>
                   <p className="text-sm text-ink-muted leading-relaxed">{description}</p>
                 </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
+
+      {/* Who We Serve — audience landing pages */}
+      <section className="section-padding bg-[var(--bg-base)]">
+        <div className="container-site">
+          <SectionTitle title={ta('serveTitle')} subtitle={ta('serveSubtitle')} />
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
+            {AUDIENCE_PAGES.map((page) => (
+              <StaggerItem key={page.slug}>
+                <Link
+                  href={`/clothing-manufacturer-for/${page.slug}`}
+                  className="group flex items-center justify-between gap-4 rounded-xl border border-cream-200 bg-white p-5 hover:border-violet-200 hover:shadow-card transition-all duration-300 h-full"
+                >
+                  <span className="font-semibold text-ink text-sm leading-snug">{page.h1}</span>
+                  <ArrowRight size={16} className="text-violet-500 shrink-0 group-hover:translate-x-0.5 transition-transform" />
+                </Link>
               </StaggerItem>
             ))}
           </StaggerContainer>
