@@ -26,9 +26,12 @@ Status legend: ✅ done · 🔄 in progress · ⬜ to do
 - ✅ Set canonical handling so `?category=` filter URLs canonical to the new landing pages
 - ✅ Confirm GSC sitemap status = "Success" (1,279 URLs, status 成功); resubmitted to pick up +65 manufacturing URLs (2026-06-07)
 - ✅ Request indexing: 12/13 EN landing pages submitted via URL inspection (2026-06-07); daily quota hit — custom-dresses pending next day
-- ⬜ Add BreadcrumbList schema to product pages (individual product pages)
-- ⬜ Wire product pages → their category landing page (breadcrumb + body link)
-- **Commit:** 8d40453 — feat(seo): add 13 manufacturing category landing pages
+- ✅ Add BreadcrumbList schema to product pages (4-level w/ category landing; 3-level fallback)
+- ✅ Wire product pages → their category landing page (breadcrumb + contextual body link)
+- **Commits:** 8d40453 (landing pages) · f20929d (product → category linking)
+
+**Phase 1 is now functionally complete.** Remaining is operational (GSC indexing
+follow-through) + optional polish. Ready to move into Phase 2 content.
 
 ### GSC indexing log (2026-06-07)
 Submitted "Request Indexing" for 12 EN pages: custom-t-shirts, custom-hoodies,
