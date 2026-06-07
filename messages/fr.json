@@ -50,14 +50,38 @@
     "subtitle": "Des basiques aux pièces fortes, nous produisons dans toutes les grandes catégories de vêtements.",
     "viewAll": "Voir Tous les Produits",
     "items": [
-      { "name": "T-Shirts & Tops", "description": "Coupe & couture sur mesure, sérigraphie, broderie" },
-      { "name": "Sweats à Capuche", "description": "Molleton premium, french terry, pull & zip" },
-      { "name": "Robes & Jupes", "description": "Tissé, jersey, du casual au formel" },
-      { "name": "Vêtements de Sport", "description": "Stretch 4 voies, tissus respirants haute performance" },
-      { "name": "Maillots de Bain", "description": "Tissus UPF, imprimés personnalisés, collections coordinées" },
-      { "name": "Streetwear", "description": "Silhouettes oversize, poids lourd, graphiques audacieux" },
-      { "name": "Vêtements d'Extérieur", "description": "Vestes, manteaux, vestes matelassées, coupe-vent" },
-      { "name": "Accessoires", "description": "Chapeaux, sacs, chaussettes et pièces coordinées" }
+      {
+        "name": "T-Shirts & Tops",
+        "description": "Coupe & couture sur mesure, sérigraphie, broderie"
+      },
+      {
+        "name": "Sweats à Capuche",
+        "description": "Molleton premium, french terry, pull & zip"
+      },
+      {
+        "name": "Robes & Jupes",
+        "description": "Tissé, jersey, du casual au formel"
+      },
+      {
+        "name": "Vêtements de Sport",
+        "description": "Stretch 4 voies, tissus respirants haute performance"
+      },
+      {
+        "name": "Maillots de Bain",
+        "description": "Tissus UPF, imprimés personnalisés, collections coordinées"
+      },
+      {
+        "name": "Streetwear",
+        "description": "Silhouettes oversize, poids lourd, graphiques audacieux"
+      },
+      {
+        "name": "Vêtements d'Extérieur",
+        "description": "Vestes, manteaux, vestes matelassées, coupe-vent"
+      },
+      {
+        "name": "Accessoires",
+        "description": "Chapeaux, sacs, chaussettes et pièces coordinées"
+      }
     ]
   },
   "process": {
@@ -100,10 +124,22 @@
     "title": "Fondé sur l'Expérience",
     "subtitle": "Des chiffres qui reflètent une décennie de partenariat, de savoir-faire et d'engagement.",
     "items": [
-      { "value": "10+", "label": "Ans d'Expérience" },
-      { "value": "500+", "label": "Marques Accompagnées" },
-      { "value": "30+", "label": "Pays Desservis" },
-      { "value": "1M+", "label": "Pièces Produites" }
+      {
+        "value": "10+",
+        "label": "Ans d'Expérience"
+      },
+      {
+        "value": "500+",
+        "label": "Marques Accompagnées"
+      },
+      {
+        "value": "30+",
+        "label": "Pays Desservis"
+      },
+      {
+        "value": "1M+",
+        "label": "Pièces Produites"
+      }
     ]
   },
   "testimonials": {
@@ -136,7 +172,13 @@
   "certifications": {
     "title": "Certifié & Conforme",
     "subtitle": "Des certifications industrielles qui témoignent de notre engagement envers la qualité, l'éthique et la durabilité.",
-    "items": ["ISO 9001:2015", "OEKO-TEX Standard 100", "Audité BSCI", "Certifié GOTS", "Membre Sedex"]
+    "items": [
+      "ISO 9001:2015",
+      "OEKO-TEX Standard 100",
+      "Audité BSCI",
+      "Certifié GOTS",
+      "Membre Sedex"
+    ]
   },
   "latestBlog": {
     "title": "Sur Notre Blog",
@@ -192,10 +234,22 @@
       "title": "Nos Installations",
       "subtitle": "Équipements de pointe, mains expertes et processus rigoureux sous un même toit.",
       "stats": [
-        { "value": "50 000+", "label": "m² de Surface de Production" },
-        { "value": "200+", "label": "Artisans Qualifiés" },
-        { "value": "50+", "label": "Machines Industrielles" },
-        { "value": "24h", "label": "Délai de Réponse CQ" }
+        {
+          "value": "50 000+",
+          "label": "m² de Surface de Production"
+        },
+        {
+          "value": "200+",
+          "label": "Artisans Qualifiés"
+        },
+        {
+          "value": "50+",
+          "label": "Machines Industrielles"
+        },
+        {
+          "value": "24h",
+          "label": "Délai de Réponse CQ"
+        }
       ]
     }
   },
@@ -303,49 +357,91 @@
       "features": "Caractéristiques Clés",
       "related": "Vous Aimerez Aussi",
       "inquire": "Demande de Devis",
-      "whatsapp": "Écrire sur WhatsApp"
+      "whatsapp": "Écrire sur WhatsApp",
+      "partOf": "Vous voulez produire la vôtre ?",
+      "serviceTail": "— faible MOQ, OEM/ODM."
     },
     "features": "Caractéristiques Clés",
     "items": [
       {
         "name": "T-Shirts & Tops",
         "description": "Des t-shirts basiques aux pièces premium. Nous gérons chaque détail — sourcing tissu, impression, broderie et finition.",
-        "features": ["100% Coton, Tri-blend, Bambou", "Sérigraphie & DTG disponibles", "Broderie & transfert thermique", "MOQ à partir de 50 pièces"]
+        "features": [
+          "100% Coton, Tri-blend, Bambou",
+          "Sérigraphie & DTG disponibles",
+          "Broderie & transfert thermique",
+          "MOQ à partir de 50 pièces"
+        ]
       },
       {
         "name": "Sweats à Capuche",
         "description": "Construction en molleton poids lourd et french terry. Pull, zip, crop — chaque style exécuté avec précision.",
-        "features": ["Options molleton 280–400 g/m²", "Intérieurs brossés et non brossés", "Côtelé personnalisé disponible", "Styles poche kangourou & patch"]
+        "features": [
+          "Options molleton 280–400 g/m²",
+          "Intérieurs brossés et non brossés",
+          "Côtelé personnalisé disponible",
+          "Styles poche kangourou & patch"
+        ]
       },
       {
         "name": "Robes & Jupes",
         "description": "Des robes longues fluides aux mini-jupes structurées. Nos modélistes garantissent une coupe et une construction parfaites.",
-        "features": ["Constructions tissées et jersey", "Du casual au formel", "Options doublure et entoilage", "Impressions et broderies sur mesure"]
+        "features": [
+          "Constructions tissées et jersey",
+          "Du casual au formel",
+          "Options doublure et entoilage",
+          "Impressions et broderies sur mesure"
+        ]
       },
       {
         "name": "Vêtements de Sport",
         "description": "Sportswear haute performance avec des tissus techniques qui suivent le mouvement sans compromis.",
-        "features": ["Tissus stretch 4 voies", "Évacuation humidité & séchage rapide", "Options protection UV", "Panneaux compression & soutien"]
+        "features": [
+          "Tissus stretch 4 voies",
+          "Évacuation humidité & séchage rapide",
+          "Options protection UV",
+          "Panneaux compression & soutien"
+        ]
       },
       {
         "name": "Maillots de Bain",
         "description": "Construction résistante au chlore, certifiée UPF, avec doublures de qualité et quincaillerie durable.",
-        "features": ["Options tissu UPF 50+", "Variantes résistantes au chlore", "Imprimés personnalisés & unis", "Sets séparables coordinés"]
+        "features": [
+          "Options tissu UPF 50+",
+          "Variantes résistantes au chlore",
+          "Imprimés personnalisés & unis",
+          "Sets séparables coordinés"
+        ]
       },
       {
         "name": "Streetwear",
         "description": "Pièces poids lourd et construction audacieuse pour la rue. Oversize, délavé, imprimé — nous exécutons chaque esthétique.",
-        "features": ["Coton lourd 300–400 g/m²", "Patronage oversize", "Teinture & lavage personnalisés", "Sérigraphie & broderie"]
+        "features": [
+          "Coton lourd 300–400 g/m²",
+          "Patronage oversize",
+          "Teinture & lavage personnalisés",
+          "Sérigraphie & broderie"
+        ]
       },
       {
         "name": "Vêtements d'Extérieur",
         "description": "Des coupe-vent légers aux manteaux d'hiver épais — construction multicouche complexe traitée avec précision.",
-        "features": ["Tissus déperlants", "Options isolées & coques", "Fermetures YKK disponibles", "Doublure & rembourrage sur mesure"]
+        "features": [
+          "Tissus déperlants",
+          "Options isolées & coques",
+          "Fermetures YKK disponibles",
+          "Doublure & rembourrage sur mesure"
+        ]
       },
       {
         "name": "Accessoires",
         "description": "Complétez votre ligne avec des accessoires coordinés fabriqués selon les mêmes standards que vos vêtements.",
-        "features": ["Chapeaux structurés et non structurés", "Sacs tote & bandoulière", "Chaussettes personnalisées", "Collections capsule coordinées"]
+        "features": [
+          "Chapeaux structurés et non structurés",
+          "Sacs tote & bandoulière",
+          "Chaussettes personnalisées",
+          "Collections capsule coordinées"
+        ]
       }
     ]
   },
@@ -363,9 +459,21 @@
       "subtitle": "Nous pensons que les grandes marques méritent un démarrage équitable — quelle que soit leur taille.",
       "description": "Notre quantité minimum de commande commence à seulement 50 pièces par modèle et coloris — parmi les plus bas du secteur. Testez des designs, lancez des éditions limitées et évoluez progressivement.",
       "tiers": [
-        { "qty": "50–200 pcs", "label": "Niveau Démarrage", "note": "Idéal pour les lancements initiaux et les éditions limitées" },
-        { "qty": "200–500 pcs", "label": "Niveau Croissance", "note": "Tarification en gros standard, délai réduit" },
-        { "qty": "500+ pcs", "label": "Niveau Échelle", "note": "Meilleur prix, planification de production prioritaire" }
+        {
+          "qty": "50–200 pcs",
+          "label": "Niveau Démarrage",
+          "note": "Idéal pour les lancements initiaux et les éditions limitées"
+        },
+        {
+          "qty": "200–500 pcs",
+          "label": "Niveau Croissance",
+          "note": "Tarification en gros standard, délai réduit"
+        },
+        {
+          "qty": "500+ pcs",
+          "label": "Niveau Échelle",
+          "note": "Meilleur prix, planification de production prioritaire"
+        }
       ]
     },
     "fabrics": {
@@ -374,15 +482,30 @@
       "categories": [
         {
           "name": "Fibres Naturelles",
-          "items": ["100% Coton (différents grammages)", "Lin & Ramie", "Bambou", "Soie & Satin"]
+          "items": [
+            "100% Coton (différents grammages)",
+            "Lin & Ramie",
+            "Bambou",
+            "Soie & Satin"
+          ]
         },
         {
           "name": "Tissus de Performance",
-          "items": ["Mélanges Polyester & Nylon", "Spandex / Élasthanne", "Tissus techniques évacuant l'humidité", "Matériaux de protection UV"]
+          "items": [
+            "Mélanges Polyester & Nylon",
+            "Spandex / Élasthanne",
+            "Tissus techniques évacuant l'humidité",
+            "Matériaux de protection UV"
+          ]
         },
         {
           "name": "Options Durables",
-          "items": ["Coton biologique (certifié GOTS)", "Polyester recyclé (rPET)", "Tencel / Lyocell", "Mélanges de chanvre"]
+          "items": [
+            "Coton biologique (certifié GOTS)",
+            "Polyester recyclé (rPET)",
+            "Tencel / Lyocell",
+            "Mélanges de chanvre"
+          ]
         }
       ]
     },
@@ -390,12 +513,30 @@
       "title": "Techniques de Décoration",
       "subtitle": "De la broderie à la sublimation — chaque méthode proposée est exécutée selon les plus hauts standards.",
       "items": [
-        { "name": "Sérigraphie", "description": "Impressions multi-couleurs pour grandes séries. Vives, durables, économiques en volume." },
-        { "name": "Broderie", "description": "Ajoute texture et profondeur premium. Idéale pour logos, écussons et détails fins." },
-        { "name": "Impression DTG", "description": "Impression directe sur tissu pour designs complexes de qualité photo sans frais de mise en route." },
-        { "name": "Transfert Thermique", "description": "Application polyvalente pour designs détaillés et effets spéciaux." },
-        { "name": "Sublimation", "description": "Impression plein format sur polyester. Couleurs illimitées, aucune sensation sur le vêtement." },
-        { "name": "Traitement & Lavage", "description": "Lavage acide, enzymatique, pierre et techniques de vieillissement personnalisées." }
+        {
+          "name": "Sérigraphie",
+          "description": "Impressions multi-couleurs pour grandes séries. Vives, durables, économiques en volume."
+        },
+        {
+          "name": "Broderie",
+          "description": "Ajoute texture et profondeur premium. Idéale pour logos, écussons et détails fins."
+        },
+        {
+          "name": "Impression DTG",
+          "description": "Impression directe sur tissu pour designs complexes de qualité photo sans frais de mise en route."
+        },
+        {
+          "name": "Transfert Thermique",
+          "description": "Application polyvalente pour designs détaillés et effets spéciaux."
+        },
+        {
+          "name": "Sublimation",
+          "description": "Impression plein format sur polyester. Couleurs illimitées, aucune sensation sur le vêtement."
+        },
+        {
+          "name": "Traitement & Lavage",
+          "description": "Lavage acide, enzymatique, pierre et techniques de vieillissement personnalisées."
+        }
       ]
     }
   },
@@ -618,4 +759,3 @@
     "why3Desc": "Inspection en plusieurs étapes avec rapport complet avant livraison."
   }
 }
-

@@ -14,6 +14,7 @@ import {
   getImportedProductBySlug,
   getImportedRelated,
 } from '@/data/products'
+import { getCategoryLandingForProduct, type CategoryLandingRef } from '@/data/manufacturing-categories'
 
 const BASE_URL = 'https://www.potatoapparel.com'
 const LOCALES  = ['en', 'zh', 'fr', 'de', 'es']
@@ -59,6 +60,36 @@ function buildProductJsonLd(p: ImportedProduct) {
       p.colorsInfo && { '@type': 'PropertyValue', name: 'Colors',   value: p.colorsInfo },
       p.weight     && { '@type': 'PropertyValue', name: 'Weight',   value: p.weight     },
     ].filter(Boolean),
+  }
+}
+
+function buildBreadcrumbJsonLd(
+  p: ImportedProduct,
+  locale: string,
+  landing: CategoryLandingRef | null,
+) {
+  const items: Array<{ '@type': 'ListItem'; position: number; name: string; item: string }> = [
+    { '@type': 'ListItem', position: 1, name: 'Home',     item: `${BASE_URL}/${locale}` },
+    { '@type': 'ListItem', position: 2, name: 'Products', item: `${BASE_URL}/${locale}/products` },
+  ]
+  if (landing) {
+    items.push({
+      '@type':   'ListItem',
+      position:  3,
+      name:      landing.label,
+      item:      `${BASE_URL}/${locale}/manufacturing/${landing.slug}`,
+    })
+  }
+  items.push({
+    '@type':   'ListItem',
+    position:  items.length + 1,
+    name:      p.title_en,
+    item:      `${BASE_URL}/${locale}/products/${p.slug}`,
+  })
+  return {
+    '@context':       'https://schema.org',
+    '@type':          'BreadcrumbList',
+    itemListElement:  items,
   }
 }
 
@@ -120,6 +151,7 @@ export default async function ImportedProductDetailPage({
 
   const t       = await getTranslations({ locale, namespace: 'products.detail' })
   const related = getImportedRelated(slug, product.category, 4)
+  const landing = getCategoryLandingForProduct(product.category, product.subcategory)
 
   // ── Parse description lines ─────────────────────────────────────────────────
   // Spec lines: "Key: Value" where key is short (< 30 chars)
@@ -147,15 +179,30 @@ export default async function ImportedProductDetailPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(buildProductJsonLd(product)) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumbJsonLd(product, locale, landing)) }}
+      />
 
       <div className="pt-20 lg:pt-28 pb-20" style={{ background: '#f7f7f5' }}>
         <div className="container-site max-w-5xl">
 
           {/* ── Breadcrumb ──────────────────────────────────────────────────── */}
-          <nav className="flex items-center gap-1.5 text-xs text-gray-400 mb-5 flex-wrap">
+          <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-xs text-gray-400 mb-5 flex-wrap">
             <Link href="/" className="hover:text-gray-600 transition-colors">{t('home')}</Link>
             <ChevronRight size={12} />
             <Link href="/products" className="hover:text-gray-600 transition-colors">{t('breadcrumbProducts')}</Link>
+            {landing && (
+              <>
+                <ChevronRight size={12} />
+                <Link
+                  href={`/manufacturing/${landing.slug}`}
+                  className="hover:text-violet-600 transition-colors"
+                >
+                  {landing.label}
+                </Link>
+              </>
+            )}
             <ChevronRight size={12} />
             <span className="text-gray-700">{product.title_en}</span>
           </nav>
@@ -248,6 +295,20 @@ export default async function ImportedProductDetailPage({
                   {product.gsm && (
                     <><span className="font-semibold">GSM</span>&nbsp;&nbsp;{product.gsm}</>
                   )}
+                </p>
+              )}
+
+              {/* Contextual link to category landing page (internal linking) */}
+              {landing && (
+                <p className="text-[12px] text-gray-500 mt-3 pt-3 border-t border-gray-100">
+                  {t('partOf')}{' '}
+                  <Link
+                    href={`/manufacturing/${landing.slug}`}
+                    className="font-semibold text-violet-600 hover:text-violet-800 transition-colors"
+                  >
+                    {landing.label}
+                  </Link>
+                  {' '}{t('serviceTail')}
                 </p>
               )}
 

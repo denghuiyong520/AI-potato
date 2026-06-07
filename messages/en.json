@@ -50,14 +50,38 @@
     "subtitle": "From basics to statement pieces, we produce across all major apparel categories.",
     "viewAll": "Explore All Products",
     "items": [
-      { "name": "T-Shirts & Tops", "description": "Custom cut & sew, screen print, embroidery" },
-      { "name": "Hoodies & Sweatshirts", "description": "Premium fleece, French terry, pullover & zip" },
-      { "name": "Dresses & Skirts", "description": "Woven, knit, casual to formal ranges" },
-      { "name": "Activewear", "description": "4-way stretch, moisture-wicking performance fabrics" },
-      { "name": "Swimwear", "description": "UPF-rated fabrics, custom prints, mix & match sets" },
-      { "name": "Streetwear", "description": "Oversized silhouettes, heavy weight, bold graphics" },
-      { "name": "Outerwear", "description": "Jackets, coats, puffer vests, windbreakers" },
-      { "name": "Accessories", "description": "Hats, bags, socks and coordinating pieces" }
+      {
+        "name": "T-Shirts & Tops",
+        "description": "Custom cut & sew, screen print, embroidery"
+      },
+      {
+        "name": "Hoodies & Sweatshirts",
+        "description": "Premium fleece, French terry, pullover & zip"
+      },
+      {
+        "name": "Dresses & Skirts",
+        "description": "Woven, knit, casual to formal ranges"
+      },
+      {
+        "name": "Activewear",
+        "description": "4-way stretch, moisture-wicking performance fabrics"
+      },
+      {
+        "name": "Swimwear",
+        "description": "UPF-rated fabrics, custom prints, mix & match sets"
+      },
+      {
+        "name": "Streetwear",
+        "description": "Oversized silhouettes, heavy weight, bold graphics"
+      },
+      {
+        "name": "Outerwear",
+        "description": "Jackets, coats, puffer vests, windbreakers"
+      },
+      {
+        "name": "Accessories",
+        "description": "Hats, bags, socks and coordinating pieces"
+      }
     ]
   },
   "process": {
@@ -100,10 +124,22 @@
     "title": "Built on Experience",
     "subtitle": "Numbers that reflect a decade of partnership, craft, and commitment.",
     "items": [
-      { "value": "10+", "label": "Years of Experience" },
-      { "value": "500+", "label": "Brands Served" },
-      { "value": "30+", "label": "Countries Reached" },
-      { "value": "1M+", "label": "Pieces Produced" }
+      {
+        "value": "10+",
+        "label": "Years of Experience"
+      },
+      {
+        "value": "500+",
+        "label": "Brands Served"
+      },
+      {
+        "value": "30+",
+        "label": "Countries Reached"
+      },
+      {
+        "value": "1M+",
+        "label": "Pieces Produced"
+      }
     ]
   },
   "testimonials": {
@@ -136,7 +172,13 @@
   "certifications": {
     "title": "Certified & Compliant",
     "subtitle": "Industry certifications that reflect our commitment to quality, ethics, and sustainability.",
-    "items": ["ISO 9001:2015", "OEKO-TEX Standard 100", "BSCI Audited", "GOTS Certified", "Sedex Member"]
+    "items": [
+      "ISO 9001:2015",
+      "OEKO-TEX Standard 100",
+      "BSCI Audited",
+      "GOTS Certified",
+      "Sedex Member"
+    ]
   },
   "latestBlog": {
     "title": "From Our Blog",
@@ -192,10 +234,22 @@
       "title": "Our Facility",
       "subtitle": "State-of-the-art equipment, skilled hands, and rigorous processes under one roof.",
       "stats": [
-        { "value": "50,000+", "label": "Sq. Ft. Production Floor" },
-        { "value": "200+", "label": "Skilled Artisans" },
-        { "value": "50+", "label": "Industrial Machines" },
-        { "value": "24h", "label": "QC Response Time" }
+        {
+          "value": "50,000+",
+          "label": "Sq. Ft. Production Floor"
+        },
+        {
+          "value": "200+",
+          "label": "Skilled Artisans"
+        },
+        {
+          "value": "50+",
+          "label": "Industrial Machines"
+        },
+        {
+          "value": "24h",
+          "label": "QC Response Time"
+        }
       ]
     }
   },
@@ -303,49 +357,91 @@
       "features": "Key Features",
       "related": "You May Also Like",
       "inquire": "Inquiry Now",
-      "whatsapp": "WhatsApp Us"
+      "whatsapp": "WhatsApp Us",
+      "partOf": "Looking to produce your own?",
+      "serviceTail": "— low MOQ, OEM/ODM."
     },
     "features": "Key Features",
     "items": [
       {
         "name": "T-Shirts & Tops",
         "description": "From basic tees to premium cut & sew pieces. We handle every detail — fabric sourcing, custom printing, embroidery, and finishing.",
-        "features": ["100% Cotton, Tri-blend, Bamboo options", "Screen printing & DTG available", "Embroidery & heat transfer", "MOQ from 50 pcs per style"]
+        "features": [
+          "100% Cotton, Tri-blend, Bamboo options",
+          "Screen printing & DTG available",
+          "Embroidery & heat transfer",
+          "MOQ from 50 pcs per style"
+        ]
       },
       {
         "name": "Hoodies & Sweatshirts",
         "description": "Premium weight fleece and French terry construction. Pullover, zip-up, cropped — every style executed with precision.",
-        "features": ["280–400gsm fleece options", "Brushed & unbrushed interiors", "Custom rib knit available", "Kangaroo & patch pocket styles"]
+        "features": [
+          "280–400gsm fleece options",
+          "Brushed & unbrushed interiors",
+          "Custom rib knit available",
+          "Kangaroo & patch pocket styles"
+        ]
       },
       {
         "name": "Dresses & Skirts",
         "description": "From flowing woven maxi dresses to structured mini skirts. Our pattern makers ensure perfect fit and construction.",
-        "features": ["Woven & knit constructions", "Casual to formal range", "Lining & interfacing options", "Custom prints & embroidery"]
+        "features": [
+          "Woven & knit constructions",
+          "Casual to formal range",
+          "Lining & interfacing options",
+          "Custom prints & embroidery"
+        ]
       },
       {
         "name": "Activewear",
         "description": "Performance-engineered sportswear with technical fabrics that move with the body without compromise.",
-        "features": ["4-way stretch fabrics", "Moisture-wicking & quick-dry", "UPF protection options", "Compression & support panels"]
+        "features": [
+          "4-way stretch fabrics",
+          "Moisture-wicking & quick-dry",
+          "UPF protection options",
+          "Compression & support panels"
+        ]
       },
       {
         "name": "Swimwear",
         "description": "UPF-rated, chlorine-resistant construction with high-quality linings and durable hardware.",
-        "features": ["UPF 50+ fabric options", "Chlorine-resistant variants", "Custom print & solid colorways", "Mix & match separate sets"]
+        "features": [
+          "UPF 50+ fabric options",
+          "Chlorine-resistant variants",
+          "Custom print & solid colorways",
+          "Mix & match separate sets"
+        ]
       },
       {
         "name": "Streetwear",
         "description": "Heavyweight, bold-construction pieces built for the street. Oversized, distressed, printed — we execute every aesthetic.",
-        "features": ["300–400gsm heavy cotton", "Oversized pattern cutting", "Custom dyeing & washing", "Screen print & embroidery"]
+        "features": [
+          "300–400gsm heavy cotton",
+          "Oversized pattern cutting",
+          "Custom dyeing & washing",
+          "Screen print & embroidery"
+        ]
       },
       {
         "name": "Outerwear",
         "description": "From lightweight windbreakers to heavy winter coats — complex multi-layer construction handled with precision.",
-        "features": ["Water-resistant fabrics", "Insulated & shell options", "YKK zippers available", "Custom lining & padding"]
+        "features": [
+          "Water-resistant fabrics",
+          "Insulated & shell options",
+          "YKK zippers available",
+          "Custom lining & padding"
+        ]
       },
       {
         "name": "Accessories",
         "description": "Complete your line with coordinating accessories manufactured to the same quality standard as your garments.",
-        "features": ["Structured & unstructured hats", "Tote & crossbody bags", "Custom socks", "Coordinating capsule sets"]
+        "features": [
+          "Structured & unstructured hats",
+          "Tote & crossbody bags",
+          "Custom socks",
+          "Coordinating capsule sets"
+        ]
       }
     ]
   },
@@ -363,9 +459,21 @@
       "subtitle": "We believe great brands deserve a fair start — no matter the size.",
       "description": "Our minimum order quantity starts at just 50 pieces per style, per colorway — among the lowest in the industry. This allows you to test designs, launch limited editions, and scale gradually without overcommitting capital.",
       "tiers": [
-        { "qty": "50–200 pcs", "label": "Startup Tier", "note": "Perfect for initial launches and limited editions" },
-        { "qty": "200–500 pcs", "label": "Growth Tier", "note": "Standard bulk pricing, faster turnaround" },
-        { "qty": "500+ pcs", "label": "Scale Tier", "note": "Best pricing, priority production scheduling" }
+        {
+          "qty": "50–200 pcs",
+          "label": "Startup Tier",
+          "note": "Perfect for initial launches and limited editions"
+        },
+        {
+          "qty": "200–500 pcs",
+          "label": "Growth Tier",
+          "note": "Standard bulk pricing, faster turnaround"
+        },
+        {
+          "qty": "500+ pcs",
+          "label": "Scale Tier",
+          "note": "Best pricing, priority production scheduling"
+        }
       ]
     },
     "fabrics": {
@@ -374,15 +482,30 @@
       "categories": [
         {
           "name": "Natural Fibers",
-          "items": ["100% Cotton (various weights)", "Linen & Ramie", "Bamboo", "Silk & Satin"]
+          "items": [
+            "100% Cotton (various weights)",
+            "Linen & Ramie",
+            "Bamboo",
+            "Silk & Satin"
+          ]
         },
         {
           "name": "Performance Fabrics",
-          "items": ["Polyester & Nylon blends", "Spandex / Elastane", "Moisture-wicking tech fabrics", "UV-protective materials"]
+          "items": [
+            "Polyester & Nylon blends",
+            "Spandex / Elastane",
+            "Moisture-wicking tech fabrics",
+            "UV-protective materials"
+          ]
         },
         {
           "name": "Sustainable Options",
-          "items": ["Organic Cotton (GOTS certified)", "Recycled Polyester (rPET)", "Tencel / Lyocell", "Hemp blends"]
+          "items": [
+            "Organic Cotton (GOTS certified)",
+            "Recycled Polyester (rPET)",
+            "Tencel / Lyocell",
+            "Hemp blends"
+          ]
         }
       ]
     },
@@ -390,12 +513,30 @@
       "title": "Decoration Techniques",
       "subtitle": "From embroidery to sublimation — every method we offer is executed to the highest standard.",
       "items": [
-        { "name": "Screen Printing", "description": "Multi-color prints for large runs. Vivid, durable, cost-effective at volume." },
-        { "name": "Embroidery", "description": "Adds premium texture and depth. Ideal for logos, badges, and fine details." },
-        { "name": "DTG Printing", "description": "Direct-to-garment for complex, photo-quality designs with no setup fees." },
-        { "name": "Heat Transfer", "description": "Versatile application for detailed designs and special effects." },
-        { "name": "Sublimation", "description": "All-over print on polyester. Unlimited color, zero feel on the garment." },
-        { "name": "Garment Washing", "description": "Acid wash, enzyme wash, stone wash, and custom aging techniques." }
+        {
+          "name": "Screen Printing",
+          "description": "Multi-color prints for large runs. Vivid, durable, cost-effective at volume."
+        },
+        {
+          "name": "Embroidery",
+          "description": "Adds premium texture and depth. Ideal for logos, badges, and fine details."
+        },
+        {
+          "name": "DTG Printing",
+          "description": "Direct-to-garment for complex, photo-quality designs with no setup fees."
+        },
+        {
+          "name": "Heat Transfer",
+          "description": "Versatile application for detailed designs and special effects."
+        },
+        {
+          "name": "Sublimation",
+          "description": "All-over print on polyester. Unlimited color, zero feel on the garment."
+        },
+        {
+          "name": "Garment Washing",
+          "description": "Acid wash, enzyme wash, stone wash, and custom aging techniques."
+        }
       ]
     }
   },
@@ -618,4 +759,3 @@
     "why3Desc": "Every shipment goes through multi-stage inspection — inline, semi-final, and final — with a detailed report sent before delivery."
   }
 }
-

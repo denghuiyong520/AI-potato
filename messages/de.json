@@ -50,14 +50,38 @@
     "subtitle": "Von Basics bis zu Statements — wir produzieren in allen wichtigen Bekleidungskategorien.",
     "viewAll": "Alle Produkte Ansehen",
     "items": [
-      { "name": "T-Shirts & Tops", "description": "Maßschneiderei, Siebdruck, Stickerei" },
-      { "name": "Hoodies & Sweatshirts", "description": "Premium Fleece, French Terry, Pullover & Zip" },
-      { "name": "Kleider & Röcke", "description": "Gewebt, gestrickt, casual bis formal" },
-      { "name": "Sportbekleidung", "description": "4-Wege-Stretch, feuchtigkeitsableitende Funktionsstoffe" },
-      { "name": "Badebekleidung", "description": "UPF-zertifizierte Stoffe, individuelle Drucke, koordinierte Sets" },
-      { "name": "Streetwear", "description": "Oversized Silhouetten, schweres Material, markante Grafiken" },
-      { "name": "Oberbekleidung", "description": "Jacken, Mäntel, Steppwesten, Windbreaker" },
-      { "name": "Accessoires", "description": "Mützen, Taschen, Socken und koordinierte Teile" }
+      {
+        "name": "T-Shirts & Tops",
+        "description": "Maßschneiderei, Siebdruck, Stickerei"
+      },
+      {
+        "name": "Hoodies & Sweatshirts",
+        "description": "Premium Fleece, French Terry, Pullover & Zip"
+      },
+      {
+        "name": "Kleider & Röcke",
+        "description": "Gewebt, gestrickt, casual bis formal"
+      },
+      {
+        "name": "Sportbekleidung",
+        "description": "4-Wege-Stretch, feuchtigkeitsableitende Funktionsstoffe"
+      },
+      {
+        "name": "Badebekleidung",
+        "description": "UPF-zertifizierte Stoffe, individuelle Drucke, koordinierte Sets"
+      },
+      {
+        "name": "Streetwear",
+        "description": "Oversized Silhouetten, schweres Material, markante Grafiken"
+      },
+      {
+        "name": "Oberbekleidung",
+        "description": "Jacken, Mäntel, Steppwesten, Windbreaker"
+      },
+      {
+        "name": "Accessoires",
+        "description": "Mützen, Taschen, Socken und koordinierte Teile"
+      }
     ]
   },
   "process": {
@@ -100,10 +124,22 @@
     "title": "Aufgebaut auf Erfahrung",
     "subtitle": "Zahlen, die ein Jahrzehnt der Partnerschaft, des Handwerks und des Engagements widerspiegeln.",
     "items": [
-      { "value": "10+", "label": "Jahre Erfahrung" },
-      { "value": "500+", "label": "Bediente Marken" },
-      { "value": "30+", "label": "Erreichte Länder" },
-      { "value": "1M+", "label": "Produzierte Stücke" }
+      {
+        "value": "10+",
+        "label": "Jahre Erfahrung"
+      },
+      {
+        "value": "500+",
+        "label": "Bediente Marken"
+      },
+      {
+        "value": "30+",
+        "label": "Erreichte Länder"
+      },
+      {
+        "value": "1M+",
+        "label": "Produzierte Stücke"
+      }
     ]
   },
   "testimonials": {
@@ -136,7 +172,13 @@
   "certifications": {
     "title": "Zertifiziert & Konform",
     "subtitle": "Branchenzertifizierungen, die unser Engagement für Qualität, Ethik und Nachhaltigkeit widerspiegeln.",
-    "items": ["ISO 9001:2015", "OEKO-TEX Standard 100", "BSCI Auditiert", "GOTS Zertifiziert", "Sedex Mitglied"]
+    "items": [
+      "ISO 9001:2015",
+      "OEKO-TEX Standard 100",
+      "BSCI Auditiert",
+      "GOTS Zertifiziert",
+      "Sedex Mitglied"
+    ]
   },
   "latestBlog": {
     "title": "Aus Unserem Blog",
@@ -192,10 +234,22 @@
       "title": "Unsere Anlage",
       "subtitle": "Modernste Ausstattung, erfahrene Hände und rigorose Prozesse unter einem Dach.",
       "stats": [
-        { "value": "50.000+", "label": "m² Produktionsfläche" },
-        { "value": "200+", "label": "Qualifizierte Handwerker" },
-        { "value": "50+", "label": "Industriemaschinen" },
-        { "value": "24h", "label": "QK-Reaktionszeit" }
+        {
+          "value": "50.000+",
+          "label": "m² Produktionsfläche"
+        },
+        {
+          "value": "200+",
+          "label": "Qualifizierte Handwerker"
+        },
+        {
+          "value": "50+",
+          "label": "Industriemaschinen"
+        },
+        {
+          "value": "24h",
+          "label": "QK-Reaktionszeit"
+        }
       ]
     }
   },
@@ -303,49 +357,91 @@
       "features": "Hauptmerkmale",
       "related": "Das könnte Ihnen auch gefallen",
       "inquire": "Anfrage senden",
-      "whatsapp": "WhatsApp schreiben"
+      "whatsapp": "WhatsApp schreiben",
+      "partOf": "Eigene Produktion geplant?",
+      "serviceTail": "— niedrige MOQ, OEM/ODM."
     },
     "features": "Hauptmerkmale",
     "items": [
       {
         "name": "T-Shirts & Tops",
         "description": "Von einfachen Shirts bis zu Premium Cut & Sew Stücken. Wir kümmern uns um jedes Detail.",
-        "features": ["100% Baumwolle, Tri-blend, Bambus", "Siebdruck & DTG verfügbar", "Stickerei & Transferdruck", "MOQ ab 50 Stück"]
+        "features": [
+          "100% Baumwolle, Tri-blend, Bambus",
+          "Siebdruck & DTG verfügbar",
+          "Stickerei & Transferdruck",
+          "MOQ ab 50 Stück"
+        ]
       },
       {
         "name": "Hoodies & Sweatshirts",
         "description": "Premium Fleece und French Terry. Pullover, Zip, Crop — jeder Stil mit Präzision ausgeführt.",
-        "features": ["280–400 g/m² Fleece-Optionen", "Gebürstete und ungebürstete Innenseiten", "Individuelles Rippenstrickwerk", "Känguru- & Aufnähtaschen"]
+        "features": [
+          "280–400 g/m² Fleece-Optionen",
+          "Gebürstete und ungebürstete Innenseiten",
+          "Individuelles Rippenstrickwerk",
+          "Känguru- & Aufnähtaschen"
+        ]
       },
       {
         "name": "Kleider & Röcke",
         "description": "Von fließenden Maxikleidern bis zu strukturierten Miniröcken — perfekte Passform garantiert.",
-        "features": ["Gewebte und gestrickte Konstruktionen", "Casual bis formal", "Futter & Einlage-Optionen", "Individuelle Drucke & Stickereien"]
+        "features": [
+          "Gewebte und gestrickte Konstruktionen",
+          "Casual bis formal",
+          "Futter & Einlage-Optionen",
+          "Individuelle Drucke & Stickereien"
+        ]
       },
       {
         "name": "Sportbekleidung",
         "description": "Leistungsorientierte Sportswear mit Funktionsstoffen, die sich mit dem Körper bewegen.",
-        "features": ["4-Wege-Stretch-Stoffe", "Feuchtigkeitsableitend & schnelltrocknend", "UV-Schutz-Optionen", "Kompressions- & Stützpaneele"]
+        "features": [
+          "4-Wege-Stretch-Stoffe",
+          "Feuchtigkeitsableitend & schnelltrocknend",
+          "UV-Schutz-Optionen",
+          "Kompressions- & Stützpaneele"
+        ]
       },
       {
         "name": "Badebekleidung",
         "description": "Chlorresistente UPF-Konstruktion mit hochwertigen Futtern und langlebiger Hardware.",
-        "features": ["UPF 50+ Stoffoptionen", "Chlorresistente Varianten", "Individuelle Drucke & Unifarben", "Koordinierte Separates-Sets"]
+        "features": [
+          "UPF 50+ Stoffoptionen",
+          "Chlorresistente Varianten",
+          "Individuelle Drucke & Unifarben",
+          "Koordinierte Separates-Sets"
+        ]
       },
       {
         "name": "Streetwear",
         "description": "Schwere, kühne Konstruktionsstücke für die Straße. Oversized, Distressed, Bedruckt — jede Ästhetik.",
-        "features": ["300–400 g/m² schwere Baumwolle", "Oversized Schnittmuster", "Individuelle Färbung & Wäsche", "Siebdruck & Stickerei"]
+        "features": [
+          "300–400 g/m² schwere Baumwolle",
+          "Oversized Schnittmuster",
+          "Individuelle Färbung & Wäsche",
+          "Siebdruck & Stickerei"
+        ]
       },
       {
         "name": "Oberbekleidung",
         "description": "Vom leichten Windbreaker bis zum schweren Wintermantel — komplexe Mehrlagenkonstruktion.",
-        "features": ["Wasserabweisende Stoffe", "Isoliert & Shell-Optionen", "YKK-Reißverschlüsse verfügbar", "Individuelles Futter & Polsterung"]
+        "features": [
+          "Wasserabweisende Stoffe",
+          "Isoliert & Shell-Optionen",
+          "YKK-Reißverschlüsse verfügbar",
+          "Individuelles Futter & Polsterung"
+        ]
       },
       {
         "name": "Accessoires",
         "description": "Komplettieren Sie Ihre Linie mit koordinierten Accessoires nach demselben Qualitätsstandard.",
-        "features": ["Strukturierte und unstrukturierte Mützen", "Tote & Umhängetaschen", "Individuelle Socken", "Koordinierte Kapselsets"]
+        "features": [
+          "Strukturierte und unstrukturierte Mützen",
+          "Tote & Umhängetaschen",
+          "Individuelle Socken",
+          "Koordinierte Kapselsets"
+        ]
       }
     ]
   },
@@ -363,9 +459,21 @@
       "subtitle": "Wir glauben, dass großartige Marken einen fairen Start verdienen — unabhängig von ihrer Größe.",
       "description": "Unsere Mindestbestellmenge beginnt bei nur 50 Stück pro Modell und Farbe — unter den niedrigsten der Branche.",
       "tiers": [
-        { "qty": "50–200 Stück", "label": "Startup-Stufe", "note": "Ideal für erste Launches und limitierte Editionen" },
-        { "qty": "200–500 Stück", "label": "Wachstums-Stufe", "note": "Standard-Großhandelspreis, kürzere Lieferzeit" },
-        { "qty": "500+ Stück", "label": "Scale-Stufe", "note": "Bester Preis, Produktionsplanung mit Priorität" }
+        {
+          "qty": "50–200 Stück",
+          "label": "Startup-Stufe",
+          "note": "Ideal für erste Launches und limitierte Editionen"
+        },
+        {
+          "qty": "200–500 Stück",
+          "label": "Wachstums-Stufe",
+          "note": "Standard-Großhandelspreis, kürzere Lieferzeit"
+        },
+        {
+          "qty": "500+ Stück",
+          "label": "Scale-Stufe",
+          "note": "Bester Preis, Produktionsplanung mit Priorität"
+        }
       ]
     },
     "fabrics": {
@@ -374,15 +482,30 @@
       "categories": [
         {
           "name": "Naturfasern",
-          "items": ["100% Baumwolle (verschiedene Gewichte)", "Leinen & Ramie", "Bambus", "Seide & Satin"]
+          "items": [
+            "100% Baumwolle (verschiedene Gewichte)",
+            "Leinen & Ramie",
+            "Bambus",
+            "Seide & Satin"
+          ]
         },
         {
           "name": "Funktionsstoffe",
-          "items": ["Polyester- & Nylonmischungen", "Spandex / Elasthan", "Feuchtigkeitsableitende Funktionsstoffe", "UV-Schutzmaterialien"]
+          "items": [
+            "Polyester- & Nylonmischungen",
+            "Spandex / Elasthan",
+            "Feuchtigkeitsableitende Funktionsstoffe",
+            "UV-Schutzmaterialien"
+          ]
         },
         {
           "name": "Nachhaltige Optionen",
-          "items": ["Biobaumwolle (GOTS-zertifiziert)", "Recyceltes Polyester (rPET)", "Tencel / Lyocell", "Hanfmischungen"]
+          "items": [
+            "Biobaumwolle (GOTS-zertifiziert)",
+            "Recyceltes Polyester (rPET)",
+            "Tencel / Lyocell",
+            "Hanfmischungen"
+          ]
         }
       ]
     },
@@ -390,12 +513,30 @@
       "title": "Dekorationstechniken",
       "subtitle": "Von Stickerei bis Sublimation — jede angebotene Methode wird nach höchsten Standards ausgeführt.",
       "items": [
-        { "name": "Siebdruck", "description": "Mehrfarbige Drucke für große Auflagen. Leuchtend, langlebig, kosteneffizient in der Menge." },
-        { "name": "Stickerei", "description": "Verleiht Premium-Textur und Tiefe. Ideal für Logos, Patches und feine Details." },
-        { "name": "DTG-Druck", "description": "Direktdruck für komplexe, fotoqualitative Designs ohne Einrichtungsgebühren." },
-        { "name": "Transferdruck", "description": "Vielseitige Anwendung für detaillierte Designs und Spezialeffekte." },
-        { "name": "Sublimation", "description": "Ganzkörperdruck auf Polyester. Unbegrenzte Farben, kein Griff auf dem Kleidungsstück." },
-        { "name": "Wäschebehandlung", "description": "Säurewäsche, Enzymwäsche, Steinwäsche und individuelle Alterungstechniken." }
+        {
+          "name": "Siebdruck",
+          "description": "Mehrfarbige Drucke für große Auflagen. Leuchtend, langlebig, kosteneffizient in der Menge."
+        },
+        {
+          "name": "Stickerei",
+          "description": "Verleiht Premium-Textur und Tiefe. Ideal für Logos, Patches und feine Details."
+        },
+        {
+          "name": "DTG-Druck",
+          "description": "Direktdruck für komplexe, fotoqualitative Designs ohne Einrichtungsgebühren."
+        },
+        {
+          "name": "Transferdruck",
+          "description": "Vielseitige Anwendung für detaillierte Designs und Spezialeffekte."
+        },
+        {
+          "name": "Sublimation",
+          "description": "Ganzkörperdruck auf Polyester. Unbegrenzte Farben, kein Griff auf dem Kleidungsstück."
+        },
+        {
+          "name": "Wäschebehandlung",
+          "description": "Säurewäsche, Enzymwäsche, Steinwäsche und individuelle Alterungstechniken."
+        }
       ]
     }
   },
@@ -618,4 +759,3 @@
     "why3Desc": "Mehrstufige Kontrolle — Inline, Halbfertig und Final — mit Bericht vor dem Versand."
   }
 }
-

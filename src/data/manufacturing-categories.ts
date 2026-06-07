@@ -640,3 +640,52 @@ export function getManufacturingCategory(slug: string): ManufacturingCategory | 
 
 /** All valid manufacturing category slugs — used in generateStaticParams */
 export const MANUFACTURING_SLUGS = MANUFACTURING_CATEGORIES.map((c) => c.slug)
+
+// ─── Product → landing page resolution ──────────────────────────────────────
+// Maps a product's `category` (and optional `subcategory`) to the most
+// specific manufacturing landing page. Used for product-page breadcrumbs and
+// internal linking (hub & spoke). Returns the landing slug + display label.
+
+/** Subcategory slug → landing slug (takes priority over the category map) */
+const SUBCATEGORY_TO_LANDING: Record<string, string> = {
+  'polo':             'custom-polo-shirts',
+  'vintage-t-shirt':  'y2k-clothing',
+  'sweatshirt':       'custom-sweatshirts',
+  'shorts':           'custom-shorts',
+}
+
+/** Top-level product category → landing slug */
+const CATEGORY_TO_LANDING: Record<string, string> = {
+  't-shirts':   'custom-t-shirts',
+  'hoodies':    'custom-hoodies',
+  'sweatpants': 'custom-joggers-sweatpants',
+  'denim':      'custom-denim',
+  'y2k-fashion':'y2k-clothing',
+  'kids-wear':  'custom-kids-clothing',
+  'swimwear':   'custom-swimwear',
+  'dresses':    'custom-dresses',
+}
+
+export interface CategoryLandingRef {
+  slug:  string
+  label: string
+}
+
+/**
+ * Resolve the best manufacturing landing page for a product.
+ * Returns null when no landing page covers the product's category (e.g.
+ * sweater, jersey, accessories, sleepwear, outdoor) — caller falls back to
+ * the generic /products breadcrumb.
+ */
+export function getCategoryLandingForProduct(
+  category: string,
+  subcategory?: string | null,
+): CategoryLandingRef | null {
+  const slug =
+    (subcategory && SUBCATEGORY_TO_LANDING[subcategory]) ||
+    CATEGORY_TO_LANDING[category]
+  if (!slug) return null
+  const cat = getManufacturingCategory(slug)
+  if (!cat) return null
+  return { slug, label: cat.h1 }
+}
