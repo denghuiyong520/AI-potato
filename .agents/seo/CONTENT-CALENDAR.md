@@ -13,12 +13,16 @@
 
 ## Month 1 — Foundation (commercial pages)
 
+> **Status (2026-06-09):** Weeks 1–3 done early — all 13 category landing pages
+> shipped in one batch, plus the GSM link magnet and the Printful comparison.
+> Remaining Month-1 item: Activewear fabrics sourcing guide (Week 4).
+
 | Week | Primary (category landing) | Secondary (blog/asset) |
 |------|----------------------------|------------------------|
-| 1 | Custom **T-Shirt** Manufacturer (template + first page) | Refresh/interlink existing t-shirt guide → new landing |
-| 2 | Custom **Hoodie** Manufacturer | "Hoodie fabric weights explained (280–480 GSM)" (link magnet) |
-| 3 | Custom **Streetwear** Manufacturer | Comparison: **"Printful alternative: cut-and-sew for real margins"** |
-| 4 | Custom **Activewear** Manufacturer | "Activewear fabrics: poly, Sorona, recycled — a sourcing guide" |
+| 1 | ✅ Custom **T-Shirt** Manufacturer (+ all 12 others) | ✅ t-shirt guide interlinked → landing (guides[] on page) |
+| 2 | ✅ Custom **Hoodie** Manufacturer | ✅ "Hoodie Fabric Weights Explained (280–480 GSM)" — `hoodie-fabric-weights-gsm-guide` |
+| 3 | ✅ Custom **Streetwear** Manufacturer | ✅ "Printful Alternative: cut-and-sew for real margins" — `printful-alternative-cut-and-sew-manufacturer` |
+| 4 | ✅ Custom **Activewear** Manufacturer | ⬜ "Activewear fabrics: poly, Sorona, recycled — a sourcing guide" |
 
 ## Month 2 — Expansion
 
