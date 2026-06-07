@@ -806,5 +806,15 @@
       },
       "disclaimer": "Nur Schätzwerte. Bruttozahlen ohne Marketing, Zahlungsgebühren, Retouren und Gemeinkosten. Zollsätze variieren — beim Zoll bestätigen."
     }
+  },
+  "audience": {
+    "breadcrumbHome": "Startseite",
+    "breadcrumbServices": "Leistungen",
+    "requestSample": "Muster anfordern",
+    "getQuote": "Angebot anfordern",
+    "howTitle": "Wie wir helfen",
+    "categoriesTitle": "Was wir für Sie fertigen",
+    "faqTitle": "Häufig gestellte Fragen",
+    "guidesTitle": "Verwandte Leitfäden"
   }
 }

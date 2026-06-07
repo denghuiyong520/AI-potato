@@ -3,6 +3,7 @@ import { getAllPosts } from '@/lib/blog'
 import { importedProducts } from '@/data/products'
 import { SITE_URL, LOCALES, DEFAULT_LOCALE } from '@/lib/seo'
 import { MANUFACTURING_CATEGORIES } from '@/data/manufacturing-categories'
+import { AUDIENCE_PAGES } from '@/data/audience-pages'
 
 // Build the hreflang alternates map for a given path (after the locale
 // segment). Every URL in a hreflang cluster must reference every other URL
@@ -81,6 +82,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified:    now,
         changeFrequency: 'monthly' as const,
         priority:        cat.priority ?? 0.85,
+        alternates:      { languages },
+      })
+    }
+  }
+
+  // ── Audience / use-case landing pages × all locales ───────────────────────
+  for (const page of AUDIENCE_PAGES) {
+    const path      = `/clothing-manufacturer-for/${page.slug}`
+    const languages = languagesFor(path)
+    for (const locale of LOCALES) {
+      entries.push({
+        url:             `${SITE_URL}/${locale}${path}`,
+        lastModified:    now,
+        changeFrequency: 'monthly' as const,
+        priority:        page.priority ?? 0.85,
         alternates:      { languages },
       })
     }

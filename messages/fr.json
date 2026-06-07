@@ -806,5 +806,15 @@
       },
       "disclaimer": "Estimations uniquement. Chiffres bruts hors marketing, frais de paiement, retours et frais généraux. Les taux de douane varient — confirmez auprès des douanes."
     }
+  },
+  "audience": {
+    "breadcrumbHome": "Accueil",
+    "breadcrumbServices": "Services",
+    "requestSample": "Demander un échantillon",
+    "getQuote": "Obtenir un devis",
+    "howTitle": "Comment nous aidons",
+    "categoriesTitle": "Ce que nous produisons pour vous",
+    "faqTitle": "Foire aux questions",
+    "guidesTitle": "Guides associés"
   }
 }

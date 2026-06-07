@@ -806,5 +806,15 @@
       },
       "disclaimer": "仅供估算。毛利数据不含营销、支付手续费、退货和管理费用。关税率因国家和品类而异——请向海关或报关行确认。"
     }
+  },
+  "audience": {
+    "breadcrumbHome": "首页",
+    "breadcrumbServices": "服务",
+    "requestSample": "申请样品",
+    "getQuote": "获取报价",
+    "howTitle": "我们如何助力",
+    "categoriesTitle": "我们为你生产",
+    "faqTitle": "常见问题",
+    "guidesTitle": "相关指南"
   }
 }

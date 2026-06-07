@@ -806,5 +806,15 @@
       },
       "disclaimer": "Estimates only. Gross figures exclude marketing, payment fees, returns and overheads. Duty rates vary by country and product — confirm with your customs authority or broker."
     }
+  },
+  "audience": {
+    "breadcrumbHome": "Home",
+    "breadcrumbServices": "Services",
+    "requestSample": "Request a Sample",
+    "getQuote": "Get a Quote",
+    "howTitle": "How We Help",
+    "categoriesTitle": "What We Make for You",
+    "faqTitle": "Frequently Asked Questions",
+    "guidesTitle": "Related Guides"
   }
 }

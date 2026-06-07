@@ -806,5 +806,15 @@
       },
       "disclaimer": "Solo estimaciones. Cifras brutas sin marketing, comisiones de pago, devoluciones ni gastos generales. Los aranceles varían — confirma con tu aduana."
     }
+  },
+  "audience": {
+    "breadcrumbHome": "Inicio",
+    "breadcrumbServices": "Servicios",
+    "requestSample": "Solicitar muestra",
+    "getQuote": "Obtener cotización",
+    "howTitle": "Cómo te ayudamos",
+    "categoriesTitle": "Lo que fabricamos para ti",
+    "faqTitle": "Preguntas frecuentes",
+    "guidesTitle": "Guías relacionadas"
   }
 }
