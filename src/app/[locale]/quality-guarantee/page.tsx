@@ -88,24 +88,20 @@ const qcStages = [
 
 const certifications = [
   {
-    name: 'ISO 9001:2015',
-    desc: 'International quality management standard covering our entire production process.',
-  },
-  {
     name: 'OEKO-TEX Standard 100',
-    desc: 'Certifies that fabric inputs are free from harmful substances. Available for all cotton and natural fibre products.',
-  },
-  {
-    name: 'BSCI Social Compliance',
-    desc: 'Business Social Compliance Initiative audit confirming ethical working conditions in our facility.',
-  },
-  {
-    name: 'SGS Factory Audit',
-    desc: 'Third-party verification of our manufacturing capabilities and quality systems.',
+    desc: 'Certifies that fabric inputs are free from harmful substances. Available for cotton and natural-fibre products; certificate supplied per order on request.',
   },
   {
     name: 'GRS (Global Recycled Standard)',
-    desc: 'Available on request for recycled polyester and sustainable material orders.',
+    desc: 'Documentation available on request for recycled polyester and sustainable-material orders, supplied by the fabric mill.',
+  },
+  {
+    name: 'AQL 2.5 Inspection',
+    desc: 'Every production run is inspected to AQL 2.5, with a photo and measurement report supplied before shipment.',
+  },
+  {
+    name: 'Independent Lab Testing',
+    desc: 'We can arrange third-party testing through SGS, Bureau Veritas, or Intertek on request for compliance and market-entry requirements.',
   },
 ]
 
@@ -280,7 +276,7 @@ export default function QualityGuaranteePage() {
       <section className="py-16 bg-gray-950 text-white">
         <div className="container-site max-w-4xl">
           <h2 className="font-display font-bold text-2xl lg:text-3xl text-center mb-10">
-            Certifications &amp; Compliance
+            Fabric Certifications, Testing &amp; Standards
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {certifications.map(({ name, desc }) => (
@@ -370,7 +366,7 @@ export default function QualityGuaranteePage() {
               href="/factory"
               className="border border-white/30 hover:border-white text-white font-semibold px-8 py-4 rounded-full transition-colors"
             >
-              Tour Our Factory
+              See How We Make It
             </Link>
           </div>
         </div>

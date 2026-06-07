@@ -170,14 +170,14 @@
     ]
   },
   "certifications": {
-    "title": "Certificados y en Conformidad",
-    "subtitle": "Certificaciones del sector que reflejan nuestro compromiso con la calidad, la ética y la sostenibilidad.",
+    "title": "Calidad que puedes verificar",
+    "subtitle": "Los estándares que aplicamos a cada pedido — del tejido a la inspección final.",
     "items": [
-      "ISO 9001:2015",
-      "OEKO-TEX Standard 100",
-      "Auditado BSCI",
-      "Certificado GOTS",
-      "Miembro Sedex"
+      "Tejidos OEKO-TEX Standard 100",
+      "Inspección AQL 2.5",
+      "MOQ desde 50 piezas",
+      "Muestra en 7 días",
+      "Envío DDP mundial"
     ]
   },
   "latestBlog": {
@@ -206,7 +206,7 @@
     "story": {
       "title": "Nuestra Historia",
       "p1": "Potato Apparel fue fundada en 2014 con una misión clara: hacer que la fabricación profesional de ropa fuera accesible para diseñadores independientes y marcas emergentes.",
-      "p2": "Partiendo de un pequeño taller en Guangzhou, nos hemos convertido en un socio de fabricación de servicio completo con más de 200 artesanos cualificados. Hoy servimos a marcas en más de 30 países.",
+      "p2": "Lo que empezó como una pequeña operación de sourcing en Guangzhou se ha convertido en un socio de fabricación integral. Trabajamos con una red cuidadosamente seleccionada de fábricas especializadas — asignando cada producto a la fábrica mejor equipada para hacerlo — mientras gestionamos diseño, muestreo, control de calidad y logística de principio a fin. Hoy servimos a marcas en más de 30 países.",
       "p3": "Lo que no ha cambiado es nuestro compromiso: cada cliente, independientemente del tamaño del pedido, recibe la misma atención dedicada y artesanía."
     },
     "values": {
@@ -231,24 +231,24 @@
       ]
     },
     "facility": {
-      "title": "Nuestras Instalaciones",
-      "subtitle": "Equipamiento de última generación, manos expertas y procesos rigurosos bajo un mismo techo.",
+      "title": "Nuestra red de fabricación",
+      "subtitle": "Una red seleccionada de fábricas especializadas, gestionada de principio a fin — adaptada a tu producto y sujeta a un único estándar de calidad.",
       "stats": [
         {
-          "value": "50.000+",
-          "label": "m² de Planta de Producción"
+          "value": "50 pzs",
+          "label": "Pedido mínimo / estilo"
         },
         {
-          "value": "200+",
-          "label": "Artesanos Cualificados"
+          "value": "7–10 días",
+          "label": "Tiempo de muestra"
         },
         {
-          "value": "50+",
-          "label": "Máquinas Industriales"
+          "value": "AQL 2.5",
+          "label": "Estándar de inspección"
         },
         {
-          "value": "24h",
-          "label": "Tiempo de Respuesta CQ"
+          "value": "30+",
+          "label": "Países atendidos"
         }
       ]
     }

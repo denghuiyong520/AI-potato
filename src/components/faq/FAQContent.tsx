@@ -28,7 +28,7 @@ const faqs = [
     category: 'Production & Timeline',
     items: [
       { q: 'How long does production take?', a: 'Standard bulk production takes 20–30 business days after sample approval and deposit payment. Blank/stock garments ship within 5–10 days. Rush production (15 days) is available for a 20% surcharge on orders under 500 pieces.' },
-      { q: 'Can I visit the factory?', a: 'Yes, factory visits are welcome and encouraged for large buyers. Our factory is in Guangzhou, Guangdong Province. We also offer virtual factory tours via video call. Contact us to schedule.' },
+      { q: 'Can I visit the factory or arrange an audit?', a: 'Yes. For serious and large buyers we can arrange a visit or a video tour of the production facility making your order in Guangzhou, Guangdong Province, and we can accommodate third-party factory audits on request. Contact us to schedule.' },
       { q: 'What happens if my order is delayed?', a: 'We build buffer time into every production schedule. If an unexpected delay occurs, we notify you immediately and provide a revised ETA. For delays caused on our end that exceed 7 days, we offer a discount on the affected order.' },
       { q: 'Can I track my production status?', a: 'Yes. We assign every order a production coordinator who sends weekly photo updates via WhatsApp or email. You can request a production status report at any time during manufacturing.' },
     ],

@@ -253,7 +253,7 @@ export default function ShippingPolicyPage() {
               Packaging Standards
             </h2>
             <p className="text-gray-500 max-w-xl mx-auto">
-              Every order is packed to retail-ready standards before it leaves our factory.
+              Every order is packed to retail-ready standards before it leaves the factory.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

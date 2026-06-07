@@ -76,7 +76,7 @@ const steps = [
     title: 'Sampling',
     duration: '7–15 business days',
     description:
-      'Our pattern makers and sewers construct your prototype based on the approved tech pack. Sample cost is $30–$80 per piece depending on complexity and is fully credited against your bulk order of 200+ pieces. You\'ll receive high-resolution photos before we ship the physical sample. Revision rounds are included — we iterate until every detail is right.',
+      'We commission your prototype from the partner factory best suited to the product, built to the approved tech pack. Sample cost is $30–$80 per piece depending on complexity and is fully credited against your bulk order of 200+ pieces. You\'ll receive high-resolution photos before we ship the physical sample. Revision rounds are included — we iterate until every detail is right.',
     tips: [
       'First sample in 7–10 days for standard styles',
       'Complex styles or cut & sew may take 12–15 days',
@@ -221,7 +221,7 @@ export default function CustomProcessPage() {
             '@type': 'HowTo',
             name: 'How to Order Custom Apparel from Potato Apparel',
             description:
-              'Step-by-step process for ordering custom clothing from our factory in China — from inquiry to worldwide delivery.',
+              'Step-by-step process for ordering custom clothing through our manufacturing network in China — from inquiry to worldwide delivery.',
             totalTime: 'P45D',
             estimatedCost: { '@type': 'MonetaryAmount', currency: 'USD', value: '500' },
             step: steps.map((s) => ({
@@ -264,7 +264,7 @@ export default function CustomProcessPage() {
               href="/factory"
               className="border border-white/30 hover:border-white text-white font-semibold px-8 py-4 rounded-full transition-colors"
             >
-              See Our Factory
+              See How We Make It
             </Link>
           </div>
         </div>

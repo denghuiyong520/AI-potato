@@ -78,15 +78,13 @@ const organizationSchema = {
   url: 'https://www.potatoapparel.com',
   logo: 'https://www.potatoapparel.com/logo-112.png',
   description:
-    'Professional OEM/ODM apparel manufacturer based in Guangzhou, China. Custom t-shirts, hoodies, streetwear, activewear and more. Low MOQ from 50 pieces.',
+    'OEM/ODM custom apparel manufacturing partner based in Guangzhou, China, managing a vetted network of specialist garment factories. Custom t-shirts, hoodies, streetwear, activewear and more. Low MOQ from 50 pieces.',
   foundingDate: '2014',
-  numberOfEmployees: { '@type': 'QuantitativeValue', value: 350 },
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Guangzhou',
     addressRegion: 'Guangdong',
     addressCountry: 'CN',
-    streetAddress: 'Haizhu District',
   },
   contactPoint: [
     {

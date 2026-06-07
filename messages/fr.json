@@ -170,14 +170,14 @@
     ]
   },
   "certifications": {
-    "title": "Certifié & Conforme",
-    "subtitle": "Des certifications industrielles qui témoignent de notre engagement envers la qualité, l'éthique et la durabilité.",
+    "title": "Une qualité vérifiable",
+    "subtitle": "Les normes que nous appliquons à chaque commande — du tissu à l'inspection finale.",
     "items": [
-      "ISO 9001:2015",
-      "OEKO-TEX Standard 100",
-      "Audité BSCI",
-      "Certifié GOTS",
-      "Membre Sedex"
+      "Tissus OEKO-TEX Standard 100",
+      "Inspection AQL 2.5",
+      "MOQ dès 50 pièces",
+      "Échantillon en 7 jours",
+      "Livraison DDP mondiale"
     ]
   },
   "latestBlog": {
@@ -206,7 +206,7 @@
     "story": {
       "title": "Notre Histoire",
       "p1": "Potato Apparel a été fondée en 2014 avec une mission claire : rendre la fabrication professionnelle de vêtements accessible aux créateurs indépendants et aux marques émergentes.",
-      "p2": "Partis d'un petit atelier à Guangzhou, nous sommes devenus un partenaire de fabrication complet avec plus de 200 artisans qualifiés. Aujourd'hui, nous servons des marques dans plus de 30 pays.",
+      "p2": "Ce qui a commencé comme une petite activité de sourcing à Guangzhou est devenu un partenaire de fabrication complet. Nous travaillons avec un réseau d'usines spécialisées soigneusement sélectionnées — en attribuant chaque produit à l'usine la mieux équipée pour le réaliser — tout en gérant la conception, l'échantillonnage, le contrôle qualité et la logistique de bout en bout. Aujourd'hui, nous servons des marques dans plus de 30 pays.",
       "p3": "Ce qui n'a pas changé, c'est notre engagement : chaque client, quelle que soit la taille de sa commande, reçoit la même attention et le même savoir-faire."
     },
     "values": {
@@ -231,24 +231,24 @@
       ]
     },
     "facility": {
-      "title": "Nos Installations",
-      "subtitle": "Équipements de pointe, mains expertes et processus rigoureux sous un même toit.",
+      "title": "Notre réseau de fabrication",
+      "subtitle": "Un réseau d'usines spécialisées sélectionnées, géré de bout en bout — adapté à votre produit et tenu à une seule norme de qualité.",
       "stats": [
         {
-          "value": "50 000+",
-          "label": "m² de Surface de Production"
+          "value": "50 pcs",
+          "label": "Quantité min. / style"
         },
         {
-          "value": "200+",
-          "label": "Artisans Qualifiés"
+          "value": "7–10 jours",
+          "label": "Délai d'échantillon"
         },
         {
-          "value": "50+",
-          "label": "Machines Industrielles"
+          "value": "AQL 2.5",
+          "label": "Norme d'inspection"
         },
         {
-          "value": "24h",
-          "label": "Délai de Réponse CQ"
+          "value": "30+",
+          "label": "Pays livrés"
         }
       ]
     }

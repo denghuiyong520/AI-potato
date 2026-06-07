@@ -170,14 +170,14 @@
     ]
   },
   "certifications": {
-    "title": "Certified & Compliant",
-    "subtitle": "Industry certifications that reflect our commitment to quality, ethics, and sustainability.",
+    "title": "Quality You Can Verify",
+    "subtitle": "The standards we hold every order to — from fabric to final inspection.",
     "items": [
-      "ISO 9001:2015",
-      "OEKO-TEX Standard 100",
-      "BSCI Audited",
-      "GOTS Certified",
-      "Sedex Member"
+      "OEKO-TEX Standard 100 Fabrics",
+      "AQL 2.5 Inspection",
+      "MOQ from 50 Pieces",
+      "7-Day Sampling",
+      "Worldwide DDP Shipping"
     ]
   },
   "latestBlog": {
@@ -206,7 +206,7 @@
     "story": {
       "title": "Our Story",
       "p1": "Potato Apparel was founded in 2014 with a clear mission: to make professional garment manufacturing accessible to independent designers and emerging brands. We saw too many great ideas stall because MOQs were too high, communication was too poor, and quality was too inconsistent.",
-      "p2": "Starting from a small workshop in Guangzhou, we've grown into a full-service manufacturing partner with a team of over 200 skilled artisans, pattern makers, and quality inspectors. Today, we serve brands across 30+ countries — from solo designers launching a first collection to established labels scaling production.",
+      "p2": "What started as a small sourcing operation in Guangzhou has grown into a full-service manufacturing partner. We work with a carefully vetted network of specialist factories — matching each product to the facility best equipped to make it — while we manage design, sampling, quality control, and logistics end to end. Today we serve brands across 30+ countries, from solo designers launching a first collection to established labels scaling production.",
       "p3": "What hasn't changed is our commitment: every client, regardless of order size, receives the same dedicated attention and craftsmanship."
     },
     "values": {
@@ -231,24 +231,24 @@
       ]
     },
     "facility": {
-      "title": "Our Facility",
-      "subtitle": "State-of-the-art equipment, skilled hands, and rigorous processes under one roof.",
+      "title": "Our Manufacturing Network",
+      "subtitle": "A vetted network of specialist factories, managed end to end — matched to your product and held to one quality standard.",
       "stats": [
         {
-          "value": "50,000+",
-          "label": "Sq. Ft. Production Floor"
+          "value": "50 pcs",
+          "label": "Minimum Order / Style"
         },
         {
-          "value": "200+",
-          "label": "Skilled Artisans"
+          "value": "7–10 days",
+          "label": "Sample Turnaround"
         },
         {
-          "value": "50+",
-          "label": "Industrial Machines"
+          "value": "AQL 2.5",
+          "label": "Inspection Standard"
         },
         {
-          "value": "24h",
-          "label": "QC Response Time"
+          "value": "30+",
+          "label": "Countries Shipped"
         }
       ]
     }

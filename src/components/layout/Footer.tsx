@@ -12,7 +12,7 @@ export default function Footer() {
     { href: '/products',  label: tn('products')  },
     { href: '/services',  label: tn('services')  },
     { href: '/portfolio', label: tn('portfolio') },
-    { href: '/factory',   label: 'Our Factory'   },
+    { href: '/factory',   label: 'Manufacturing' },
     { href: '/blog',      label: tn('blog')      },
     { href: '/contact',   label: tn('contact')   },
   ]

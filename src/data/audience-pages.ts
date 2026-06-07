@@ -217,7 +217,7 @@ From your first sample to your first reorder, we treat a 50-piece startup order 
 
 We specialize in the weights and constructions the category demands: 280–320 GSM premium tees, 380–420 GSM heavyweight fleece hoodies, and French terry mid-weights, in the oversized, boxy, cropped, and longline silhouettes streetwear lives on. We work from your tech pack or a reference garment to nail the exact drop shoulder, body width, and length you want.
 
-Decoration is where streetwear brands express themselves, and we cover the full range: screen printing (oversized prints welcome), 3D puff and flat embroidery, DTF for photoreal multi-color art, chenille and rubber patches, and garment washes — vintage, acid, pigment, and overdye — applied in-house for an authentic finish. Custom Pantone dyeing brings your exact colorway to life.
+Decoration is where streetwear brands express themselves, and we cover the full range: screen printing (oversized prints welcome), 3D puff and flat embroidery, DTF for photoreal multi-color art, chenille and rubber patches, and garment washes — vintage, acid, pigment, and overdye — produced by the specialist partners we manage for an authentic finish. Custom Pantone dyeing brings your exact colorway to life.
 
 Low MOQ of 50 pieces per style makes us a real partner for capsule drops and limited releases, not just full seasonal ranges. Combined with 7–10 day sampling, you can move at the pace the category demands. And full custom branding — woven labels, custom tags, mailer boxes — with no factory marks means the product is unmistakably yours.
 
@@ -230,7 +230,7 @@ Every order ships with AQL 2.5 inspection, because in a category built on hype a
     ],
     points: [
       { title: 'The right weights & fits', desc: '280–480 GSM in oversized, boxy, cropped and longline silhouettes — built from your tech pack or reference garment.' },
-      { title: 'Decoration that expresses the brand', desc: 'Oversized screen print, 3D puff, embroidery, DTF, chenille/rubber patches, and in-house garment washes.' },
+      { title: 'Decoration that expresses the brand', desc: 'Oversized screen print, 3D puff, embroidery, DTF, chenille/rubber patches, and specialist garment washes.' },
       { title: 'Drop-friendly MOQ', desc: '50 pcs per style suits capsule drops and limited releases, with 7–10 day samples to move at pace.' },
       { title: 'Unmistakably yours', desc: 'Full custom branding and packaging with no factory marks — plus AQL 2.5 QC to protect a hype-driven reputation.' },
     ],
@@ -241,7 +241,7 @@ Every order ships with AQL 2.5 inspection, because in a category built on hype a
       },
       {
         q: 'Do you offer garment washes and premium decoration?',
-        a: 'Yes. In-house vintage, acid, pigment, and overdye washes, plus oversized screen print, 3D puff and flat embroidery, DTF, and chenille/rubber patches. Custom Pantone dyeing is available from 100 pcs.',
+        a: 'Yes. Vintage, acid, pigment, and overdye washes via the specialist partners we manage, plus oversized screen print, 3D puff and flat embroidery, DTF, and chenille/rubber patches. Custom Pantone dyeing is available from 100 pcs.',
       },
       {
         q: 'Can I order a small capsule drop?',

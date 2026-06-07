@@ -2,20 +2,19 @@ import type { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
 import { CheckCircle, Factory, Layers, Settings, ShieldCheck, Zap, ArrowRight } from 'lucide-react'
 import BottomCTASection from '@/components/home/BottomCTASection'
-import { buildAlternates } from '@/lib/seo'
+import { buildAlternates, SITE_URL } from '@/lib/seo'
 
 const baseMetadata: Metadata = {
-  title: 'Our Factory | Custom Apparel Manufacturing Facility | Potato Apparel',
-  description: 'Tour our 15,000 m² apparel manufacturing facility in Guangzhou, China. 200+ machines, 300+ skilled workers, ISO-certified quality control. Custom t-shirts, hoodies, and streetwear at scale.',
+  title: 'Our Manufacturing Network | Custom Apparel Production | Potato Apparel',
+  description: 'How we make your clothing: a vetted network of specialist garment factories in Guangzhou, managed end-to-end by our team — sampling, OEKO-TEX fabrics, AQL 2.5 QC, global shipping.',
   openGraph: {
-    title: 'Apparel Manufacturing Factory | Potato Apparel',
-    description: 'See inside our Guangzhou factory — 15,000 m², 300+ workers, ISO quality control. OEM & ODM manufacturing for global brands.',
+    title: 'Our Manufacturing Network | Potato Apparel',
+    description: 'A vetted network of specialist apparel factories in Guangzhou, managed end-to-end — design, sampling, AQL 2.5 quality control and logistics for global brands.',
     images: [{
-      // dh1EDCiQ6lg / EqualStock — workers sewing textiles in large factory setting
       url:    'https://images.unsplash.com/photo-1741176505800-caaa3a52631a?w=1200&h=630&fit=crop&q=85&auto=format',
       width:  1200,
       height: 630,
-      alt:    'Potato Apparel garment manufacturing facility in Guangzhou',
+      alt:    'Apparel manufacturing — garment sewing production line',
     }],
   },
 }
@@ -29,31 +28,30 @@ export async function generateMetadata({
 }
 
 const steps = [
-  { step: '01', title: 'Design Review & Tech Pack', desc: 'Our technical team reviews your design files, suggests improvements, and creates a detailed tech pack covering measurements, materials, construction methods, and finish specifications.', icon: Layers },
-  { step: '02', title: 'Material Sourcing', desc: 'We source fabrics from certified mills — ring-spun cotton, French terry, polyester blends, and performance fabrics — ensuring every roll meets our GSM and quality standards before cutting begins.', icon: Settings },
-  { step: '03', title: 'Pattern Making & Sampling', desc: 'Our pattern makers cut and construct your prototype. We typically deliver first samples within 7–10 business days. You review and approve before we proceed to bulk production.', icon: CheckCircle },
-  { step: '04', title: 'Bulk Cutting', desc: 'Industrial precision cutters handle up to 200 layers of fabric simultaneously. Our CAD nesting software minimises waste while maintaining dimensional accuracy to ±0.5 cm.', icon: Factory },
-  { step: '05', title: 'Sewing & Construction', desc: '300+ skilled sewers working on Brother and Juki industrial machines complete assembly. Each garment passes through multiple workstations for collar attachment, side seaming, hemming, and finishing.', icon: Zap },
-  { step: '06', title: 'Printing & Embroidery', desc: 'In-house decoration includes screen printing (up to 12 colours), DTG printing, embroidery (up to 15 threads), heat transfer, woven patches, and puff printing. Zero outsourcing means full quality control.', icon: Settings },
-  { step: '07', title: 'Quality Inspection (AQL 2.5)', desc: 'Every production run undergoes AQL 2.5 inspection. Our QC team checks measurements, stitch density, colour fastness, seam strength, and print alignment on 100% of samples in the final batch.', icon: ShieldCheck },
-  { step: '08', title: 'Finishing & Packing', desc: 'Garments are steamed, folded, and packed to your specification — polybag per piece, hang tags, woven labels, size stickers, and custom retail packaging all handled in-house.', icon: CheckCircle },
+  { step: '01', title: 'Design Review & Tech Pack', desc: 'Our technical team reviews your design files, suggests improvements, and builds a detailed tech pack covering measurements, materials, construction methods, and finish specifications.', icon: Layers },
+  { step: '02', title: 'Material Sourcing', desc: 'We source fabrics from vetted mills — ring-spun cotton, French terry, polyester blends, and performance fabrics — including OEKO-TEX Standard 100 certified options, confirming every roll meets your GSM and quality spec before cutting.', icon: Settings },
+  { step: '03', title: 'Pattern Making & Sampling', desc: 'We commission your prototype from the partner factory best suited to the product. First samples typically arrive within 7–10 business days for your review and approval before bulk.', icon: CheckCircle },
+  { step: '04', title: 'Production Matching', desc: 'We assign your order to the specialist factory in our network best equipped for it — knitwear to a knit specialist, denim to a denim house — so every product is made where it is made best.', icon: Factory },
+  { step: '05', title: 'Sewing & Construction', desc: 'Skilled sewers on industrial lockstitch, overlock, and flatlock machines complete assembly across multiple workstations — collar attachment, side seaming, hemming, and finishing — to your approved sample.', icon: Zap },
+  { step: '06', title: 'Printing & Embroidery', desc: 'Decoration — screen printing (up to 12 colours), DTG, DTF, embroidery (up to 15 colours), heat transfer, woven patches, and puff print — is produced by specialist decorators we manage and inspect directly.', icon: Settings },
+  { step: '07', title: 'Quality Inspection (AQL 2.5)', desc: 'We run AQL 2.5 inspection on every production run at the factory. Our QC team checks measurements, stitch density, colour fastness, seam strength, and print alignment against your approved sample.', icon: ShieldCheck },
+  { step: '08', title: 'Finishing & Packing', desc: 'Garments are steamed, folded, and packed to your specification — poly bag per piece, hang tags, woven labels, size stickers, and custom retail packaging — then consolidated for shipment.', icon: CheckCircle },
 ]
 
-const equipment = [
-  { category: 'Cutting Department', items: ['Gerber automatic cutting machines ×4', 'Band knife cutters ×8', 'Spreading machines ×6', 'CAD pattern software (Lectra)'] },
-  { category: 'Sewing Department', items: ['Juki DDL lockstitch machines ×120', 'Brother overlock machines ×60', 'Flatlock machines ×30', 'Bartack & buttonhole machines ×20'] },
-  { category: 'Printing Department', items: ['Anatol 8-colour screen printing carousels ×4', 'DTG printers (Epson SureColor) ×6', 'Discharge & water-based ink stations', 'Heat press machines ×12'] },
-  { category: 'Embroidery Department', items: ['12-head Barudan embroidery machines ×8', 'Up to 15-colour thread capability', 'Digitising software (Wilcom EmbroideryStudio)', 'Backing & topping materials in stock'] },
-  { category: 'QC & Lab', items: ['Crockmeter (colour fastness testing)', 'GSM balance scales', 'Seam strength testing machine', 'Light box for colour matching (D65 standard)'] },
-  { category: 'Finishing & Packing', items: ['Steam pressing tunnel ×2', 'Automatic polybagging machine', 'Hang tag & labelling stations', 'Carton sealing & palletising area'] },
+const capabilities = [
+  { category: 'Cutting', items: ['Automated CAD cutting (Gerber / Lectra)', 'Multi-layer spreading & nesting', 'Dimensional accuracy to ±0.5 cm', 'Low-waste marker optimisation'] },
+  { category: 'Sewing', items: ['Industrial lockstitch & overlock', 'Flatlock for activewear seams', 'Bartack & buttonhole finishing', 'Multi-station assembly lines'] },
+  { category: 'Printing', items: ['Screen printing up to 8–12 colours', 'DTG & DTF for full-colour art', 'Discharge & water-based inks', 'Puff, gloss & heat-transfer finishes'] },
+  { category: 'Embroidery', items: ['Multi-head embroidery machines', 'Up to 15-colour thread capability', 'Flat, 3D puff & chain stitch', 'Artwork digitising included'] },
+  { category: 'QC & Testing', items: ['AQL 2.5 inspection on every run', 'GSM verification & colour matching', 'Seam strength & colour-fastness checks', 'Photo + measurement QC report'] },
+  { category: 'Finishing & Packing', items: ['Steam pressing & folding', 'Per-piece poly-bagging', 'Hang tags, woven & care labels', 'Custom retail & mailer packaging'] },
 ]
 
-const certifications = [
-  'ISO 9001:2015 Quality Management',
-  'OEKO-TEX Standard 100 (fabric suppliers)',
-  'BSCI Social Compliance Audit',
-  'SGS Factory Audit Certified',
-  'GRS (Global Recycled Standard) available on request',
+const trustPoints = [
+  'OEKO-TEX Standard 100 certified fabrics available (certificate on request)',
+  'AQL 2.5 inspection with a photo + measurement report on every order',
+  'Recycled-fabric (GRS) documentation available on request',
+  'Vetted, long-term partner factories — matched to each product type',
 ]
 
 export default function FactoryPage() {
@@ -64,15 +62,13 @@ export default function FactoryPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'ManufacturingBusiness',
-            name: 'Potato Apparel Factory',
-            description: 'Custom apparel manufacturing facility in Guangzhou, China. 15,000 m², 300+ workers.',
-            address: { '@type': 'PostalAddress', addressLocality: 'Guangzhou', addressRegion: 'Guangdong', addressCountry: 'CN' },
-            telephone: '+44-7907-131539',
+            '@type': 'Organization',
+            name: 'Potato Apparel',
+            description: 'Custom apparel manufacturing partner managing a vetted network of specialist garment factories in Guangzhou, China — OEM & ODM production for global brands.',
+            areaServed: 'Worldwide',
             email: 'sales@potatoapparel.com',
-            url: 'https://potatoapparel.com/factory',
-            numberOfEmployees: { '@type': 'QuantitativeValue', value: 350 },
-            hasOfferCatalog: {
+            url: `${SITE_URL}/factory`,
+            makesOffer: {
               '@type': 'OfferCatalog',
               name: 'Custom Apparel Manufacturing Services',
               itemListElement: [
@@ -91,14 +87,14 @@ export default function FactoryPage() {
         <div className="relative container-site max-w-4xl text-center">
           <span className="inline-block bg-violet-600 text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-widest">Guangzhou, China</span>
           <h1 className="font-display font-bold text-4xl lg:text-6xl mb-6 leading-tight">
-            Our Manufacturing Facility
+            Our Manufacturing Network
           </h1>
           <p className="text-gray-300 text-lg lg:text-xl max-w-2xl mx-auto mb-8">
-            15,000 m² of precision apparel manufacturing. 300+ skilled workers. Full vertical production from fabric to finished garment — under one roof.
+            We manage a vetted network of specialist garment factories in Guangzhou — matching every product to the facility best equipped to make it, and holding all of them to one quality standard: yours.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link href="/contact" className="bg-violet-600 hover:bg-violet-700 text-white font-semibold px-8 py-4 rounded-full transition-colors">
-              Request Factory Audit
+            <Link href="/request-samples" className="bg-violet-600 hover:bg-violet-700 text-white font-semibold px-8 py-4 rounded-full transition-colors">
+              Request a Sample
             </Link>
             <Link href="/custom-process" className="border border-white/30 hover:border-white text-white font-semibold px-8 py-4 rounded-full transition-colors">
               See Our Process
@@ -107,15 +103,15 @@ export default function FactoryPage() {
         </div>
       </section>
 
-      {/* Key Stats */}
+      {/* Key Stats — honest service metrics */}
       <section className="py-12 bg-violet-600 text-white">
         <div className="container-site">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             {[
-              { value: '15,000 m²', label: 'Factory Floor Space' },
-              { value: '300+', label: 'Skilled Workers' },
-              { value: '500K+', label: 'Units / Month Capacity' },
-              { value: '12+', label: 'Years of Operation' },
+              { value: '50 pcs', label: 'Minimum Order / Style' },
+              { value: '7–10 days', label: 'Sample Turnaround' },
+              { value: 'AQL 2.5', label: 'Inspection Standard' },
+              { value: '30+', label: 'Countries Shipped' },
             ].map((s) => (
               <div key={s.label}>
                 <p className="text-3xl lg:text-4xl font-bold font-display mb-1">{s.value}</p>
@@ -131,10 +127,10 @@ export default function FactoryPage() {
         <div className="container-site">
           <div className="text-center mb-14">
             <h2 className="font-display font-bold text-3xl lg:text-4xl text-gray-900 mb-4">
-              End-to-End Production Process
+              End-to-End Production, Managed by Us
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto text-lg">
-              From your design file to your warehouse door — every step managed in-house for complete quality control.
+              From your design file to your warehouse door — we manage every step across our partner network, so you have one point of contact and one quality standard.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -156,19 +152,19 @@ export default function FactoryPage() {
         </div>
       </section>
 
-      {/* Equipment */}
+      {/* Capabilities */}
       <section className="py-20 bg-gray-50">
         <div className="container-site">
           <div className="text-center mb-14">
             <h2 className="font-display font-bold text-3xl lg:text-4xl text-gray-900 mb-4">
-              Workshop & Equipment Overview
+              Capabilities Across Our Network
             </h2>
             <p className="text-gray-500 max-w-xl mx-auto">
-              Industrial-grade machines and specialised departments for every stage of garment production.
+              The specialist equipment and departments our partner factories bring to every stage of garment production.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {equipment.map((dept) => (
+            {capabilities.map((dept) => (
               <div key={dept.category} className="bg-white rounded-2xl p-6 border border-gray-100">
                 <h3 className="font-bold text-gray-900 mb-4 text-lg">{dept.category}</h3>
                 <ul className="space-y-2">
@@ -192,13 +188,13 @@ export default function FactoryPage() {
             <h2 className="font-display font-bold text-3xl lg:text-4xl text-gray-900 mb-4">
               Quality Inspection Process
             </h2>
-            <p className="text-gray-500 text-lg">AQL 2.5 standard — the same inspection level used by major global retailers.</p>
+            <p className="text-gray-500 text-lg">AQL 2.5 standard — the same inspection level used by major global retailers, run on every order we manage.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { phase: 'Inline QC', desc: 'QC officers inspect the first 10 garments off each production line and check every 50th piece throughout production. Issues are caught and corrected before they multiply.' },
-              { phase: 'Semi-Final QC', desc: 'At 80% completion, a full AQL inspection is conducted. Measurements, stitch density, colour consistency, and embellishment placement are all verified against your approved sample.' },
-              { phase: 'Final QC & Report', desc: 'Every order ships with a detailed QC report including measurement table, photos of inspection results, and AQL outcome. Failed units are reworked or replaced before shipment.' },
+              { phase: 'Inline QC', desc: 'Our QC officers inspect the first garments off each line and check throughout the run at the partner factory. Issues are caught and corrected before they multiply.' },
+              { phase: 'Semi-Final QC', desc: 'At ~80% completion, a full AQL inspection is conducted. Measurements, stitch density, colour consistency, and embellishment placement are verified against your approved sample.' },
+              { phase: 'Final QC & Report', desc: 'Every order ships with a detailed QC report — measurement table, inspection photos, and AQL outcome. Failed units are reworked or replaced before shipment.' },
             ].map((q) => (
               <div key={q.phase} className="bg-violet-50 border border-violet-100 rounded-2xl p-6">
                 <ShieldCheck size={28} className="text-violet-600 mb-3" />
@@ -210,17 +206,21 @@ export default function FactoryPage() {
         </div>
       </section>
 
-      {/* Certifications */}
+      {/* Trust / Standards */}
       <section className="py-16 bg-gray-950 text-white">
         <div className="container-site max-w-3xl text-center">
-          <h2 className="font-display font-bold text-2xl lg:text-3xl mb-8">Certifications & Compliance</h2>
-          <div className="flex flex-wrap gap-3 justify-center">
-            {certifications.map((cert) => (
-              <span key={cert} className="bg-white/10 border border-white/20 text-sm px-4 py-2 rounded-full">
-                {cert}
-              </span>
+          <h2 className="font-display font-bold text-2xl lg:text-3xl mb-8">Standards & Documentation</h2>
+          <div className="flex flex-col gap-3 max-w-xl mx-auto text-left">
+            {trustPoints.map((point) => (
+              <div key={point} className="flex items-start gap-3 bg-white/5 border border-white/10 rounded-xl px-5 py-3">
+                <CheckCircle size={18} className="text-violet-400 shrink-0 mt-0.5" />
+                <span className="text-sm text-gray-200">{point}</span>
+              </div>
             ))}
           </div>
+          <p className="text-gray-500 text-xs mt-6 max-w-lg mx-auto">
+            Fabric certifications (e.g. OEKO-TEX Standard 100) are issued to the fabric/mill and supplied per order on request. We are a manufacturing partner managing production across vetted factories, not a single owned facility.
+          </p>
         </div>
       </section>
 
@@ -228,7 +228,7 @@ export default function FactoryPage() {
       <section className="py-20 bg-white">
         <div className="container-site max-w-2xl text-center">
           <h2 className="font-display font-bold text-3xl text-gray-900 mb-4">Ready to Start Your Order?</h2>
-          <p className="text-gray-500 mb-8 text-lg">MOQ from 50 pieces. Free samples available. Most orders ship within 25–30 days.</p>
+          <p className="text-gray-500 mb-8 text-lg">MOQ from 50 pieces. Samples available. Most orders ship within 25–35 days.</p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link href="/contact" className="bg-violet-600 hover:bg-violet-700 text-white font-semibold px-8 py-4 rounded-full transition-colors flex items-center gap-2">
               Get a Free Quote <ArrowRight size={16} />

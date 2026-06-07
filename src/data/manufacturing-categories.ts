@@ -58,9 +58,9 @@ export const MANUFACTURING_CATEGORIES: ManufacturingCategory[] = [
     title: 'Custom T-Shirt Manufacturer | OEM/ODM Wholesale | Potato Apparel',
     description:
       'Premium custom t-shirt manufacturing from 160–320GSM. MOQ 50 pcs, 7-day samples, screen print, embroidery & DTF. OEM/ODM for brands & e-commerce. Request a quote today.',
-    intro: `Need a custom t-shirt manufacturer you can actually build a brand with? Potato Apparel produces premium OEM and ODM t-shirts from our China-based manufacturing facility — from 280GSM boxy oversized silhouettes to 160GSM lightweight basics. Whether you're launching a streetwear label, restocking a uniform program, or private-labeling for your e-commerce store, our low MOQ of just 50 pieces per style lets you test before you scale.
+    intro: `Need a custom t-shirt manufacturer you can actually build a brand with? Potato Apparel produces premium OEM and ODM t-shirts through our China-based manufacturing network — from 280GSM boxy oversized silhouettes to 160GSM lightweight basics. Whether you're launching a streetwear label, restocking a uniform program, or private-labeling for your e-commerce store, our low MOQ of just 50 pieces per style lets you test before you scale.
 
-We handle the full process in-house: fabric sourcing, pattern making, first sample, bulk production, and AQL 2.5 quality inspection — so there's no finger-pointing between vendors when something needs to be corrected. Available fabric weights range from 160GSM for lightweight layering tees all the way to 320GSM for premium heavyweight streetwear. Our standard colorway library has 20+ base colors with custom Pantone dyeing available for orders of 100 pcs or more.
+We manage the full process end to end: fabric sourcing, pattern making, first sample, bulk production, and AQL 2.5 quality inspection — so you have one accountable partner instead of chasing multiple vendors. Available fabric weights range from 160GSM for lightweight layering tees all the way to 320GSM for premium heavyweight streetwear. Our standard colorway library has 20+ base colors with custom Pantone dyeing available for orders of 100 pcs or more.
 
 Decoration options include screen printing, embroidery (up to 15,000 stitches), heat transfer vinyl (HTV), puff print, DTG, and DTF. All-over sublimation is available on polyester blends. Custom woven labels, printed labels, hangtags, poly bags, and branded packaging are included from 100 pcs — with no factory marks on the final garment.
 
@@ -111,7 +111,7 @@ We ship globally via DDP (delivered, duties paid) to the USA, UK, Australia, EU,
     title: 'Custom Hoodie Manufacturer | OEM/ODM Wholesale | Potato Apparel',
     description:
       'Premium custom hoodie manufacturing from 280–480GSM fleece & French terry. MOQ 50 pcs, 7-day samples, embroidery, screen print & puff ink. Request a quote.',
-    intro: `Source custom hoodies with the quality your brand deserves. Potato Apparel specializes in OEM and ODM hoodie manufacturing — from 280GSM French terry pullover hoodies to 420GSM heavyweight fleece styles that feel as premium as they look. Our manufacturing facility handles cut-and-sew, custom labeling, and all decoration in-house, so you get consistent quality from first sample to bulk run.
+    intro: `Source custom hoodies with the quality your brand deserves. Potato Apparel specializes in OEM and ODM hoodie manufacturing — from 280GSM French terry pullover hoodies to 420GSM heavyweight fleece styles that feel as premium as they look. We manage cut-and-sew, custom labeling, and all decoration across our vetted partner network, so you get consistent quality from first sample to bulk run.
 
 MOQ starts at 50 pieces per style with color and size mixing allowed, making us the ideal partner for independent labels, DTC brands, and streetwear drops that need professional manufacturing without the high minimums that large factories impose. Fleece hoodies, French terry pullover hoodies, zip-up hoodies, oversized hoodies, and cropped hoodies are all standard in our production repertoire.
 
@@ -141,7 +141,7 @@ Final inspection follows AQL 2.5 protocol with a detailed report and pre-shipmen
       },
       {
         q: 'How long does bulk hoodie production take?',
-        a: 'Once your sample is approved, bulk production typically takes 25–35 business days for quantities of 200–500 pcs. We provide production progress photos and an AQL 2.5 final inspection report before any shipment leaves our facility.',
+        a: 'Once your sample is approved, bulk production typically takes 25–35 business days for quantities of 200–500 pcs. We provide production progress photos and an AQL 2.5 final inspection report before any shipment leaves the factory.',
       },
       {
         q: 'Do you manufacture zip-up hoodies as well as pullovers?',
@@ -211,7 +211,7 @@ Fabrics include 100% cotton French terry, cotton/polyester blend fleece, and hea
     title: 'Custom Streetwear Manufacturer | OEM/ODM | Potato Apparel',
     description:
       'Custom streetwear clothing manufacturing — heavyweight tees, hoodies, oversized silhouettes. MOQ 50 pcs, 7-day sampling, AQL 2.5 QC. OEM/ODM for independent labels.',
-    intro: `Build your streetwear brand on a manufacturing foundation that understands the category. Potato Apparel produces premium OEM and ODM streetwear garments — heavyweight tees, fleece hoodies, oversized silhouettes, vintage-wash pieces, and statement graphic items — from our manufacturing facility in China.
+    intro: `Build your streetwear brand on a manufacturing foundation that understands the category. Potato Apparel produces premium OEM and ODM streetwear garments — heavyweight tees, fleece hoodies, oversized silhouettes, vintage-wash pieces, and statement graphic items — through our manufacturing network in China.
 
 We work with independent streetwear labels, DTC brands, and designers who care about the details that separate a real brand from a commodity drop: correct GSM, precise fit specifications, decoration that lasts, and QC that actually means something. Our AQL 2.5 inspection protocol is applied to every shipment, with a report and pre-shipment photos sent before goods leave the factory.
 
@@ -491,7 +491,7 @@ OEM and ODM with MOQ from 50 pieces per style (minimum may vary by complexity of
       'Y2K and vintage-inspired clothing manufacturing — washed tees, faded hoodies, vintage silhouettes. MOQ 50 pcs, 7-day samples. OEM/ODM for trend-led labels.',
     intro: `The Y2K revival is one of the most commercially enduring trend cycles in contemporary fashion — and the brands winning in this space need a manufacturing partner who understands the garment treatments, silhouettes, and styling codes that make Y2K clothing authentic.
 
-Potato Apparel produces Y2K-inspired and vintage-wash clothing including acid-washed tees, faded pigment-dye hoodies, butterfly-print pieces, low-rise bottoms, baby tees, ribbed tank tops, and velour-style pieces. All garment treatments — vintage wash, acid wash, pigment dye, suede-finish dyeing, and cold-pack overdye — are applied in-house by our wash team, ensuring consistent results batch to batch.
+Potato Apparel produces Y2K-inspired and vintage-wash clothing including acid-washed tees, faded pigment-dye hoodies, butterfly-print pieces, low-rise bottoms, baby tees, ribbed tank tops, and velour-style pieces. All garment treatments — vintage wash, acid wash, pigment dye, suede-finish dyeing, and cold-pack overdye — are applied by the specialist wash partners we manage, with QC against a signed sample for consistent results batch to batch.
 
 Silhouettes popular in Y2K fashion that we specialize in: boxy and cropped tops, baby tee fits, wide-leg and flared bottoms, mini skirts, and form-fitting co-ord sets. Embellishments including rhinestone heat-transfer, chenille patch, and chain stitch embroidery are available to add Y2K-appropriate visual interest.
 
@@ -517,7 +517,7 @@ MOQ from 50 pieces per style. Sample turnaround 7–10 business days. OEM and OD
       },
       {
         q: 'Can you help me develop Y2K samples from a mood board, without a full tech pack?',
-        a: 'Yes. Our in-house design team can develop a tech pack and sample from a mood board, reference images, or even a Pinterest board. There is a development fee for this service which is credited back against your bulk order.',
+        a: 'Yes. Our design team can develop a tech pack and sample from a mood board, reference images, or even a Pinterest board. There is a development fee for this service which is credited back against your bulk order.',
       },
     ],
     productCategory: 't-shirts',

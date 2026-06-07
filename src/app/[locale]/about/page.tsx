@@ -66,7 +66,7 @@ export default async function AboutPage({
         <div className="absolute inset-0 opacity-30">
           <Image
             src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=1920&h=800&fit=crop&q=80&auto=format"
-            alt="Our factory"
+            alt="Apparel manufacturing — garment production"
             fill
             className="object-cover"
             priority
@@ -162,7 +162,7 @@ export default async function AboutPage({
       {/* Factory images grid */}
       <section className="section-padding bg-[var(--bg-base)]">
         <div className="container-site">
-          <SectionTitle title="Inside Our Factory" subtitle="State-of-the-art production floor, cutting room, and QC department." />
+          <SectionTitle title="Across Our Production Network" subtitle="Specialist partner factories matched to every product type — managed end to end by our team." />
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
             {[
               '1521572163474-6864f9cf17ab',

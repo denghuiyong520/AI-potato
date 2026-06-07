@@ -170,14 +170,14 @@
     ]
   },
   "certifications": {
-    "title": "Zertifiziert & Konform",
-    "subtitle": "Branchenzertifizierungen, die unser Engagement für Qualität, Ethik und Nachhaltigkeit widerspiegeln.",
+    "title": "Nachprüfbare Qualität",
+    "subtitle": "Die Standards, die wir bei jeder Bestellung einhalten — vom Stoff bis zur Endkontrolle.",
     "items": [
-      "ISO 9001:2015",
-      "OEKO-TEX Standard 100",
-      "BSCI Auditiert",
-      "GOTS Zertifiziert",
-      "Sedex Mitglied"
+      "OEKO-TEX Standard 100 Stoffe",
+      "AQL 2.5 Prüfung",
+      "MOQ ab 50 Stück",
+      "7-Tage-Muster",
+      "Weltweiter DDP-Versand"
     ]
   },
   "latestBlog": {
@@ -206,7 +206,7 @@
     "story": {
       "title": "Unsere Geschichte",
       "p1": "Potato Apparel wurde 2014 mit einer klaren Mission gegründet: professionelle Bekleidungsfertigung für unabhängige Designer und aufstrebende Marken zugänglich zu machen.",
-      "p2": "Ausgehend von einer kleinen Werkstatt in Guangzhou sind wir zu einem Full-Service-Fertigungspartner mit über 200 qualifizierten Handwerkern gewachsen. Heute bedienen wir Marken in über 30 Ländern.",
+      "p2": "Was als kleiner Sourcing-Betrieb in Guangzhou begann, ist heute ein Full-Service-Fertigungspartner. Wir arbeiten mit einem sorgfältig geprüften Netzwerk spezialisierter Fabriken — jedes Produkt wird der am besten geeigneten Fabrik zugeordnet — und steuern Design, Musterung, Qualitätskontrolle und Logistik durchgängig selbst. Heute betreuen wir Marken in über 30 Ländern.",
       "p3": "Was sich nicht verändert hat, ist unser Engagement: Jeder Kunde, unabhängig von der Bestellgröße, erhält die gleiche engagierte Aufmerksamkeit und Handwerkskunst."
     },
     "values": {
@@ -231,24 +231,24 @@
       ]
     },
     "facility": {
-      "title": "Unsere Anlage",
-      "subtitle": "Modernste Ausstattung, erfahrene Hände und rigorose Prozesse unter einem Dach.",
+      "title": "Unser Fertigungsnetzwerk",
+      "subtitle": "Ein geprüftes Netzwerk spezialisierter Fabriken, durchgängig gesteuert — passend zu Ihrem Produkt und an einem Qualitätsstandard gemessen.",
       "stats": [
         {
-          "value": "50.000+",
-          "label": "m² Produktionsfläche"
+          "value": "50 Stück",
+          "label": "Mindestbestellung / Stil"
         },
         {
-          "value": "200+",
-          "label": "Qualifizierte Handwerker"
+          "value": "7–10 Tage",
+          "label": "Musterzeit"
         },
         {
-          "value": "50+",
-          "label": "Industriemaschinen"
+          "value": "AQL 2.5",
+          "label": "Prüfstandard"
         },
         {
-          "value": "24h",
-          "label": "QK-Reaktionszeit"
+          "value": "30+",
+          "label": "Belieferte Länder"
         }
       ]
     }

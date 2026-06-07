@@ -184,8 +184,8 @@ export default function RequestSamplesPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-950/70 to-transparent flex items-end p-4">
                     <div>
-                      <p className="text-white font-semibold text-sm">15,000 m² Factory</p>
-                      <p className="text-gray-300 text-xs">Guangzhou, China · 300+ workers</p>
+                      <p className="text-white font-semibold text-sm">Vetted Factory Network</p>
+                      <p className="text-gray-300 text-xs">Guangzhou, China · matched to your product</p>
                     </div>
                   </div>
                 </div>
