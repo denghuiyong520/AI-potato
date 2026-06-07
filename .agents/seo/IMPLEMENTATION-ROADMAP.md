@@ -19,14 +19,15 @@ Status legend: ✅ done · 🔄 in progress · ⬜ to do
 
 **Goal: ship the category-landing-page system + claim long-tail.**
 
-- ⬜ Build category landing page **template** (CollectionPage + ItemList + Breadcrumb + FAQ schema) — see SITE-STRUCTURE.md
-- ⬜ Launch first 4 category pages: T-Shirt, Hoodie, Streetwear, Activewear (EN) + unique copy
-- ⬜ Wire internal linking: products → category → /services hub; blog → category
-- ⬜ Add category pages to `sitemap.ts` with hreflang
-- ⬜ Add BreadcrumbList schema to product pages
+- ✅ Build category landing page **template** (CollectionPage + ItemList + Breadcrumb + FAQ schema) — see SITE-STRUCTURE.md
+- ✅ Launch **all 13** category pages × 5 locales = 65 pages (EN copy + translated UI; body copy EN-first per strategy)
+- ✅ Wire internal linking: homepage cards → landing pages; landing pages → /products / /contact
+- ✅ Add category pages to `sitemap.ts` with hreflang (priority 0.85–0.9)
+- ✅ Set canonical handling so `?category=` filter URLs canonical to the new landing pages
+- ⬜ Add BreadcrumbList schema to product pages (individual product pages)
 - ⬜ Confirm GSC sitemap status = "Success"; request indexing on top 10 pages
-- ⬜ Set canonical handling so `?category=` filter URLs canonical to the new landing pages
-- **Dependency:** category template before any category page. **Owner:** dev + content.
+- ⬜ Wire product pages → their category landing page (breadcrumb + body link)
+- **Commit:** 8d40453 — feat(seo): add 13 manufacturing category landing pages
 
 ## Phase 2 — Expansion (Weeks 5–12)
 
