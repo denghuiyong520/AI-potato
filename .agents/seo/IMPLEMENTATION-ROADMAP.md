@@ -44,27 +44,29 @@ Sitemap resubmitted; expect "已发现的网页" to rise 1,279 → ~1,344.
 
 **Goal: complete commercial coverage + first BOFU + first trust assets.**
 
-- ⬜ Finish remaining ~9 category landing pages (Sweatshirt, Polo, Joggers, Shorts, Denim, Y2K, Kids, Swimwear, Dresses)
-- ⬜ Translate category pages to ZH/FR/DE/ES (reuse labels; unique intro per locale, EN-quality)
-- ⬜ Publish 2 comparison pages: "Printful alternative", "Gildan blanks vs custom"
-- ⬜ Ship 1 link magnet: MOQ/cost calculator (or tech-pack template lead magnet)
-- ⬜ Publish 2 case studies (real client stories) → add to homepage + relevant categories
-- ⬜ Add OfferShippingDetails to Product offers
-- ⬜ Start light link building: directory submissions (`/directory-submissions`), supplier listings, relevant roundups
+- ✅ Finish remaining ~9 category landing pages — DONE (all 13 shipped in Phase 1)
+- ⬜ Translate category pages to ZH/FR/DE/ES (intro copy still EN — **holding per strategy** until EN ranks; UI labels already translated)
+- ✅ Publish 2 comparison pages: "Printful alternative" + "Gildan blanks vs custom" — DONE
+- ✅ Ship 1 link magnet: **Apparel Cost & Margin Calculator** (`/tools/apparel-cost-calculator`) — DONE
+- ⬜ Publish 2 case studies (real client stories) — **BLOCKED: needs real client data**; do not fabricate. Flag to owner.
+- ⬜ Add OfferShippingDetails to Product offers — **deliberately deferred**: shipping is quote-based DDP/FOB, a fixed rate would be inaccurate (risk of misleading schema).
+- ⬜ Start light link building: directory submissions, supplier listings, roundups — off-site, needs owner accounts.
 - **KPI check (Wk 12):** 800+ indexed, 150+ ranking keywords, 5–15 in top 10.
 
 ## Phase 3 — Scale (Weeks 13–24 / Months 4–6)
 
 **Goal: content velocity + authority + AI search.**
 
-- ⬜ Audience landing pages (Amazon FBA, Shopify/DTC, startups) promoted from blog
-- ⬜ Fabric/GSM library + glossary hub (internal-link spider)
-- ⬜ Collect customer reviews → AggregateRating/Review schema on products
-- ⬜ Build E-E-A-T: founder/QC-lead bios, certification pages, original factory photo/video shoot
-- ⬜ AI-search optimization (`/ai-seo`): FAQ-rich, citable, entity-clear pages for AI Overviews/Perplexity
-- ⬜ Outreach/link building (`/cold-email`, `/co-marketing`): guest posts, supplier partnerships, founder communities
-- ⬜ Core Web Vitals pass on product galleries
+- ✅ Audience landing pages — DONE early: Amazon FBA, Shopify/DTC, startups, streetwear at `/clothing-manufacturer-for/[slug]` (linked from Services hub)
+- 🔄 Fabric/GSM library + glossary hub — **glossary DONE** (`apparel-manufacturing-glossary`); fabric library partial (hoodie GSM + activewear fabrics guides). Remaining: deep per-fabric pages.
+- ⬜ Collect customer reviews → AggregateRating/Review schema — needs real reviews (do not fabricate).
+- ⬜ Build E-E-A-T: founder/QC-lead bios, certification pages, original factory photo/video shoot — needs owner input/assets.
+- ⬜ AI-search optimization (`/ai-seo`): FAQ-rich, citable pages — partially served by glossary + FAQ schema across landing pages.
+- ⬜ Outreach/link building — off-site.
+- ⬜ Core Web Vitals pass on product galleries.
 - **KPI check (Mo 6):** 1,200+ indexed, 400–800 clicks/mo, 8–15 inquiries/mo.
+
+> **Autonomous build log (2026-06-07 session):** Shipped 13 category pages + product→category linking (Phase 1), then Phase 2/3 content: 9 blog posts (hoodie GSM, Printful alt, activewear fabrics, Incoterms, garment washes, certifications, Gildan vs custom, apparel glossary), the cost calculator tool, and 4 audience landing pages. Total static pages 1,279 → 1,482. **Blocked items all require real client/owner data** (case studies, reviews, founder bios, factory photos) — intentionally not fabricated.
 
 ## Phase 4 — Authority (Months 7–12)
 

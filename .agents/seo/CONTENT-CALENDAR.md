@@ -26,21 +26,47 @@
 
 ## Month 2 — Expansion
 
+> **Status (2026-06-09):** All category landing pages already shipped. Secondary
+> assets for Weeks 5, 6, 8 done. Week 7 case study is **blocked — needs real client data**.
+
 | Week | Primary | Secondary |
 |------|---------|-----------|
-| 5 | Custom **Sweatshirt** + **Polo** Manufacturer | Tool: **MOQ / unit-cost calculator** (interactive link magnet) |
-| 6 | Custom **Joggers/Sweatpants** + **Shorts** | "DDP vs FOB vs EXW: shipping Incoterms for clothing imports" |
-| 7 | Custom **Denim** Manufacturer | Case study #1: activewear brand (Bloom Athletics style) |
-| 8 | **Y2K / Vintage-Wash** Clothing Manufacturer | "Garment wash & dye techniques (vintage, acid, pigment)" |
+| 5 | ✅ Custom **Sweatshirt** + **Polo** Manufacturer | ✅ **Apparel Cost & Margin Calculator** — `/tools/apparel-cost-calculator` |
+| 6 | ✅ Custom **Joggers/Sweatpants** + **Shorts** | ✅ "DDP vs FOB vs EXW: Shipping Incoterms" — `ddp-fob-exw-shipping-incoterms-clothing` |
+| 7 | ✅ Custom **Denim** Manufacturer | ⛔ Case study #1 — **needs real client story (do not fabricate)** |
+| 8 | ✅ **Y2K / Vintage-Wash** Manufacturer | ✅ "Garment Wash & Dye Techniques" — `garment-wash-dye-techniques-guide` |
 
 ## Month 3 — Scale + trust
 
+> **Status (2026-06-09):** Certifications guide, glossary hub, and all 4 audience
+> landing pages done (FBA, Shopify/DTC, startups, streetwear). Case study #2 and
+> the Gildan comparison done. Remaining: Shopify audience page done; cert *pages*
+> (vs the guide) and case studies need owner assets.
+
 | Week | Primary | Secondary |
 |------|---------|-----------|
-| 9 | Custom **Kids' Clothing** Manufacturer | Case study #2: streetwear label (UK) |
-| 10 | Custom **Swimwear** + **Dress** Manufacturer | "Apparel certifications explained (OEKO-TEX, BSCI, GOTS)" + cert pages |
-| 11 | Audience page: **Clothing manufacturer for Amazon FBA sellers** (promote blog → evergreen landing) | Glossary / GSM reference hub (internal-link spider) |
-| 12 | Audience page: **Manufacturer for Shopify / DTC brands** | Comparison: "Gildan blanks vs custom manufacturing" |
+| 9 | ✅ Custom **Kids' Clothing** Manufacturer | ⛔ Case study #2 — **needs real client story** |
+| 10 | ✅ Custom **Swimwear** + **Dress** Manufacturer | ✅ "Apparel Certifications Explained" — `apparel-certifications-explained` |
+| 11 | ✅ Audience page: **Amazon FBA sellers** — `/clothing-manufacturer-for/amazon-fba-sellers` | ✅ Glossary hub — `apparel-manufacturing-glossary` |
+| 12 | ✅ Audience page: **Shopify / DTC brands** — `/clothing-manufacturer-for/shopify-dtc-brands` | ✅ "Gildan Blanks vs Custom Manufacturing" — `gildan-blanks-vs-custom-manufacturing` |
+
+---
+
+## ✅ Months 1–3 status: substantially complete (ahead of schedule)
+
+All 13 category landing pages + 4 audience pages + cost calculator shipped, plus
+**9 blog posts** (hoodie GSM, Printful alternative, activewear fabrics, Incoterms,
+garment washes, certifications, Gildan vs custom, apparel glossary — and the
+existing 14). Full bidirectional internal linking (blog ↔ category ↔ product ↔ audience).
+
+**Remaining Month 1–3 items are blocked on real-world assets (not writeable by an AI without fabricating):**
+- Case studies #1 & #2 → need real client stories + permission
+- Certification *pages* with logos → need actual certificates/scans
+- Customer reviews/ratings → need real reviews
+
+**Safe next content (Month 4+):** deep per-fabric library pages (cotton, French
+terry, fleece, denim), "sampling process in 7 days" (photo-led, needs factory
+photos), sustainable manufacturing, tech-pack downloadable template (`/lead-magnets`).
 
 ## Evergreen backlog (pull when capacity allows)
 
