@@ -295,6 +295,9 @@ We work with athletic brands, boutique gym apparel lines, CrossFit and yoga stud
     ],
     productCategory: ['sweatpants', 'outdoor'],
     related: ['custom-joggers-sweatpants', 'custom-shorts', 'custom-t-shirts'],
+    guides: [
+      { slug: 'activewear-fabrics-sourcing-guide', title: 'Activewear Fabrics Explained: A Sourcing Guide' },
+    ],
     priority: 0.85,
   },
 
@@ -473,6 +476,9 @@ OEM and ODM with MOQ from 50 pieces per style (minimum may vary by complexity of
     ],
     productCategory: 'denim',
     related: ['custom-t-shirts', 'custom-streetwear', 'y2k-clothing'],
+    guides: [
+      { slug: 'garment-wash-dye-techniques-guide', title: 'Garment Wash & Dye Techniques Explained' },
+    ],
     priority: 0.85,
   },
 
@@ -517,6 +523,9 @@ MOQ from 50 pieces per style. Sample turnaround 7–10 business days. OEM and OD
     productCategory: 't-shirts',
     productSubcategory: 'vintage-t-shirt',
     related: ['custom-t-shirts', 'custom-streetwear', 'custom-denim', 'custom-hoodies'],
+    guides: [
+      { slug: 'garment-wash-dye-techniques-guide', title: 'Garment Wash & Dye Techniques (Vintage, Acid, Pigment)' },
+    ],
     priority: 0.85,
   },
 
@@ -560,6 +569,9 @@ Decoration using water-based or discharge inks (lower chemical load than plastis
     ],
     productCategory: 'kids-wear',
     related: ['custom-t-shirts', 'custom-hoodies', 'custom-sweatshirts'],
+    guides: [
+      { slug: 'apparel-certifications-explained', title: 'Apparel Certifications Explained (OEKO-TEX, GOTS, BSCI)' },
+    ],
     priority: 0.85,
   },
 
