@@ -11,7 +11,7 @@ import { getPostBySlug, getRelatedPosts, getAllPosts } from '@/lib/blog'
 import { formatDate } from '@/lib/utils'
 import AnimatedSection from '@/components/shared/AnimatedSection'
 import BlogCard from '@/components/blog/BlogCard'
-import { buildEnglishOnlyAlternates } from '@/lib/seo'
+import { buildEnglishOnlyAlternates, SITE_URL } from '@/lib/seo'
 
 export async function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }))
@@ -64,6 +64,7 @@ export default async function BlogPostPage({
   const categoryLabel = categoryLabels[post.category] ?? post.category
 
   // JSON-LD structured data for Article SEO
+  const articleUrl = `${SITE_URL}/${params.locale}/blog/${post.slug}`
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -71,15 +72,18 @@ export default async function BlogPostPage({
     description:    post.description,
     image:          post.coverImage,
     datePublished:  post.date,
+    dateModified:   post.date,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': articleUrl },
+    url:            articleUrl,
     author: {
       '@type': 'Organization',
       name:    post.author,
-      url:     'https://potatoapparel.com', // TODO: replace with real domain
+      url:     SITE_URL,
     },
     publisher: {
       '@type': 'Organization',
       name:    'Potato Apparel',
-      logo:    { '@type': 'ImageObject', url: 'https://potatoapparel.com/logo.png' }, // TODO
+      logo:    { '@type': 'ImageObject', url: `${SITE_URL}/logo-112.png` },
     },
   }
 
