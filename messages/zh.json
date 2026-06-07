@@ -597,5 +597,24 @@
     "yourOrder": "您的订单",
     "continueShopping": "继续购物",
     "contactUs": "联系我们"
+  },
+  "manufacturing": {
+    "breadcrumbHome": "首页",
+    "breadcrumbManufacturing": "定制制造",
+    "productsSection": "精选产品",
+    "productsSubtitle": "件产品可供选择",
+    "viewAll": "查看全部产品",
+    "faqSection": "常见问题",
+    "relatedSection": "相关类目",
+    "requestSample": "申请样品",
+    "getQuote": "获取报价",
+    "whyTitle": "为什么选择 Potato Apparel",
+    "whySubtitle": "专业的 OEM/ODM 制造，品质看得见。",
+    "why1Title": "低起订量，不打折扣",
+    "why1Desc": "每款最低仅需 50 件，颜色尺码可混搭，无需囤货压资金。",
+    "why2Title": "7 天打样交货",
+    "why2Desc": "收到技术资料包后 7–10 个工作日内收到实物样品，快速迭代，信心量产。",
+    "why3Title": "AQL 2.5 品质管控",
+    "why3Desc": "每批货均经过多阶段检验——流水线、半成品及成品检验，发货前出具检验报告。"
   }
 }

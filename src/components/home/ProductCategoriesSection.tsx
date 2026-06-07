@@ -9,41 +9,42 @@ import { StaggerContainer, StaggerItem } from '@/components/shared/AnimatedSecti
 import { ArrowRight } from 'lucide-react'
 
 // Confirmed clothing-relevant Unsplash photo IDs + target category URLs
+// ⚠ hrefs now point to manufacturing landing pages for SEO (hub & spoke)
 const categoryData = [
   {
     // White boxy t-shirt flat lay
     photo: '1521572163474-6864f9cf17ab',
-    href: '/products?category=t-shirts',
+    href: '/manufacturing/custom-t-shirts',
   },
   {
     // White hoodie flat lay
     photo: '1620799140408-edc6dcb6d633',
-    href: '/products?category=hoodies',
+    href: '/manufacturing/custom-hoodies',
   },
   {
     // Ribbed bodycon dress
     photo: '1566174053879-31528523f8ae',
-    href: '/products?category=dresses',
+    href: '/manufacturing/custom-dresses',
   },
   {
     // Seamless yoga / activewear set
     photo: '1506629082955-511b1aa562c8',
-    href: '/products?category=activewear',
+    href: '/manufacturing/custom-activewear',
   },
   {
-    // High-waist seamless leggings (activewear / swimwear adjacent)
+    // High-waist seamless leggings / swimwear adjacent
     photo: '1518310383802-640c2de311b2',
-    href: '/products?category=activewear',
+    href: '/manufacturing/custom-swimwear',
   },
   {
     // Model in graphic black tee — streetwear vibe
     photo: '1503341504253-dff4815485f1',
-    href: '/products?category=t-shirts',
+    href: '/manufacturing/custom-streetwear',
   },
   {
     // Bomber jacket outerwear
     photo: '1591047139829-d91aecb6caea',
-    href: '/products?category=outerwear',
+    href: '/products?category=outdoor',
   },
   {
     // Structured baseball cap

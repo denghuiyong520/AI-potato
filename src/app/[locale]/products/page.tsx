@@ -13,14 +13,47 @@ import { CATEGORY_TREE, SUB_TO_CATEGORY } from '@/data/categories'
 import CategorySidebar from '@/components/products/CategorySidebar'
 import MobileFilterPanel from '@/components/products/MobileFilterPanel'
 import ProductGrid from '@/components/products/ProductGrid'
-import { buildAlternates } from '@/lib/seo'
+import { buildAlternates, SITE_URL } from '@/lib/seo'
+
+// Maps a ?category= filter value → manufacturing landing page slug
+// When a single category is active (no subcategory, no search), we set the
+// canonical to the dedicated landing page so Google doesn't index thin
+// filter views as duplicates of our real category pages.
+const CATEGORY_LANDING: Record<string, string> = {
+  't-shirts':  'custom-t-shirts',
+  'hoodies':   'custom-hoodies',
+  'sweatpants':'custom-joggers-sweatpants',
+  'denim':     'custom-denim',
+  'kids-wear': 'custom-kids-clothing',
+  'swimwear':  'custom-swimwear',
+  'dresses':   'custom-dresses',
+}
 
 export async function generateMetadata({
   params: { locale },
+  searchParams,
 }: {
   params: { locale: string }
+  searchParams: { category?: string; sub?: string; search?: string }
 }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'products.meta' })
+
+  // Filtered view with a category that has a landing page → canonical there
+  const landingSlug =
+    searchParams.category && !searchParams.sub && !searchParams.search
+      ? CATEGORY_LANDING[searchParams.category]
+      : undefined
+
+  if (landingSlug) {
+    return {
+      title: t('title'),
+      description: t('description'),
+      alternates: {
+        canonical: `${SITE_URL}/${locale}/manufacturing/${landingSlug}`,
+      },
+    }
+  }
+
   return {
     title: t('title'),
     description: t('description'),

@@ -597,6 +597,25 @@
     "yourOrder": "Votre commande",
     "continueShopping": "Continuer les achats",
     "contactUs": "Nous contacter"
+  },
+  "manufacturing": {
+    "breadcrumbHome": "Accueil",
+    "breadcrumbManufacturing": "Fabrication",
+    "productsSection": "Produits sélectionnés",
+    "productsSubtitle": "produits disponibles dans cette catégorie",
+    "viewAll": "Voir tous les produits",
+    "faqSection": "Foire aux questions",
+    "relatedSection": "Catégories associées",
+    "requestSample": "Demander un échantillon",
+    "getQuote": "Obtenir un devis",
+    "whyTitle": "Pourquoi choisir Potato Apparel",
+    "whySubtitle": "Fabrication OEM/ODM professionnelle, qualité vérifiable.",
+    "why1Title": "Faible MOQ, aucun compromis",
+    "why1Desc": "À partir de 50 pcs par style, couleurs et tailles mixées autorisées.",
+    "why2Title": "Échantillon en 7 jours",
+    "why2Desc": "Recevez votre premier prototype en 7 à 10 jours ouvrés.",
+    "why3Title": "Contrôle qualité AQL 2.5",
+    "why3Desc": "Inspection en plusieurs étapes avec rapport complet avant livraison."
   }
 }
 

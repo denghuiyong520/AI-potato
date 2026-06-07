@@ -597,6 +597,25 @@
     "yourOrder": "Your Order",
     "continueShopping": "Continue Shopping",
     "contactUs": "Contact Us"
+  },
+  "manufacturing": {
+    "breadcrumbHome": "Home",
+    "breadcrumbManufacturing": "Manufacturing",
+    "productsSection": "Featured Products",
+    "productsSubtitle": "products available in this category",
+    "viewAll": "View All Products",
+    "faqSection": "Frequently Asked Questions",
+    "relatedSection": "Related Categories",
+    "requestSample": "Request a Sample",
+    "getQuote": "Get a Quote",
+    "whyTitle": "Why Choose Potato Apparel",
+    "whySubtitle": "Professional OEM/ODM manufacturing with quality you can verify.",
+    "why1Title": "Low MOQ, No Compromise",
+    "why1Desc": "Start from 50 pcs per style. Mix colors and sizes. No inflated minimums to force overstock.",
+    "why2Title": "7-Day Sample Turnaround",
+    "why2Desc": "Receive your first physical prototype within 7–10 business days. Iterate quickly and launch with confidence.",
+    "why3Title": "AQL 2.5 Quality Control",
+    "why3Desc": "Every shipment goes through multi-stage inspection — inline, semi-final, and final — with a detailed report sent before delivery."
   }
 }
 

@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next'
 import { getAllPosts } from '@/lib/blog'
 import { importedProducts } from '@/data/products'
 import { SITE_URL, LOCALES, DEFAULT_LOCALE } from '@/lib/seo'
+import { MANUFACTURING_CATEGORIES } from '@/data/manufacturing-categories'
 
 // Build the hreflang alternates map for a given path (after the locale
 // segment). Every URL in a hreflang cluster must reference every other URL
@@ -64,6 +65,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified:    new Date(product.importedAt),
         changeFrequency: 'monthly',
         priority:        product.mainImages.length > 0 ? 0.8 : 0.6,
+        alternates:      { languages },
+      })
+    }
+  }
+
+  // ── Manufacturing category landing pages × all locales ────────────────────
+  for (const cat of MANUFACTURING_CATEGORIES) {
+    const path      = `/manufacturing/${cat.slug}`
+    const languages = languagesFor(path)
+    for (const locale of LOCALES) {
+      entries.push({
+        url:             `${SITE_URL}/${locale}${path}`,
+        lastModified:    now,
+        changeFrequency: 'monthly' as const,
+        priority:        cat.priority ?? 0.85,
         alternates:      { languages },
       })
     }
