@@ -24,10 +24,18 @@ Status legend: ✅ done · 🔄 in progress · ⬜ to do
 - ✅ Wire internal linking: homepage cards → landing pages; landing pages → /products / /contact
 - ✅ Add category pages to `sitemap.ts` with hreflang (priority 0.85–0.9)
 - ✅ Set canonical handling so `?category=` filter URLs canonical to the new landing pages
+- ✅ Confirm GSC sitemap status = "Success" (1,279 URLs, status 成功); resubmitted to pick up +65 manufacturing URLs (2026-06-07)
+- ✅ Request indexing: 12/13 EN landing pages submitted via URL inspection (2026-06-07); daily quota hit — custom-dresses pending next day
 - ⬜ Add BreadcrumbList schema to product pages (individual product pages)
-- ⬜ Confirm GSC sitemap status = "Success"; request indexing on top 10 pages
 - ⬜ Wire product pages → their category landing page (breadcrumb + body link)
 - **Commit:** 8d40453 — feat(seo): add 13 manufacturing category landing pages
+
+### GSC indexing log (2026-06-07)
+Submitted "Request Indexing" for 12 EN pages: custom-t-shirts, custom-hoodies,
+custom-joggers-sweatpants, custom-streetwear, custom-activewear, custom-sweatshirts,
+custom-polo-shirts, custom-shorts, custom-denim, y2k-clothing, custom-kids-clothing,
+custom-swimwear. **Pending (quota):** custom-dresses → resubmit next day.
+Sitemap resubmitted; expect "已发现的网页" to rise 1,279 → ~1,344.
 
 ## Phase 2 — Expansion (Weeks 5–12)
 
