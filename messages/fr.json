@@ -805,6 +805,24 @@
         "low": "Marge faible. Après marketing, frais et retours, ce n’est peut-être pas rentable. Augmentez le prix ou la quantité."
       },
       "disclaimer": "Estimations uniquement. Chiffres bruts hors marketing, frais de paiement, retours et frais généraux. Les taux de douane varient — confirmez auprès des douanes."
+    },
+    "techpack": {
+      "meta": {
+        "title": "Modèle de fiche technique vêtement gratuit (imprimable) | Potato Apparel",
+        "description": "Un modèle de tech pack vêtement gratuit et imprimable — nomenclature, mesures, coloris, construction, graphismes et étiquettes. À remplir et envoyer à votre fabricant.",
+        "h1": "Modèle de fiche technique gratuit"
+      },
+      "breadcrumbHome": "Accueil",
+      "intro": "Une fiche technique claire fait la différence entre un échantillon réussi et des semaines perdues. Utilisez ce modèle gratuit — imprimez-le ou enregistrez-le en PDF, remplissez-le et envoyez-le à votre fabricant.",
+      "printHint": "Imprimez-le, ou utilisez « Enregistrer au format PDF » dans la boîte de dialogue d'impression.",
+      "printButton": "Imprimer / PDF",
+      "whyTitle": "Pourquoi la fiche technique compte",
+      "why1": "La fiche technique est le plan de votre vêtement — mesures, matières, construction, coloris, graphismes et étiquettes dans un seul document. Elle supprime les approximations et réduit les cycles d'échantillonnage.",
+      "why2": "Inutile de tout remplir dès le premier jour. Commencez par le croquis, le tissu et les mesures clés ; un bon fabricant vous aidera à compléter le reste.",
+      "ctaTitle": "Étapes suivantes",
+      "guideLink": "Comment créer une fiche technique",
+      "calcLink": "Calculateur de coût et marge",
+      "quoteLink": "Obtenir un devis"
     }
   },
   "audience": {

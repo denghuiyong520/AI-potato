@@ -805,6 +805,24 @@
         "low": "Margen bajo. Tras marketing, comisiones y devoluciones podría no ser rentable. Considera subir el precio o aumentar el pedido."
       },
       "disclaimer": "Solo estimaciones. Cifras brutas sin marketing, comisiones de pago, devoluciones ni gastos generales. Los aranceles varían — confirma con tu aduana."
+    },
+    "techpack": {
+      "meta": {
+        "title": "Plantilla de ficha técnica de ropa gratis (imprimible) | Potato Apparel",
+        "description": "Una plantilla de tech pack de prenda gratis e imprimible — lista de materiales, medidas, colorways, construcción, arte y etiquetas. Complétala y envíala a tu fabricante.",
+        "h1": "Plantilla de ficha técnica gratis"
+      },
+      "breadcrumbHome": "Inicio",
+      "intro": "Una ficha técnica clara marca la diferencia entre una muestra que sale bien y semanas perdidas. Usa esta plantilla gratuita — imprímela o guárdala como PDF, complétala y envíala a tu fabricante.",
+      "printHint": "Imprímela, o usa \"Guardar como PDF\" en el cuadro de impresión para una copia digital.",
+      "printButton": "Imprimir / Guardar PDF",
+      "whyTitle": "Por qué importa la ficha técnica",
+      "why1": "Una ficha técnica es el plano de tu prenda — medidas, materiales, construcción, colorways, arte y etiquetas en un solo documento. Elimina las suposiciones y reduce las rondas de muestra.",
+      "why2": "No necesitas rellenar todo el primer día. Empieza con el boceto, el tejido y las medidas clave; un buen fabricante te ayudará a completar el resto.",
+      "ctaTitle": "Próximos pasos",
+      "guideLink": "Cómo crear una ficha técnica",
+      "calcLink": "Calculadora de costo y margen",
+      "quoteLink": "Obtener cotización"
     }
   },
   "audience": {

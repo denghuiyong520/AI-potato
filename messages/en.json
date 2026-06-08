@@ -805,6 +805,24 @@
         "low": "Margin is low. After marketing, fees and returns this may not be profitable. Consider a higher retail price, a larger order for a lower unit cost, or a lighter spec."
       },
       "disclaimer": "Estimates only. Gross figures exclude marketing, payment fees, returns and overheads. Duty rates vary by country and product — confirm with your customs authority or broker."
+    },
+    "techpack": {
+      "meta": {
+        "title": "Free Tech Pack Template for Clothing (Printable) | Potato Apparel",
+        "description": "A free, printable garment tech pack template — BOM, measurement spec, colorways, construction, artwork and labels. Fill it in and send it to your manufacturer.",
+        "h1": "Free Tech Pack Template"
+      },
+      "breadcrumbHome": "Home",
+      "intro": "A clear tech pack is the difference between a sample that comes back right and one that wastes weeks. Use this free template — print it or save as PDF, fill it in, and send it to your manufacturer.",
+      "printHint": "Print it, or use \"Save as PDF\" in the print dialog to keep a digital copy.",
+      "printButton": "Print / Save as PDF",
+      "whyTitle": "Why a tech pack matters",
+      "why1": "A tech pack is the blueprint of your garment — measurements, materials, construction, colorways, artwork, and labels in one document. It removes guesswork, reduces sample rounds, and protects you if a production run comes back wrong.",
+      "why2": "You do not need to fill in every field on day one. Start with the sketch, fabric, and key measurements; a good manufacturer will help you complete the rest during sampling.",
+      "ctaTitle": "Next steps",
+      "guideLink": "How to Create a Tech Pack",
+      "calcLink": "Cost & Margin Calculator",
+      "quoteLink": "Get a Quote"
     }
   },
   "audience": {

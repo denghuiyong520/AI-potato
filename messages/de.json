@@ -805,6 +805,24 @@
         "low": "Niedrige Marge. Nach Marketing, Gebühren und Retouren evtl. nicht profitabel. Höherer VK oder größere Menge erwägen."
       },
       "disclaimer": "Nur Schätzwerte. Bruttozahlen ohne Marketing, Zahlungsgebühren, Retouren und Gemeinkosten. Zollsätze variieren — beim Zoll bestätigen."
+    },
+    "techpack": {
+      "meta": {
+        "title": "Kostenlose Tech-Pack-Vorlage für Bekleidung (druckbar) | Potato Apparel",
+        "description": "Eine kostenlose, druckbare Tech-Pack-Vorlage — Stückliste, Maße, Farbvarianten, Konstruktion, Artwork und Etiketten. Ausfüllen und an Ihren Hersteller senden.",
+        "h1": "Kostenlose Tech-Pack-Vorlage"
+      },
+      "breadcrumbHome": "Startseite",
+      "intro": "Ein klares Tech Pack entscheidet, ob das Muster richtig zurückkommt oder Wochen verschwendet werden. Nutzen Sie diese kostenlose Vorlage — drucken oder als PDF speichern, ausfüllen und an Ihren Hersteller senden.",
+      "printHint": "Drucken Sie sie oder wählen Sie im Druckdialog „Als PDF speichern\".",
+      "printButton": "Drucken / als PDF",
+      "whyTitle": "Warum ein Tech Pack wichtig ist",
+      "why1": "Ein Tech Pack ist der Bauplan Ihres Kleidungsstücks — Maße, Materialien, Konstruktion, Farbvarianten, Artwork und Etiketten in einem Dokument. Es beseitigt Rätselraten und reduziert Musterrunden.",
+      "why2": "Sie müssen nicht am ersten Tag alles ausfüllen. Beginnen Sie mit Skizze, Stoff und Hauptmaßen; ein guter Hersteller hilft beim Rest.",
+      "ctaTitle": "Nächste Schritte",
+      "guideLink": "Tech Pack erstellen",
+      "calcLink": "Kosten- & Margenrechner",
+      "quoteLink": "Angebot anfordern"
     }
   },
   "audience": {
