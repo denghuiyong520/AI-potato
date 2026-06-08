@@ -15,8 +15,7 @@ const nextConfig = {
       { protocol: 'https', hostname: 'picsum.photos' },
       { protocol: 'https', hostname: 'images.unsplash.com' },
       { protocol: 'https', hostname: 'fastly.picsum.photos' },
-      // Product images from hongyuapparel.com CDN
-      { protocol: 'https', hostname: 'www.hongyuapparel.com' },
+      // Product images are now self-hosted under /public/products (de-watermarked).
     ],
   },
 }
