@@ -99,6 +99,7 @@ We ship globally via DDP (delivered, duties paid) to the USA, UK, Australia, EU,
     related: ['custom-hoodies', 'custom-sweatshirts', 'custom-polo-shirts', 'custom-streetwear'],
     guides: [
       { slug: 'custom-t-shirt-manufacturer-guide', title: 'Custom T-Shirt Manufacturer: The Complete Guide' },
+      { slug: 'cotton-fabric-guide-t-shirts',      title: 'Cotton Fabric Guide for T-Shirts' },
       { slug: 'screen-printing-vs-embroidery',     title: 'Screen Printing vs Embroidery: Which to Choose' },
     ],
     priority: 0.9,
@@ -152,6 +153,7 @@ Final inspection follows AQL 2.5 protocol with a detailed report and pre-shipmen
     related: ['custom-sweatshirts', 'custom-t-shirts', 'custom-streetwear', 'custom-joggers-sweatpants'],
     guides: [
       { slug: 'hoodie-fabric-weights-gsm-guide',   title: 'Hoodie Fabric Weights Explained: The GSM Guide' },
+      { slug: 'french-terry-vs-fleece',            title: 'French Terry vs Fleece: Which Fabric?' },
       { slug: 'custom-hoodie-manufacturer-guide',   title: 'Custom Hoodie Manufacturer: The Complete Guide' },
     ],
     priority: 0.9,
@@ -477,6 +479,7 @@ OEM and ODM with MOQ from 50 pieces per style (minimum may vary by complexity of
     productCategory: 'denim',
     related: ['custom-t-shirts', 'custom-streetwear', 'y2k-clothing'],
     guides: [
+      { slug: 'denim-fabric-guide-weights-types',  title: 'Denim Fabric Guide: Weights, Stretch & Selvedge' },
       { slug: 'garment-wash-dye-techniques-guide', title: 'Garment Wash & Dye Techniques Explained' },
     ],
     priority: 0.85,
