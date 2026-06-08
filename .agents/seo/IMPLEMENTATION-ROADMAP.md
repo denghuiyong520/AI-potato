@@ -61,7 +61,7 @@ Sitemap resubmitted; expect "已发现的网页" to rise 1,279 → ~1,344.
 - 🔄 Fabric/GSM library + glossary hub — **glossary DONE** (`apparel-manufacturing-glossary`); fabric library partial (hoodie GSM + activewear fabrics guides). Remaining: deep per-fabric pages.
 - ⬜ Collect customer reviews → AggregateRating/Review schema — needs real reviews (do not fabricate).
 - ⬜ Build E-E-A-T: founder/QC-lead bios, certification pages, original factory photo/video shoot — needs owner input/assets.
-- ⬜ AI-search optimization (`/ai-seo`): FAQ-rich, citable pages — partially served by glossary + FAQ schema across landing pages.
+- 🔄 AI-search optimization (`/ai-seo`): FAQ schema across landing/audience pages, glossary, WebSite+Organization+SearchAction schema, and **llms.txt** (llmstxt.org) shipped. Remaining: monitor AI citations; verify Organization `sameAs` social links are real.
 - ⬜ Outreach/link building — off-site.
 - ⬜ Core Web Vitals pass on product galleries.
 - **KPI check (Mo 6):** 1,200+ indexed, 400–800 clicks/mo, 8–15 inquiries/mo.
