@@ -21,6 +21,7 @@ export default function Footer() {
     { href: '/custom-process',    label: 'Custom Process'    },
     { href: '/quality-guarantee', label: 'Quality Guarantee' },
     { href: '/shipping-policy',   label: 'Shipping Policy'   },
+    { href: '/tools',             label: 'Free Tools'        },
     { href: '/faq',               label: 'FAQ'               },
   ]
 

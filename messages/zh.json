@@ -823,6 +823,22 @@
       "guideLink": "如何制作 Tech Pack",
       "calcLink": "成本与利润计算器",
       "quoteLink": "获取报价"
+    },
+    "hub": {
+      "title": "服装品牌免费工具与资源 | Potato Apparel",
+      "description": "服装品牌免费工具：成本与利润计算器、可打印 Tech Pack 模板、制造术语表。无需注册。",
+      "h1": "服装品牌免费工具",
+      "intro": "实用免费资源，助你像行家一样定规格、算成本、找供应。无需注册。",
+      "open": "打开",
+      "tagTool": "工具",
+      "tagTemplate": "模板",
+      "tagGuide": "指南",
+      "calcTitle": "服装成本与利润计算器",
+      "calcDesc": "输入单价、运费、关税和零售价，立即算出到岸成本、毛利率和每件利润。",
+      "techpackTitle": "Tech Pack 模板",
+      "techpackDesc": "免费可打印的服装技术资料包——含物料清单、尺寸规格、配色、工艺、印花与标签。填好直接发给工厂。",
+      "glossaryTitle": "服装制造术语表",
+      "glossaryDesc": "50+ 制造术语通俗讲解——MOQ、GSM、Tech Pack、AQL、裁缝、FOB 等。"
     }
   },
   "audience": {

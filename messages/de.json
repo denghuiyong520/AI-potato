@@ -823,6 +823,22 @@
       "guideLink": "Tech Pack erstellen",
       "calcLink": "Kosten- & Margenrechner",
       "quoteLink": "Angebot anfordern"
+    },
+    "hub": {
+      "title": "Kostenlose Tools für Modemarken | Potato Apparel",
+      "description": "Kostenlose Tools für Modemarken: Kosten- & Margenrechner, druckbare Tech-Pack-Vorlage und ein Fertigungsglossar. Ohne Anmeldung.",
+      "h1": "Kostenlose Tools für Modemarken",
+      "intro": "Praktische, kostenlose Ressourcen, um Ihre Produkte wie ein Profi zu spezifizieren, zu kalkulieren und zu beschaffen. Ohne Anmeldung.",
+      "open": "Öffnen",
+      "tagTool": "Tool",
+      "tagTemplate": "Vorlage",
+      "tagGuide": "Leitfaden",
+      "calcTitle": "Kosten- & Margenrechner",
+      "calcDesc": "Stückkosten, Fracht, Zoll und VK eingeben und sofort Landed Cost, Bruttomarge und Gewinn pro Stück sehen.",
+      "techpackTitle": "Tech-Pack-Vorlage",
+      "techpackDesc": "Eine kostenlose, druckbare Tech-Pack-Vorlage — Stückliste, Maße, Farbvarianten, Konstruktion, Artwork und Etiketten.",
+      "glossaryTitle": "Glossar der Bekleidungsfertigung",
+      "glossaryDesc": "50+ Fertigungsbegriffe einfach erklärt — MOQ, GSM, Tech Pack, AQL, Cut-and-Sew, FOB und mehr."
     }
   },
   "audience": {

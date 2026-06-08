@@ -33,6 +33,7 @@ const STATIC_ROUTES: Array<{ path: string; priority: number; freq: MetadataRoute
   { path: '/privacy-policy',    priority: 0.3, freq: 'yearly'  },
   { path: '/terms-of-service',  priority: 0.3, freq: 'yearly'  },
   { path: '/request-samples',   priority: 0.8, freq: 'monthly' },
+  { path: '/tools',                          priority: 0.7, freq: 'monthly' },
   { path: '/tools/apparel-cost-calculator', priority: 0.7, freq: 'monthly' },
   { path: '/tools/tech-pack-template',       priority: 0.7, freq: 'monthly' },
   // NOTE: /seo-roadmap is intentionally excluded — it is noindex and must

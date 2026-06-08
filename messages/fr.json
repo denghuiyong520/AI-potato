@@ -823,6 +823,22 @@
       "guideLink": "Comment créer une fiche technique",
       "calcLink": "Calculateur de coût et marge",
       "quoteLink": "Obtenir un devis"
+    },
+    "hub": {
+      "title": "Outils gratuits pour marques de mode | Potato Apparel",
+      "description": "Outils gratuits pour marques de mode : calculateur de coût et marge, modèle de fiche technique imprimable, et glossaire de fabrication. Sans inscription.",
+      "h1": "Outils gratuits pour marques de mode",
+      "intro": "Des ressources gratuites et pratiques pour spécifier, chiffrer et sourcer vos produits comme un pro. Sans inscription.",
+      "open": "Ouvrir",
+      "tagTool": "Outil",
+      "tagTemplate": "Modèle",
+      "tagGuide": "Guide",
+      "calcTitle": "Calculateur de coût et marge",
+      "calcDesc": "Entrez coût unitaire, fret, douane et prix de vente pour voir coût rendu, marge brute et profit par pièce.",
+      "techpackTitle": "Modèle de fiche technique",
+      "techpackDesc": "Une fiche technique imprimable gratuite — nomenclature, mesures, coloris, construction, graphismes et étiquettes.",
+      "glossaryTitle": "Glossaire de fabrication textile",
+      "glossaryDesc": "50+ termes de fabrication expliqués simplement — MOQ, GSM, fiche technique, AQL, coupe-couture, FOB, etc."
     }
   },
   "audience": {

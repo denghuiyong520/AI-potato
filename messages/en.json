@@ -823,6 +823,22 @@
       "guideLink": "How to Create a Tech Pack",
       "calcLink": "Cost & Margin Calculator",
       "quoteLink": "Get a Quote"
+    },
+    "hub": {
+      "title": "Free Tools & Resources for Clothing Brands | Potato Apparel",
+      "description": "Free tools for apparel brands: an apparel cost & margin calculator, a printable tech pack template, and a manufacturing glossary. No signup required.",
+      "h1": "Free Tools for Clothing Brands",
+      "intro": "Practical, free resources to help you spec, cost, and source your products like a pro. No signup required.",
+      "open": "Open",
+      "tagTool": "Tool",
+      "tagTemplate": "Template",
+      "tagGuide": "Guide",
+      "calcTitle": "Apparel Cost & Margin Calculator",
+      "calcDesc": "Enter your unit cost, freight, duty and retail price to instantly see landed cost, gross margin, and profit per piece.",
+      "techpackTitle": "Tech Pack Template",
+      "techpackDesc": "A free printable garment tech pack — BOM, measurement spec, colorways, construction, artwork and labels. Fill it in and send it to your manufacturer.",
+      "glossaryTitle": "Apparel Manufacturing Glossary",
+      "glossaryDesc": "50+ manufacturing terms explained in plain English — MOQ, GSM, tech pack, AQL, cut-and-sew, FOB and more."
     }
   },
   "audience": {

@@ -823,6 +823,22 @@
       "guideLink": "Cómo crear una ficha técnica",
       "calcLink": "Calculadora de costo y margen",
       "quoteLink": "Obtener cotización"
+    },
+    "hub": {
+      "title": "Herramientas gratis para marcas de ropa | Potato Apparel",
+      "description": "Herramientas gratis para marcas de ropa: calculadora de costo y margen, plantilla de ficha técnica imprimible y un glosario de fabricación. Sin registro.",
+      "h1": "Herramientas gratis para marcas de ropa",
+      "intro": "Recursos gratuitos y prácticos para especificar, costear y abastecer tus productos como un profesional. Sin registro.",
+      "open": "Abrir",
+      "tagTool": "Herramienta",
+      "tagTemplate": "Plantilla",
+      "tagGuide": "Guía",
+      "calcTitle": "Calculadora de costo y margen",
+      "calcDesc": "Ingresa costo unitario, flete, arancel y precio de venta para ver costo en destino, margen bruto y ganancia por pieza.",
+      "techpackTitle": "Plantilla de ficha técnica",
+      "techpackDesc": "Una ficha técnica imprimible gratuita — lista de materiales, medidas, colorways, construcción, arte y etiquetas.",
+      "glossaryTitle": "Glosario de fabricación textil",
+      "glossaryDesc": "50+ términos de fabricación explicados en lenguaje claro — MOQ, GSM, ficha técnica, AQL, corte y confección, FOB y más."
     }
   },
   "audience": {
