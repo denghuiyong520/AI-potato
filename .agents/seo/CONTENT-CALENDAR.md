@@ -52,21 +52,27 @@
 
 ---
 
-## ✅ Months 1–3 status: substantially complete (ahead of schedule)
+## ✅ Months 1–4 status: substantially complete (well ahead of schedule)
 
-All 13 category landing pages + 4 audience pages + cost calculator shipped, plus
-**9 blog posts** (hoodie GSM, Printful alternative, activewear fabrics, Incoterms,
-garment washes, certifications, Gildan vs custom, apparel glossary — and the
-existing 14). Full bidirectional internal linking (blog ↔ category ↔ product ↔ audience).
+Shipped this build cycle:
+- 13 category landing pages + 4 audience pages (`/clothing-manufacturer-for/*`)
+- **12 new blog posts**: hoodie GSM, Printful alternative, activewear fabrics,
+  Incoterms, garment washes, certifications, Gildan vs custom, apparel glossary,
+  sustainable manufacturing, **+ fabric library: cotton, denim, French terry vs fleece**
+- **3 free tools**: cost calculator, printable tech pack template, /tools hub
+- Full bidirectional internal linking (blog ↔ category ↔ product ↔ audience ↔ tools)
+- Honest "partner-network" trust reframe across the whole site
 
-**Remaining Month 1–3 items are blocked on real-world assets (not writeable by an AI without fabricating):**
+**Remaining items are blocked on real-world assets (NOT writeable without fabricating):**
 - Case studies #1 & #2 → need real client stories + permission
-- Certification *pages* with logos → need actual certificates/scans
-- Customer reviews/ratings → need real reviews
+- Certification *pages* with logos → need actual certificate scans (only OEKO-TEX fabric is real)
+- Customer reviews/ratings + Review schema → need real reviews
+- "Sampling process in 7 days" photo essay → needs real production photos
+- Founder/QC-lead bios (E-E-A-T) → need real people
 
-**Safe next content (Month 4+):** deep per-fabric library pages (cotton, French
-terry, fleece, denim), "sampling process in 7 days" (photo-led, needs factory
-photos), sustainable manufacturing, tech-pack downloadable template (`/lead-magnets`).
+**Safe next content (optional, Month 4+):** more fabric deep-dives (jersey/rib,
+performance knits), region/use-case guides, refreshing older posts. Diminishing
+returns vs. the blocked trust assets above — those now move the needle most.
 
 ## Evergreen backlog (pull when capacity allows)
 
