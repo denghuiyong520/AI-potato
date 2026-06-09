@@ -650,7 +650,9 @@
       "successTitle": "¡Mensaje Enviado!",
       "successText": "Gracias por tu consulta. Te responderemos en 24 horas.",
       "errorText": "Algo salió mal. Por favor inténtalo de nuevo o contáctanos directamente.",
-      "required": "Obligatorio"
+      "required": "Obligatorio",
+      "reassurance": "Respondemos en 24 h · Tus diseños son confidenciales · Sin spam, nunca",
+      "errorHelp": "¿No se envió? Escríbenos por email o WhatsApp — recibiremos tu solicitud igualmente."
     }
   },
   "footer": {

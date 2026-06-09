@@ -650,7 +650,9 @@
       "successTitle": "消息已发送！",
       "successText": "感谢您的询盘，我们将在24小时内回复您。",
       "errorText": "发送失败，请重试或直接联系我们。",
-      "required": "必填"
+      "required": "必填",
+      "reassurance": "24 小时内回复 · 设计资料严格保密 · 绝不发垃圾邮件",
+      "errorHelp": "发送失败？可直接邮件或 WhatsApp 联系我们,我们照样能收到你的询盘。"
     }
   },
   "footer": {

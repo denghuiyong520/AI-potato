@@ -650,7 +650,9 @@
       "successTitle": "Message Sent!",
       "successText": "Thank you for your inquiry. We'll get back to you within 24 hours.",
       "errorText": "Something went wrong. Please try again or contact us directly.",
-      "required": "Required"
+      "required": "Required",
+      "reassurance": "We reply within 24 hours · Your designs stay confidential · No spam, ever",
+      "errorHelp": "Couldn't send? Email us directly or message us on WhatsApp — we'll still get your inquiry."
     }
   },
   "footer": {

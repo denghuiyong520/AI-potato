@@ -650,7 +650,9 @@
       "successTitle": "Message Envoyé !",
       "successText": "Merci pour votre demande. Nous vous répondrons sous 24 heures.",
       "errorText": "Une erreur s'est produite. Veuillez réessayer ou nous contacter directement.",
-      "required": "Requis"
+      "required": "Requis",
+      "reassurance": "Réponse sous 24 h · Vos designs restent confidentiels · Jamais de spam",
+      "errorHelp": "Échec de l'envoi ? Écrivez-nous directement ou via WhatsApp — nous recevrons votre demande."
     }
   },
   "footer": {

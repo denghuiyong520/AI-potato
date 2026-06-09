@@ -650,7 +650,9 @@
       "successTitle": "Nachricht Gesendet!",
       "successText": "Vielen Dank für Ihre Anfrage. Wir melden uns innerhalb von 24 Stunden.",
       "errorText": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt.",
-      "required": "Pflichtfeld"
+      "required": "Pflichtfeld",
+      "reassurance": "Antwort binnen 24 Std. · Ihre Designs bleiben vertraulich · Niemals Spam",
+      "errorHelp": "Senden fehlgeschlagen? Schreiben Sie uns direkt oder per WhatsApp — wir erhalten Ihre Anfrage trotzdem."
     }
   },
   "footer": {
