@@ -45,6 +45,8 @@ export interface ImportedProduct {
   mainImages: string[]
   /** Paths relative to /public, e.g. ["/products/AR002/detail/1.jpg", ...] */
   detailImages: string[]
+  /** Pixel [width, height] per detail image (same index) — for CLS-free next/image. */
+  detailDims?: ([number, number] | null)[]
 
   // ── Reference ─────────────────────────────────────────────────────────────
   /** Our own hongyuapparel.com product page URL — useful for English title derivation */

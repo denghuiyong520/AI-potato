@@ -353,19 +353,23 @@ export default async function ImportedProductDetailPage({
           {product.detailImages.length > 0 && (
             <div className="mt-10">
               <div className="max-w-2xl mx-auto space-y-2">
-                {product.detailImages.map((src, i) => (
-                  <div key={src} className="relative w-full overflow-hidden rounded-lg bg-white">
-                    <Image
-                      src={src}
-                      alt={`${product.title_en} – detail ${i + 1}`}
-                      width={900}
-                      height={900}
-                      className="w-full h-auto object-contain"
-                      sizes="(max-width: 900px) 100vw, 800px"
-                      loading={i < 3 ? 'eager' : 'lazy'}
-                    />
-                  </div>
-                ))}
+                {product.detailImages.map((src, i) => {
+                  const dim = product.detailDims?.[i]
+                  const [w, h] = dim ?? [1080, 1080]
+                  return (
+                    <div key={src} className="relative w-full overflow-hidden rounded-lg bg-white">
+                      <Image
+                        src={src}
+                        alt={`${product.title_en} – detail ${i + 1}`}
+                        width={w}
+                        height={h}
+                        className="w-full h-auto object-contain"
+                        sizes="(max-width: 900px) 100vw, 800px"
+                        loading={i < 3 ? 'eager' : 'lazy'}
+                      />
+                    </div>
+                  )
+                })}
               </div>
             </div>
           )}
