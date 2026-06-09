@@ -359,7 +359,10 @@
       "inquire": "Solicitar Cotización",
       "whatsapp": "Escribir por WhatsApp",
       "partOf": "¿Quieres producir la tuya?",
-      "serviceTail": "— MOQ bajo, OEM/ODM."
+      "serviceTail": "— MOQ bajo, OEM/ODM.",
+      "trustMoq": "MOQ desde 50 pzs",
+      "trustSample": "Muestra en 7 días",
+      "trustReply": "Respuesta en 24 h"
     },
     "features": "Características Principales",
     "items": [

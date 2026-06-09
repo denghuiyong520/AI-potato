@@ -359,7 +359,10 @@
       "inquire": "Inquiry Now",
       "whatsapp": "WhatsApp Us",
       "partOf": "Looking to produce your own?",
-      "serviceTail": "— low MOQ, OEM/ODM."
+      "serviceTail": "— low MOQ, OEM/ODM.",
+      "trustMoq": "MOQ from 50 pcs",
+      "trustSample": "7-day samples",
+      "trustReply": "Reply within 24h"
     },
     "features": "Key Features",
     "items": [

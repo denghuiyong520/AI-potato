@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
-import { ChevronRight, MessageCircle } from 'lucide-react'
+import { ChevronRight, MessageCircle, CheckCircle } from 'lucide-react'
 import Image from 'next/image'
 import BottomCTASection from '@/components/home/BottomCTASection'
 import ImportedProductGallery from '@/components/products/ImportedProductGallery'
@@ -333,6 +333,16 @@ export default async function ImportedProductDetailPage({
                     <MessageCircle size={15} />
                     {t('whatsapp')}
                   </a>
+                </div>
+
+                {/* Trust strip — reinforce conversion at the CTA */}
+                <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[11px] text-gray-500">
+                  {[t('trustMoq'), t('trustSample'), t('trustReply')].map((item) => (
+                    <span key={item} className="inline-flex items-center gap-1.5">
+                      <CheckCircle size={12} className="text-green-500 shrink-0" />
+                      {item}
+                    </span>
+                  ))}
                 </div>
               </div>
 

@@ -359,7 +359,10 @@
       "inquire": "Demande de Devis",
       "whatsapp": "Écrire sur WhatsApp",
       "partOf": "Vous voulez produire la vôtre ?",
-      "serviceTail": "— faible MOQ, OEM/ODM."
+      "serviceTail": "— faible MOQ, OEM/ODM.",
+      "trustMoq": "MOQ dès 50 pcs",
+      "trustSample": "Échantillon 7 jours",
+      "trustReply": "Réponse sous 24 h"
     },
     "features": "Caractéristiques Clés",
     "items": [

@@ -359,7 +359,10 @@
       "inquire": "立即询价",
       "whatsapp": "WhatsApp咨询",
       "partOf": "想生产同款？",
-      "serviceTail": "— 低起订量，OEM/ODM。"
+      "serviceTail": "— 低起订量，OEM/ODM。",
+      "trustMoq": "50 件起订",
+      "trustSample": "7 天打样",
+      "trustReply": "24 小时回复"
     },
     "features": "主要特点",
     "items": [
