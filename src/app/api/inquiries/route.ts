@@ -3,14 +3,18 @@ import { createClient as createSupabaseClient } from '@supabase/supabase-js'
 import { Resend } from 'resend'
 
 // ── Clients ───────────────────────────────────────────────────────────────────
+// Both clients are created lazily inside the handler so a missing env var
+// produces a clear, logged error instead of crashing the whole route at import
+// time (which would 500 every request — including ones we could otherwise save).
 function createClient() {
-  return createSupabaseClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-  )
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  if (!url || !key) {
+    throw new Error('Supabase env vars missing (NEXT_PUBLIC_SUPABASE_URL / NEXT_PUBLIC_SUPABASE_ANON_KEY)')
+  }
+  return createSupabaseClient(url, key)
 }
 
-const resend = new Resend(process.env.RESEND_API_KEY)
 const NOTIFY_TO = process.env.NOTIFY_EMAIL ?? 'sales@potatoapparel.com'
 
 // ── Email template ────────────────────────────────────────────────────────────
@@ -156,17 +160,24 @@ export async function POST(req: NextRequest) {
       ? `New Product Inquiry — #${productSku} ${productTitle ?? ''}`
       : `New Contact Inquiry from ${name.trim()}`
 
-    resend.emails.send({
-      from:    'Potato Apparel <noreply@potatoapparel.com>',
-      to:      [NOTIFY_TO],
-      replyTo: email.trim(),
-      subject,
-      html:    buildEmailHtml({
-        type, name: name.trim(), email: email.trim(),
-        phone, countryIso, company, platform, budget,
-        productSku, productTitle, message: message.trim(), sourceUrl,
-      }),
-    }).catch(err => console.error('[inquiries] Email send error:', err))
+    // Email is best-effort: the lead is already safely persisted above, so a
+    // missing RESEND_API_KEY or send failure must never fail the request.
+    if (process.env.RESEND_API_KEY) {
+      const resend = new Resend(process.env.RESEND_API_KEY)
+      resend.emails.send({
+        from:    'Potato Apparel <noreply@potatoapparel.com>',
+        to:      [NOTIFY_TO],
+        replyTo: email.trim(),
+        subject,
+        html:    buildEmailHtml({
+          type, name: name.trim(), email: email.trim(),
+          phone, countryIso, company, platform, budget,
+          productSku, productTitle, message: message.trim(), sourceUrl,
+        }),
+      }).catch(err => console.error('[inquiries] Email send error:', err))
+    } else {
+      console.warn('[inquiries] RESEND_API_KEY not set — lead saved, email skipped')
+    }
 
     return NextResponse.json({ success: true, id: row.id }, { status: 201 })
   } catch (err) {
