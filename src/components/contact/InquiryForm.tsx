@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl'
 import { useSearchParams } from 'next/navigation'
 import { Scissors, Upload, X, CheckCircle, AlertCircle, ChevronDown, Search } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { trackLead } from '@/lib/gtag'
 
 interface FormData {
   name:       string
@@ -273,6 +274,11 @@ export default function InquiryForm() {
         throw new Error(body.error ?? `HTTP ${res.status}`)
       }
 
+      trackLead({
+        type:         isFromProduct ? 'product' : 'contact',
+        productSku:   skuParam     || undefined,
+        productTitle: productParam || undefined,
+      })
       setStatus('success')
     } catch (err) {
       console.error('Inquiry submit error:', err)

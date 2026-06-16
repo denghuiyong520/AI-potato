@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { ArrowRight, CheckCircle, AlertCircle } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { trackLead } from '@/lib/gtag'
 
 const GARMENT_OPTIONS = [
   'T-Shirts / Tees',
@@ -75,6 +76,7 @@ export default function SampleRequestForm() {
       })
 
       if (!res.ok) throw new Error('Submit failed')
+      trackLead({ type: 'sample_request' })
       setStatus('success')
     } catch {
       setStatus('error')
