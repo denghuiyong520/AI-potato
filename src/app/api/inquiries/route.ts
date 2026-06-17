@@ -131,7 +131,10 @@ export async function POST(req: NextRequest) {
 
     // ── 1. Save to Supabase ─────────────────────────────────────────────────
     const supabase = createClient()
-    const { data: row, error: dbError } = await supabase
+    // Insert only — no .select() afterwards. Reading the row back would require
+    // a SELECT RLS policy, which we intentionally withhold so the public anon
+    // key can write leads but never read them. The frontend only needs success.
+    const { error: dbError } = await supabase
       .from('inquiries')
       .insert({
         type,
@@ -147,8 +150,6 @@ export async function POST(req: NextRequest) {
         message:       message.trim(),
         source_url:    sourceUrl       || null,
       })
-      .select('id, created_at')
-      .single()
 
     if (dbError) {
       console.error('[inquiries] DB error:', dbError)
@@ -179,7 +180,7 @@ export async function POST(req: NextRequest) {
       console.warn('[inquiries] RESEND_API_KEY not set — lead saved, email skipped')
     }
 
-    return NextResponse.json({ success: true, id: row.id }, { status: 201 })
+    return NextResponse.json({ success: true }, { status: 201 })
   } catch (err) {
     console.error('[inquiries] Unexpected error:', err)
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
