@@ -11,8 +11,12 @@ const withBundleAnalyzer = bundleAnalyzer({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    // AVIF first (smaller than WebP) with WebP fallback — faster LCP on the
-    // 3,792 self-hosted product images. Vercel caches the optimized output.
+    // Vercel's Hobby plan caps Image Optimization at 5,000 transformations/mo.
+    // With 3,792 self-hosted product images that quota is blown almost instantly,
+    // and once exceeded Vercel stops optimizing — every product image 404s/breaks.
+    // Serving the originals unoptimized sidesteps the quota entirely (free, and
+    // images load reliably). Re-enable optimization if upgrading to Vercel Pro.
+    unoptimized: true,
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 2678400, // 31 days
     remotePatterns: [
