@@ -27,6 +27,15 @@ function getTransporter(): Transporter {
     port,
     secure: port === 465, // 465 = implicit TLS, 587 = STARTTLS (secure:false, upgraded automatically)
     auth: { user, pass },
+    tls: {
+      // mail.potatoapparel.com currently presents Poste.io's default
+      // self-signed certificate (O=Poste.io, not a trusted CA), so strict
+      // verification fails the STARTTLS handshake before auth is even
+      // attempted. This trusts that one known host while Let's Encrypt is
+      // set up server-side — remove once a real certificate is issued
+      // (see Poste.io → System settings → TLS certificate → Let's Encrypt).
+      rejectUnauthorized: false,
+    },
   })
 
   return transporter
