@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient as createSupabaseClient } from '@supabase/supabase-js'
-import { Resend } from 'resend'
+import { sendInquiryNotification, sendCustomerAutoReply, type InquiryAttachment } from '@/lib/mailer'
+import { isRateLimited } from '@/lib/rate-limit'
 
-// ── Clients ───────────────────────────────────────────────────────────────────
-// Both clients are created lazily inside the handler so a missing env var
-// produces a clear, logged error instead of crashing the whole route at import
-// time (which would 500 every request — including ones we could otherwise save).
+// ── Supabase client ──────────────────────────────────────────────────────────
+// Created lazily so a missing env var produces a clear, logged error instead
+// of crashing the whole route at import time.
 function createClient() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
@@ -15,121 +15,102 @@ function createClient() {
   return createSupabaseClient(url, key)
 }
 
-const NOTIFY_TO = process.env.NOTIFY_EMAIL ?? 'sales@potatoapparel.com'
+// ── Field limits ──────────────────────────────────────────────────────────────
+const MAX_TEXT_LEN = { name: 200, email: 254, phone: 40, company: 200, message: 5000, misc: 200 }
+const MAX_FILES = 10
+const MAX_FILE_BYTES = 8 * 1024 * 1024 // 8MB per file
+const MAX_TOTAL_ATTACHMENT_BYTES = 20 * 1024 * 1024 // 20MB combined
+const ALLOWED_FILE_TYPES = new Set([
+  'image/jpeg', 'image/png', 'image/webp', 'image/gif',
+  'application/pdf',
+])
 
-// ── Email template ────────────────────────────────────────────────────────────
-function buildEmailHtml(data: {
-  name: string; email: string; phone?: string; countryIso?: string
-  company?: string; platform?: string; budget?: string
-  productSku?: string; productTitle?: string; message: string
-  type: string; sourceUrl?: string
-}) {
-  const budgetMap: Record<string, string> = {
-    under1k: 'Under $1,000', '1k5k': '$1,000 – $5,000',
-    '5k20k': '$5,000 – $20,000', '20kPlus': '$20,000+',
-  }
-  const platformMap: Record<string, string> = {
-    shopify: 'Shopify', amazon: 'Amazon', tiktok: 'TikTok Shop',
-    offline: 'Offline / Retail', other: 'Other',
-  }
+function truncate(value: string, max: number): string {
+  return value.trim().slice(0, max)
+}
 
-  const rows = [
-    ['Name',     data.name],
-    ['Email',    `<a href="mailto:${data.email}">${data.email}</a>`],
-    data.phone    && ['Phone',    data.phone + (data.countryIso ? ` (${data.countryIso.toUpperCase()})` : '')],
-    data.company  && ['Company',  data.company],
-    data.platform && ['Platform', platformMap[data.platform] ?? data.platform],
-    data.budget   && ['Budget',   budgetMap[data.budget]   ?? data.budget],
-    data.productSku && ['Product SKU',   `#${data.productSku}`],
-    data.productTitle && ['Product',     data.productTitle],
-    data.sourceUrl && ['Page',    `<a href="${data.sourceUrl}">${data.sourceUrl}</a>`],
-  ].filter(Boolean) as [string, string][]
-
-  const tableRows = rows.map(([label, value]) => `
-    <tr>
-      <td style="padding:8px 12px;background:#f9f9f9;color:#666;font-size:13px;width:120px;vertical-align:top">${label}</td>
-      <td style="padding:8px 12px;color:#111;font-size:13px">${value}</td>
-    </tr>`).join('')
-
-  const isProduct = data.type === 'product'
-  const badgeColor = isProduct ? '#7c3aed' : '#2563eb'
-  const badgeLabel = isProduct ? '🛍 Product Inquiry' : '📩 Contact Inquiry'
-
-  return `
-<!DOCTYPE html>
-<html>
-<head><meta charset="utf-8"></head>
-<body style="margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f4f4f5">
-  <table width="100%" cellpadding="0" cellspacing="0">
-    <tr><td align="center" style="padding:40px 16px">
-      <table width="600" cellpadding="0" cellspacing="0" style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.1)">
-        <!-- Header -->
-        <tr>
-          <td style="background:#111;padding:24px 32px">
-            <p style="margin:0;color:#fff;font-size:20px;font-weight:700">🥔 Potato Apparel</p>
-            <p style="margin:4px 0 0;color:#aaa;font-size:13px">New inquiry received</p>
-          </td>
-        </tr>
-        <!-- Badge -->
-        <tr>
-          <td style="padding:20px 32px 0">
-            <span style="display:inline-block;background:${badgeColor};color:#fff;font-size:12px;font-weight:600;padding:4px 12px;border-radius:99px">${badgeLabel}</span>
-          </td>
-        </tr>
-        <!-- Details table -->
-        <tr>
-          <td style="padding:16px 32px">
-            <table width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e5e7eb;border-radius:8px;overflow:hidden">
-              ${tableRows}
-            </table>
-          </td>
-        </tr>
-        <!-- Message -->
-        <tr>
-          <td style="padding:0 32px 24px">
-            <p style="margin:0 0 8px;font-size:13px;font-weight:600;color:#374151;text-transform:uppercase;letter-spacing:.05em">Message</p>
-            <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:16px;font-size:14px;color:#111;line-height:1.6;white-space:pre-wrap">${data.message}</div>
-          </td>
-        </tr>
-        <!-- CTA -->
-        <tr>
-          <td style="padding:0 32px 32px">
-            <a href="mailto:${data.email}" style="display:inline-block;background:#7c3aed;color:#fff;font-size:14px;font-weight:600;padding:12px 24px;border-radius:8px;text-decoration:none">Reply to ${data.name}</a>
-          </td>
-        </tr>
-        <!-- Footer -->
-        <tr>
-          <td style="padding:16px 32px;border-top:1px solid #f3f4f6;background:#fafafa">
-            <p style="margin:0;font-size:12px;color:#9ca3af">This notification was sent by Potato Apparel website · <a href="https://potatoapparel.com" style="color:#9ca3af">potatoapparel.com</a></p>
-          </td>
-        </tr>
-      </table>
-    </td></tr>
-  </table>
-</body>
-</html>`
+function isValidEmail(email: string): boolean {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && email.length <= MAX_TEXT_LEN.email
 }
 
 // ── POST handler ──────────────────────────────────────────────────────────────
 export async function POST(req: NextRequest) {
   try {
-    const body = await req.json()
+    // ── Rate limit (per IP, best-effort — see lib/rate-limit.ts) ─────────────
+    const ip = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim()
+      || req.headers.get('x-real-ip')
+      || 'unknown'
+    if (isRateLimited(ip)) {
+      return NextResponse.json({ error: 'Too many requests. Please wait a moment and try again.' }, { status: 429 })
+    }
+
+    // ── Parse body (multipart for file uploads, JSON as a fallback) ──────────
+    const contentType = req.headers.get('content-type') ?? ''
+    const fields: Record<string, string> = {}
+    const attachments: InquiryAttachment[] = []
+    let totalAttachmentBytes = 0
+
+    if (contentType.includes('multipart/form-data')) {
+      const form = await req.formData()
+      for (const [key, value] of Array.from(form.entries())) {
+        if (value instanceof File) {
+          if (key !== 'files') continue
+          if (attachments.length >= MAX_FILES) {
+            return NextResponse.json({ error: `Too many files (max ${MAX_FILES}).` }, { status: 400 })
+          }
+          if (!ALLOWED_FILE_TYPES.has(value.type)) {
+            return NextResponse.json({ error: `Unsupported file type: ${value.type || value.name}` }, { status: 400 })
+          }
+          if (value.size > MAX_FILE_BYTES) {
+            return NextResponse.json({ error: `File too large: ${value.name} (max 8MB).` }, { status: 400 })
+          }
+          totalAttachmentBytes += value.size
+          if (totalAttachmentBytes > MAX_TOTAL_ATTACHMENT_BYTES) {
+            return NextResponse.json({ error: 'Total attachment size exceeds 20MB.' }, { status: 400 })
+          }
+          const buf = Buffer.from(await value.arrayBuffer())
+          attachments.push({
+            filename: value.name.slice(0, 200), // originals live in-memory only — never a filesystem temp path
+            content: buf,
+            contentType: value.type || 'application/octet-stream',
+          })
+        } else {
+          fields[key] = String(value)
+        }
+      }
+    } else {
+      Object.assign(fields, await req.json())
+    }
+
+    // ── Honeypot — hidden field that only bots fill in ───────────────────────
+    if (fields.company_website) {
+      // Pretend success so bots don't learn the honeypot rejected them.
+      return NextResponse.json({ success: true }, { status: 201 })
+    }
 
     const {
       type = 'contact', name, email, phone, countryIso,
-      company, platform, budget, productSku, productTitle, message,
-    } = body
+      company, platform, budget, productSku, productTitle, productUrl,
+      quantity, whatsapp, message,
+    } = fields
 
-    // Server-side validation
+    // ── Server-side validation ────────────────────────────────────────────────
     if (!name?.trim())    return NextResponse.json({ error: 'Name is required' },    { status: 400 })
     if (!email?.trim())   return NextResponse.json({ error: 'Email is required' },   { status: 400 })
     if (!message?.trim()) return NextResponse.json({ error: 'Message is required' }, { status: 400 })
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
+    if (!isValidEmail(email.trim()))
       return NextResponse.json({ error: 'Invalid email address' }, { status: 400 })
+    if (message.length > MAX_TEXT_LEN.message)
+      return NextResponse.json({ error: 'Message is too long' }, { status: 400 })
 
+    const cleanName    = truncate(name, MAX_TEXT_LEN.name)
+    const cleanEmail   = truncate(email, MAX_TEXT_LEN.email).toLowerCase()
+    const cleanPhone   = phone    ? truncate(phone, MAX_TEXT_LEN.phone)     : undefined
+    const cleanCompany = company  ? truncate(company, MAX_TEXT_LEN.company) : undefined
+    const cleanMessage = truncate(message, MAX_TEXT_LEN.message)
     const sourceUrl = req.headers.get('referer') || undefined
 
-    // ── 1. Save to Supabase ─────────────────────────────────────────────────
+    // ── 1. Save to Supabase (always attempted first — the durable record) ────
     const supabase = createClient()
     // Insert only — no .select() afterwards. Reading the row back would require
     // a SELECT RLS policy, which we intentionally withhold so the public anon
@@ -138,17 +119,17 @@ export async function POST(req: NextRequest) {
       .from('inquiries')
       .insert({
         type,
-        name:          name.trim(),
-        email:         email.trim().toLowerCase(),
-        phone:         phone?.trim()   || null,
-        country_iso:   countryIso      || null,
-        company:       company?.trim() || null,
-        platform:      platform        || null,
-        budget:        budget          || null,
-        product_sku:   productSku      || null,
-        product_title: productTitle    || null,
-        message:       message.trim(),
-        source_url:    sourceUrl       || null,
+        name:          cleanName,
+        email:         cleanEmail,
+        phone:         cleanPhone         || null,
+        country_iso:   countryIso         || null,
+        company:       cleanCompany       || null,
+        platform:      platform           || null,
+        budget:        budget             || null,
+        product_sku:   productSku         || null,
+        product_title: productTitle       || null,
+        message:       cleanMessage,
+        source_url:    sourceUrl          || null,
       })
 
     if (dbError) {
@@ -156,29 +137,30 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Failed to save inquiry' }, { status: 500 })
     }
 
-    // ── 2. Send email notification (non-blocking) ───────────────────────────
-    const subject = productSku
-      ? `New Product Inquiry — #${productSku} ${productTitle ?? ''}`
-      : `New Contact Inquiry from ${name.trim()}`
-
-    // Email is best-effort: the lead is already safely persisted above, so a
-    // missing RESEND_API_KEY or send failure must never fail the request.
-    if (process.env.RESEND_API_KEY) {
-      const resend = new Resend(process.env.RESEND_API_KEY)
-      resend.emails.send({
-        from:    'Potato Apparel <noreply@potatoapparel.com>',
-        to:      [NOTIFY_TO],
-        replyTo: email.trim(),
-        subject,
-        html:    buildEmailHtml({
-          type, name: name.trim(), email: email.trim(),
-          phone, countryIso, company, platform, budget,
-          productSku, productTitle, message: message.trim(), sourceUrl,
-        }),
-      }).catch(err => console.error('[inquiries] Email send error:', err))
-    } else {
-      console.warn('[inquiries] RESEND_API_KEY not set — lead saved, email skipped')
+    // ── 2. Send the internal notification over SMTP ───────────────────────────
+    // This is NOT best-effort: if it fails, the frontend must be told the
+    // truth (the lead is still safe in Supabase as a backup, but sales won't
+    // see it in their inbox unless someone checks the DB).
+    try {
+      await sendInquiryNotification({
+        type, name: cleanName, email: cleanEmail, phone: cleanPhone,
+        whatsapp: whatsapp ? truncate(whatsapp, MAX_TEXT_LEN.phone) : undefined,
+        countryIso, company: cleanCompany, platform, budget,
+        productSku, productTitle, productUrl, quantity,
+        message: cleanMessage, sourceUrl,
+      }, attachments)
+    } catch (err) {
+      console.error('[inquiries] SMTP notification failed:', err)
+      return NextResponse.json(
+        { error: 'Your inquiry was saved but the notification email failed to send. Our team will still follow up — you can also reach us directly at sales@potatoapparel.com.' },
+        { status: 502 },
+      )
     }
+
+    // ── 3. Best-effort confirmation email to the customer ─────────────────────
+    sendCustomerAutoReply(cleanEmail, cleanName).catch((err) =>
+      console.error('[inquiries] Customer auto-reply failed:', err),
+    )
 
     return NextResponse.json({ success: true }, { status: 201 })
   } catch (err) {

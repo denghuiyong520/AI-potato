@@ -31,6 +31,8 @@ export default function SampleRequestForm() {
   })
   const [errors, setErrors] = useState<Partial<FormState>>({})
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [errorMsg, setErrorMsg] = useState('')
+  const [honeypot, setHoneypot] = useState('') // anti-bot trap — see hidden input below
 
   function toggleGarment(g: string) {
     setForm((f) => ({
@@ -63,22 +65,26 @@ export default function SampleRequestForm() {
         form.whatsapp ? `WhatsApp: ${form.whatsapp}` : '',
       ].filter(Boolean).join('\n')
 
-      const res = await fetch('/api/inquiries', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          type: 'sample_request',
-          name: form.name,
-          email: form.email,
-          phone: form.whatsapp,
-          message,
-        }),
-      })
+      const fd = new FormData()
+      fd.set('type', 'sample_request')
+      fd.set('name', form.name)
+      fd.set('email', form.email)
+      fd.set('phone', form.whatsapp)
+      fd.set('whatsapp', form.whatsapp)
+      fd.set('quantity', form.quantity)
+      fd.set('message', message)
+      fd.set('company_website', honeypot) // honeypot
 
-      if (!res.ok) throw new Error('Submit failed')
+      const res = await fetch('/api/inquiries', { method: 'POST', body: fd })
+
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}))
+        throw new Error(body.error ?? 'Submit failed')
+      }
       trackLead({ type: 'sample_request' })
       setStatus('success')
-    } catch {
+    } catch (err) {
+      setErrorMsg(err instanceof Error ? err.message : '')
       setStatus('error')
     }
   }
@@ -108,6 +114,17 @@ export default function SampleRequestForm() {
 
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-5">
+      {/* Honeypot — invisible to real visitors, bots that auto-fill every field trip it */}
+      <input
+        type="text"
+        name="company_website"
+        value={honeypot}
+        onChange={(e) => setHoneypot(e.target.value)}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, opacity: 0 }}
+      />
       {/* Name */}
       <div>
         <label className="block text-sm font-semibold text-gray-800 mb-1.5">
@@ -237,7 +254,7 @@ export default function SampleRequestForm() {
 
       {status === 'error' && (
         <p className="text-center text-sm text-red-500">
-          Something went wrong.{' '}
+          {errorMsg || 'Unable to send your inquiry. Please try again or contact us directly at sales@potatoapparel.com.'}{' '}
           <a href="https://wa.me/447907131539" className="underline">WhatsApp us directly</a>.
         </p>
       )}

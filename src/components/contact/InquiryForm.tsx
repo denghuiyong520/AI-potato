@@ -199,6 +199,7 @@ export default function InquiryForm() {
   const isFromProduct = Boolean(skuParam)
   const [errors,   setErrors]   = useState<FormErrors>({})
   const [files,    setFiles]    = useState<File[]>([])
+  const [honeypot, setHoneypot] = useState('') // anti-bot trap — see hidden input in the JSX below
   const [dragging, setDragging] = useState(false)
   const [status,   setStatus]   = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [codeOpen, setCodeOpen] = useState(false)
@@ -251,23 +252,25 @@ export default function InquiryForm() {
     setStatus('loading')
 
     try {
-      const res = await fetch('/api/inquiries', {
-        method:  'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          type:         isFromProduct ? 'product' : 'contact',
-          name:         form.name,
-          email:        form.email,
-          phone:        form.phone,
-          countryIso:   form.countryIso,
-          company:      form.company,
-          platform:     form.platform,
-          budget:       form.budget,
-          message:      form.details,
-          productSku:   skuParam     || undefined,
-          productTitle: productParam || undefined,
-        }),
-      })
+      // FormData (not JSON) so uploaded files ride along as real multipart
+      // attachments — the API reads `files` entries and mails them in-memory.
+      const fd = new FormData()
+      fd.set('type',         isFromProduct ? 'product' : 'contact')
+      fd.set('name',         form.name)
+      fd.set('email',        form.email)
+      fd.set('phone',        form.phone)
+      fd.set('countryIso',   form.countryIso)
+      fd.set('company',      form.company)
+      fd.set('platform',     form.platform)
+      fd.set('budget',       form.budget)
+      fd.set('message',      form.details)
+      if (skuParam)     fd.set('productSku', skuParam)
+      if (productParam) fd.set('productTitle', productParam)
+      files.forEach((file) => fd.append('files', file))
+      // Honeypot — real visitors never see or fill this field (see hidden input below).
+      fd.set('company_website', honeypot)
+
+      const res = await fetch('/api/inquiries', { method: 'POST', body: fd })
 
       if (!res.ok) {
         const body = await res.json().catch(() => ({}))
@@ -347,6 +350,17 @@ export default function InquiryForm() {
       </h2>
 
       <form onSubmit={handleSubmit} noValidate>
+        {/* Honeypot — invisible to real visitors, bots that auto-fill every field trip it */}
+        <input
+          type="text"
+          name="company_website"
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, opacity: 0 }}
+        />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
 
           {/* Name */}
