@@ -25,9 +25,8 @@ export default async function BlogPage({
   params: { locale: string }
 }) {
   const t          = await getTranslations({ locale, namespace: 'blog' })
-  // Fetched server-side — safe to use fs here
-  const posts      = getAllPosts()
-  const categories = getAllCategories()
+  const posts      = await getAllPosts()
+  const categories = await getAllCategories()
 
   return (
     <>

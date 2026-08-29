@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { getAllPosts } from '@/lib/blog'
-import { importedProducts } from '@/data/products'
+import { getImportedProducts } from '@/data/products'
 import { SITE_URL, LOCALES, DEFAULT_LOCALE } from '@/lib/seo'
 import { MANUFACTURING_CATEGORIES } from '@/data/manufacturing-categories'
 import { AUDIENCE_PAGES } from '@/data/audience-pages'
@@ -40,8 +40,8 @@ const STATIC_ROUTES: Array<{ path: string; priority: number; freq: MetadataRoute
   // never appear in the sitemap (conflicting signal + wasted crawl budget).
 ]
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const posts   = getAllPosts()
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const posts   = await getAllPosts()
   const entries: MetadataRoute.Sitemap = []
   const now     = new Date()
 
@@ -60,7 +60,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   // ── Product pages × all locales (with full hreflang cluster) ──────────────
-  for (const product of importedProducts) {
+  const products = await getImportedProducts()
+  for (const product of products) {
     const path      = `/products/${product.slug}`
     const languages = languagesFor(path)
     for (const locale of LOCALES) {

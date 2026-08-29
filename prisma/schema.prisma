@@ -1,0 +1,200 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// Potato Apparel — admin CMS/CRM schema (Phase 1)
+//
+// This is the SOURCE OF TRUTH copy of the schema. admin-api/prisma/schema.prisma
+// keeps a duplicate — see admin-api/README.md for the manual sync step and the
+// check-schema-sync.ts guard. Two repos, two deploy targets (Vercel vs. Docker
+// on the VPS), so a shared workspace package is more risk than it's worth for
+// one file — see the Phase 1 plan for the full reasoning.
+//
+// SECURITY NOTE: `products`, `blog_posts`, `admin_users`, `settings`, and the
+// `categories`/`subcategories` tables intentionally have NO Row Level Security
+// policy. They are only ever reached via a direct Postgres connection
+// (DATABASE_URL) from this Next.js app's build step or from admin-api — never
+// through Supabase's public PostgREST/anon-key path. Do NOT "fix" the Supabase
+// Advisor's RLS-disabled warning on these tables by enabling RLS with no
+// policies — that would silently deny all access and break both apps.
+//
+// The `inquiries` table is untouched apart from one additive `status` column
+// (see migration). Its existing INSERT-only RLS policy for the `anon` role
+// stays exactly as-is — the public /api/inquiries route keeps using the anon
+// key and is unaffected by anything in this schema.
+// ─────────────────────────────────────────────────────────────────────────────
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// ─── Products ──────────────────────────────────────────────────────────────
+
+model Category {
+  id            String        @id @default(cuid())
+  slug          String        @unique // matches CATEGORY_TREE[].value in src/data/categories.ts
+  label         String
+  subcategories Subcategory[]
+  products      Product[]
+  createdAt     DateTime      @default(now()) @map("created_at")
+  updatedAt     DateTime      @updatedAt @map("updated_at")
+
+  @@map("categories")
+}
+
+model Subcategory {
+  id         String    @id @default(cuid())
+  slug       String    @unique // matches Subcategory.value
+  label      String
+  category   Category  @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  categoryId String    @map("category_id")
+  products   Product[]
+
+  @@map("subcategories")
+}
+
+model Product {
+  id     String @id @default(cuid())
+  sku    String @unique
+  slug   String @unique // URLs depend on this — must exactly match today's products.json values
+
+  titleZh String? @map("title_zh")
+  titleEn String  @map("title_en")
+
+  category        Category     @relation(fields: [categorySlug], references: [slug])
+  categorySlug    String       @map("category")
+  subcategory     Subcategory? @relation(fields: [subcategorySlug], references: [slug])
+  subcategorySlug String?      @map("subcategory")
+
+  notes         String?  @db.Text
+  sellingPoints String[] @default([]) @map("selling_points")
+
+  colorsInfo String? @map("colors_info")
+  sizesInfo  String? @map("sizes_info")
+  price      String?
+  material   String?
+  gsm        String?
+  weight     String?
+
+  // Image paths under /public/products/<slug>/... — the files themselves are
+  // untouched by this migration, only this metadata about them moves to Postgres.
+  mainImages   String[] @default([]) @map("main_images")
+  detailImages String[] @default([]) @map("detail_images")
+  // Index-aligned to detailImages: [[w,h] | null, ...] — same shape as today's
+  // ImportedProduct.detailDims in src/types/product.ts.
+  detailDims   Json?    @map("detail_dims")
+
+  referenceUrl String? @map("reference_url")
+  sheetName    String? @map("sheet_name")
+
+  // Admin/internal-only fields — NEVER select these in the storefront's public
+  // product queries (src/data/products.ts). They exist here for the admin API
+  // only, mirroring what products-internal.json (gitignored) held before.
+  supplier     String?
+  sourceFolder String? @map("source_folder")
+
+  // Nullable SEO overrides. Left null on every backfilled row so the existing
+  // buildEnDescription()/buildProductJsonLd() derivation keeps running exactly
+  // as today until an admin explicitly sets one — this is what makes the
+  // Phase 1 migration behavior-neutral for the live site.
+  seoTitle       String? @map("seo_title")
+  seoDescription String? @db.Text @map("seo_description")
+
+  needsReview Boolean  @default(false) @map("needs_review")
+  importedAt  DateTime @map("imported_at")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@index([categorySlug])
+  @@index([subcategorySlug])
+  @@map("products")
+}
+
+// ─── Blog ──────────────────────────────────────────────────────────────────
+
+model BlogPost {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  description String   @db.Text
+  content     String   @db.Text // raw MDX body, post-frontmatter
+  date        DateTime
+  category    String
+  author      String   @default("Potato Apparel Team")
+  tags        String[] @default([])
+  coverImage  String   @map("cover_image")
+
+  seoTitle       String? @map("seo_title")
+  seoDescription String? @db.Text @map("seo_description")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([category])
+  @@map("blog_posts")
+}
+
+// ─── CRM: extends the EXISTING Supabase `inquiries` table ────────────────
+// @@map ties this model to the pre-existing table — no new table is created
+// by this model. Every column matches what's actually there.
+//
+// `status` already existed on this table before Phase 1 touched anything
+// (plain text, default 'new') — not something this migration added. Kept as
+// a String (not a Prisma enum, which would require a native Postgres enum
+// type and an ALTER we don't need) so the existing column is used as-is,
+// zero risk to the live insert path. Allowed values, enforced at the
+// application layer (admin-api), by convention:
+// new | contacted | quoted | won | lost | spam
+
+model Inquiry {
+  id           String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  type         String
+  name         String
+  email        String
+  phone        String?
+  countryIso   String?  @map("country_iso")
+  company      String?
+  platform     String?
+  budget       String?
+  productSku   String?  @map("product_sku")
+  productTitle String?  @map("product_title")
+  message      String   @db.Text
+  sourceUrl    String?  @map("source_url")
+  status       String   @default("new")
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  @@map("inquiries")
+}
+
+// ─── Admin auth ────────────────────────────────────────────────────────────
+
+enum AdminRole {
+  ADMIN
+  // room to grow (EDITOR, VIEWER, ...) later without a migration surprise
+
+  @@map("admin_role")
+}
+
+model AdminUser {
+  id           String    @id @default(cuid())
+  email        String    @unique
+  passwordHash String    @map("password_hash")
+  role         AdminRole @default(ADMIN)
+  createdAt    DateTime  @default(now()) @map("created_at")
+  updatedAt    DateTime  @updatedAt @map("updated_at")
+
+  @@map("admin_users")
+}
+
+// ─── Settings (schema now, wired up in Phase 4: GA4/Ads/Meta Pixel config) ──
+
+model Setting {
+  key       String   @id
+  value     Json
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("settings")
+}

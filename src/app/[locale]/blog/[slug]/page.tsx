@@ -14,7 +14,8 @@ import BlogCard from '@/components/blog/BlogCard'
 import { buildEnglishOnlyAlternates, SITE_URL } from '@/lib/seo'
 
 export async function generateStaticParams() {
-  return getAllPosts().map((post) => ({ slug: post.slug }))
+  const posts = await getAllPosts()
+  return posts.map((post) => ({ slug: post.slug }))
 }
 
 export async function generateMetadata({
@@ -22,7 +23,7 @@ export async function generateMetadata({
 }: {
   params: { locale: string; slug: string }
 }): Promise<Metadata> {
-  const post = getPostBySlug(params.slug)
+  const post = await getPostBySlug(params.slug)
   if (!post) return {}
 
   return {
@@ -49,11 +50,11 @@ export default async function BlogPostPage({
 }: {
   params: { locale: string; slug: string }
 }) {
-  const post = getPostBySlug(params.slug)
+  const post = await getPostBySlug(params.slug)
   if (!post) notFound()
 
   const t       = await getTranslations({ locale: params.locale, namespace: 'blog' })
-  const related = getRelatedPosts(post.slug, post.category)
+  const related = await getRelatedPosts(post.slug, post.category)
 
   const categoryLabels: Record<string, string> = {
     'Brand Building':     t('filter.brandBuilding'),

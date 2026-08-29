@@ -1,9 +1,10 @@
-import fs from 'fs'
-import path from 'path'
-import matter from 'gray-matter'
 import readingTime from 'reading-time'
+import { prisma } from '@/lib/prisma'
 
-const BLOG_DIR = path.join(process.cwd(), 'content', 'blog')
+// Phase 1: backed by Postgres (via Prisma) instead of reading content/blog/*.mdx
+// directly. Every exported function keeps its original name/shape so every
+// call site only needs `await` added — see prisma/backfill.ts for the
+// one-time migration of the existing 26 .mdx files into this table.
 
 export interface BlogPost {
   slug: string
@@ -22,74 +23,67 @@ export interface BlogPostWithContent extends BlogPost {
   content: string
 }
 
-function getPostDir(): string {
-  if (fs.existsSync(BLOG_DIR)) return BLOG_DIR
-  return ''
+// Public-safe select — every field a BlogPost needs, nothing more.
+const BLOG_SELECT = {
+  slug: true,
+  title: true,
+  description: true,
+  date: true,
+  category: true,
+  tags: true,
+  coverImage: true,
+  author: true,
+  content: true,
+} as const
+
+type BlogRow = {
+  slug: string
+  title: string
+  description: string
+  date: Date
+  category: string
+  tags: string[]
+  coverImage: string
+  author: string
+  content: string
 }
 
-export function getAllPosts(): BlogPost[] {
-  const dir = getPostDir()
-  if (!dir) return []
-
-  const files = fs
-    .readdirSync(dir)
-    .filter((f) => f.endsWith('.mdx') || f.endsWith('.md'))
-
-  const posts = files
-    .map((file) => {
-      const slug = file.replace(/\.(mdx|md)$/, '')
-      const filePath = path.join(dir, file)
-      const source = fs.readFileSync(filePath, 'utf-8')
-      const { data, content } = matter(source)
-      const rt = readingTime(content)
-
-      return {
-        slug,
-        title:              (data.title       as string) ?? '',
-        description:        (data.description as string) ?? '',
-        date:               (data.date        as string) ?? '',
-        category:           (data.category    as string) ?? 'General',
-        tags:               (data.tags        as string[]) ?? [],
-        coverImage:         (data.coverImage  as string) ?? `https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&h=500&fit=crop&q=80&auto=format`,
-        readingTime:        rt.text,
-        readingTimeMinutes: Math.ceil(rt.minutes),
-        author:             (data.author      as string) ?? 'Potato Apparel Team',
-      } satisfies BlogPost
-    })
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-
-  return posts
-}
-
-export function getPostBySlug(slug: string): BlogPostWithContent | null {
-  const dir = getPostDir()
-  if (!dir) return null
-
-  const candidates = [`${slug}.mdx`, `${slug}.md`]
-  const file = candidates.find((c) => fs.existsSync(path.join(dir, c)))
-  if (!file) return null
-
-  const source = fs.readFileSync(path.join(dir, file), 'utf-8')
-  const { data, content } = matter(source)
-  const rt = readingTime(content)
-
+function toBlogPost(row: BlogRow): BlogPostWithContent {
+  const rt = readingTime(row.content)
   return {
-    slug,
-    title:              (data.title       as string) ?? '',
-    description:        (data.description as string) ?? '',
-    date:               (data.date        as string) ?? '',
-    category:           (data.category    as string) ?? 'General',
-    tags:               (data.tags        as string[]) ?? [],
-    coverImage:         (data.coverImage  as string) ?? `https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=1200&h=630&fit=crop&q=80&auto=format`,
-    readingTime:        rt.text,
+    slug: row.slug,
+    title: row.title,
+    description: row.description,
+    date: row.date.toISOString().slice(0, 10), // matches original "YYYY-MM-DD" frontmatter granularity
+    category: row.category,
+    tags: row.tags,
+    coverImage: row.coverImage,
+    readingTime: rt.text,
     readingTimeMinutes: Math.ceil(rt.minutes),
-    author:             (data.author      as string) ?? 'Potato Apparel Team',
-    content,
+    author: row.author,
+    content: row.content,
   }
 }
 
-export function getRelatedPosts(currentSlug: string, category: string, limit = 3): BlogPost[] {
-  return getAllPosts()
+export async function getAllPosts(): Promise<BlogPost[]> {
+  const rows = await prisma.blogPost.findMany({
+    select: BLOG_SELECT,
+    orderBy: { date: 'desc' },
+  })
+  return rows.map((r) => {
+    const { content: _content, ...post } = toBlogPost(r)
+    return post
+  })
+}
+
+export async function getPostBySlug(slug: string): Promise<BlogPostWithContent | null> {
+  const row = await prisma.blogPost.findUnique({ where: { slug }, select: BLOG_SELECT })
+  return row ? toBlogPost(row) : null
+}
+
+export async function getRelatedPosts(currentSlug: string, category: string, limit = 3): Promise<BlogPost[]> {
+  const all = await getAllPosts()
+  return all
     .filter((p) => p.slug !== currentSlug)
     .sort((a, b) => {
       const aMatch = a.category === category ? 1 : 0
@@ -99,7 +93,8 @@ export function getRelatedPosts(currentSlug: string, category: string, limit = 3
     .slice(0, limit)
 }
 
-export function getAllCategories(): string[] {
-  const categories = getAllPosts().map((p) => p.category)
+export async function getAllCategories(): Promise<string[]> {
+  const posts = await getAllPosts()
+  const categories = posts.map((p) => p.category)
   return ['all', ...Array.from(new Set(categories))]
 }

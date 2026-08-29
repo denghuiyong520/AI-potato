@@ -6,9 +6,9 @@ import SectionTitle from '@/components/shared/SectionTitle'
 import BlogCard from '@/components/blog/BlogCard'
 import AnimatedSection, { StaggerContainer, StaggerItem } from '@/components/shared/AnimatedSection'
 
-export default function LatestBlogSection() {
+export default async function LatestBlogSection() {
   const t = useTranslations('latestBlog')
-  const posts = getAllPosts().slice(0, 3)
+  const posts = (await getAllPosts()).slice(0, 3)
 
   if (posts.length === 0) return null
 

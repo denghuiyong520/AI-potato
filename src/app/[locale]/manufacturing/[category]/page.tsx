@@ -124,9 +124,10 @@ function buildJsonLd(
 }
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
-function getProducts(cat: NonNullable<ReturnType<typeof getManufacturingCategory>>): ImportedProduct[] {
+async function getProducts(cat: NonNullable<ReturnType<typeof getManufacturingCategory>>): Promise<ImportedProduct[]> {
   if (Array.isArray(cat.productCategory)) {
-    return cat.productCategory.flatMap((c) => getImportedProductsByCategory(c))
+    const lists = await Promise.all(cat.productCategory.map((c) => getImportedProductsByCategory(c)))
+    return lists.flat()
   }
   return getImportedProductsBySubcategory(cat.productCategory, cat.productSubcategory ?? null)
 }
@@ -233,7 +234,7 @@ export default async function ManufacturingCategoryPage({
   const cat = getManufacturingCategory(slug)
   if (!cat) notFound()
 
-  const allProducts = getProducts(cat)
+  const allProducts = await getProducts(cat)
   const featured    = allProducts.slice(0, 12)
   const totalCount  = allProducts.length
 

@@ -7,16 +7,19 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "postinstall": "prisma generate",
     "analyze": "cross-env ANALYZE=true next build",
     "import": "tsx scripts/import-products.ts",
     "import:diqi": "tsx scripts/import-products.ts --supplier 中山帝琦",
     "import:dry": "tsx scripts/import-products.ts --dry-run",
     "import-sheet": "tsx scripts/import-from-sheet.ts",
-    "scrape-hongyuapparel": "tsx scripts/scrape-hongyuapparel.ts"
+    "scrape-hongyuapparel": "tsx scripts/scrape-hongyuapparel.ts",
+    "db:backfill": "tsx prisma/backfill.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.4.0",
     "@paypal/react-paypal-js": "^9.2.0",
+    "@prisma/client": "^6.19.3",
     "@supabase/ssr": "^0.10.3",
     "@supabase/supabase-js": "^2.107.0",
     "clsx": "^2.1.1",
@@ -52,6 +55,7 @@
     "eslint-config-next": "^14.2.0",
     "node-html-parser": "^7.1.0",
     "postcss": "^8.4.0",
+    "prisma": "^6.19.3",
     "schema-dts": "^2.0.0",
     "sharp": "^0.34.5",
     "tailwindcss": "^3.4.0",

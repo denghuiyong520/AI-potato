@@ -10,7 +10,7 @@ import AddToCartButton from '@/components/products/AddToCartButton'
 import InquiryButton from '@/components/products/InquiryButton'
 import type { ImportedProduct } from '@/types/product'
 import {
-  importedProducts,
+  getImportedProducts,
   getImportedProductBySlug,
   getImportedRelated,
 } from '@/data/products'
@@ -96,7 +96,8 @@ function buildBreadcrumbJsonLd(
 // ─── generateStaticParams ─────────────────────────────────────────────────────
 
 export async function generateStaticParams() {
-  return importedProducts.map((p) => ({ slug: p.slug }))
+  const products = await getImportedProducts()
+  return products.map((p) => ({ slug: p.slug }))
 }
 
 // ─── generateMetadata ─────────────────────────────────────────────────────────
@@ -106,7 +107,7 @@ export async function generateMetadata({
 }: {
   params: { locale: string; slug: string }
 }): Promise<Metadata> {
-  const product = getImportedProductBySlug(slug)
+  const product = await getImportedProductBySlug(slug)
   if (!product) return {}
   const t = await getTranslations({ locale, namespace: 'products.meta' })
   const description = buildEnDescription(product)
@@ -146,11 +147,11 @@ export default async function ImportedProductDetailPage({
 }: {
   params: { locale: string; slug: string }
 }) {
-  const product = getImportedProductBySlug(slug)
+  const product = await getImportedProductBySlug(slug)
   if (!product) notFound()
 
   const t       = await getTranslations({ locale, namespace: 'products.detail' })
-  const related = getImportedRelated(slug, product.category, 4)
+  const related = await getImportedRelated(slug, product.category, 4)
   const landing = getCategoryLandingForProduct(product.category, product.subcategory)
 
   // ── Parse description lines ─────────────────────────────────────────────────

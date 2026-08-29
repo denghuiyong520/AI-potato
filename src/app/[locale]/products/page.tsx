@@ -7,7 +7,7 @@ import BottomCTASection from '@/components/home/BottomCTASection'
 import {
   getCategoryCounts,
   getImportedProductsBySubcategory,
-  importedProducts,
+  getSubcategoryCounts,
 } from '@/data/products'
 import { CATEGORY_TREE, SUB_TO_CATEGORY } from '@/data/categories'
 import CategorySidebar from '@/components/products/CategorySidebar'
@@ -85,20 +85,14 @@ export default async function ProductsPage({
   }
 
   // ── Server-side category filtering (search is done client-side) ───────────
-  const categoryFiltered = getImportedProductsBySubcategory(
+  const categoryFiltered = await getImportedProductsBySubcategory(
     activeCategory,
     activeSubcategory,
   )
 
   // ── Counts for sidebar ────────────────────────────────────────────────────
-  const categoryCounts = getCategoryCounts()
-  const subcategoryCounts: Record<string, number> = importedProducts.reduce<Record<string, number>>(
-    (acc, p) => {
-      if (p.subcategory) acc[p.subcategory] = (acc[p.subcategory] ?? 0) + 1
-      return acc
-    },
-    {},
-  )
+  const categoryCounts = await getCategoryCounts()
+  const subcategoryCounts = await getSubcategoryCounts('all')
 
   // ── Active labels for breadcrumb ──────────────────────────────────────────
   const activeCatDef  = CATEGORY_TREE.find((c) => c.value === activeCategory)
