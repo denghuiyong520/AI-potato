@@ -358,67 +358,85 @@ function toImportedProduct(row: ProductRow): ImportedProduct {
   }
 }
 
+// ── In-memory, per-process cache ─────────────────────────────────────────
+// generateStaticParams/generateMetadata/the page component are each called
+// independently per product per locale (238 products × 5 locales × ~2 calls
+// ≈ 2,000+ invocations) — querying Postgres individually for every one of
+// those blew Next.js's page-data-collection timeout during the build. All
+// 238 products fit trivially in memory, so — same as the pre-Phase-1 static
+// JSON array — fetch the full table ONCE per process and serve every
+// lookup from that cache for the rest of the process's lifetime (this
+// matches the original static-JSON behavior: frozen for the process's
+// duration, not per-request-fresh; that's fine for a Vercel build/dev
+// process, and admin edits reach production via the /api/revalidate
+// on-demand-ISR path, not by this cache invalidating mid-build).
+let productsCache: Promise<ImportedProduct[]> | null = null
+
+function loadAllProducts(): Promise<ImportedProduct[]> {
+  if (!productsCache) {
+    // Explicit orderBy is required — Postgres makes no row-order guarantee
+    // without one. importedAt is strictly non-decreasing in the exact order
+    // products.json's array was (verified against the source file), so this
+    // reproduces the original array order the "related products" fallback
+    // and other position-dependent slices used to rely on. `id` breaks ties
+    // deterministically for any rows sharing a timestamp.
+    productsCache = prisma.product
+      .findMany({ select: PUBLIC_PRODUCT_SELECT, orderBy: [{ importedAt: 'asc' }, { id: 'asc' }] })
+      .then((rows) => rows.map(toImportedProduct))
+  }
+  return productsCache
+}
+
 export async function getImportedProducts(): Promise<ImportedProduct[]> {
-  const rows = await prisma.product.findMany({ select: PUBLIC_PRODUCT_SELECT })
-  return rows.map(toImportedProduct)
+  return loadAllProducts()
 }
 
 export async function getImportedProductBySlug(slug: string): Promise<ImportedProduct | null> {
-  const row = await prisma.product.findUnique({ where: { slug }, select: PUBLIC_PRODUCT_SELECT })
-  return row ? toImportedProduct(row) : null
+  const all = await loadAllProducts()
+  return all.find((p) => p.slug === slug) ?? null
 }
 
 export async function getImportedProductsByCategory(category: string): Promise<ImportedProduct[]> {
-  if (category === 'all') return getImportedProducts()
-  const rows = await prisma.product.findMany({ where: { categorySlug: category }, select: PUBLIC_PRODUCT_SELECT })
-  return rows.map(toImportedProduct)
+  const all = await loadAllProducts()
+  if (category === 'all') return all
+  return all.filter((p) => p.category === category)
 }
 
 export async function getImportedProductsBySubcategory(
   category: string,
   subcategory: string | null,
 ): Promise<ImportedProduct[]> {
-  if (category === 'all') return getImportedProducts()
-  const rows = await prisma.product.findMany({
-    where: { categorySlug: category, ...(subcategory ? { subcategorySlug: subcategory } : {}) },
-    select: PUBLIC_PRODUCT_SELECT,
-  })
-  return rows.map(toImportedProduct)
+  const all = await loadAllProducts()
+  if (category === 'all') return all
+  const byCat = all.filter((p) => p.category === category)
+  if (!subcategory) return byCat
+  return byCat.filter((p) => (p.subcategory ?? null) === subcategory)
 }
 
 /** Count products per subcategory within a parent category */
 export async function getSubcategoryCounts(category: string): Promise<Record<string, number>> {
-  const rows = await prisma.product.findMany({
-    where: category === 'all' ? {} : { categorySlug: category },
-    select: { subcategorySlug: true },
-  })
-  return rows.reduce<Record<string, number>>((acc, p) => {
-    if (p.subcategorySlug) acc[p.subcategorySlug] = (acc[p.subcategorySlug] ?? 0) + 1
+  const all = await loadAllProducts()
+  const byCat = category === 'all' ? all : all.filter((p) => p.category === category)
+  return byCat.reduce<Record<string, number>>((acc, p) => {
+    if (p.subcategory) acc[p.subcategory] = (acc[p.subcategory] ?? 0) + 1
     return acc
   }, {})
 }
 
 /** Count products per top-level category */
 export async function getCategoryCounts(): Promise<Record<string, number>> {
-  const rows = await prisma.product.findMany({ select: { categorySlug: true } })
-  return rows.reduce<Record<string, number>>((acc, p) => {
-    acc[p.categorySlug] = (acc[p.categorySlug] ?? 0) + 1
+  const all = await loadAllProducts()
+  return all.reduce<Record<string, number>>((acc, p) => {
+    acc[p.category] = (acc[p.category] ?? 0) + 1
     return acc
   }, {})
 }
 
 export async function getImportedRelated(currentSlug: string, category: string, limit = 4): Promise<ImportedProduct[]> {
-  const sameRows = await prisma.product.findMany({
-    where: { categorySlug: category, slug: { not: currentSlug } },
-    select: PUBLIC_PRODUCT_SELECT,
-    take: limit,
-  })
-  if (sameRows.length >= limit) return sameRows.map(toImportedProduct)
-
-  const fillerRows = await prisma.product.findMany({
-    where: { categorySlug: { not: category }, slug: { not: currentSlug } },
-    select: PUBLIC_PRODUCT_SELECT,
-    take: limit - sameRows.length,
-  })
-  return [...sameRows, ...fillerRows].map(toImportedProduct)
+  const all = await loadAllProducts()
+  const same = all.filter((p) => p.slug !== currentSlug && p.category === category)
+  return same.length >= limit ? same.slice(0, limit) : [
+    ...same,
+    ...all.filter((p) => p.slug !== currentSlug && p.category !== category),
+  ].slice(0, limit)
 }

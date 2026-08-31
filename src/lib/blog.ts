@@ -48,7 +48,7 @@ type BlogRow = {
   content: string
 }
 
-function toBlogPost(row: BlogRow): BlogPostWithContent {
+function toBlogPostBase(row: BlogRow): BlogPost {
   const rt = readingTime(row.content)
   return {
     slug: row.slug,
@@ -61,24 +61,34 @@ function toBlogPost(row: BlogRow): BlogPostWithContent {
     readingTime: rt.text,
     readingTimeMinutes: Math.ceil(rt.minutes),
     author: row.author,
-    content: row.content,
   }
 }
 
+// Same reasoning as src/data/products.ts's loadAllProducts(): fetch once per
+// process, serve every lookup from memory — avoids hundreds of individual
+// per-page DB round-trips during static generation (238 products + 26 posts
+// × 5 locales × ~2 calls each blew Next.js's page-data-collection timeout
+// when every call hit Postgres directly).
+let postsCache: Promise<{ base: BlogPost; content: string }[]> | null = null
+
+function loadAllPosts(): Promise<{ base: BlogPost; content: string }[]> {
+  if (!postsCache) {
+    postsCache = prisma.blogPost
+      .findMany({ select: BLOG_SELECT, orderBy: { date: 'desc' } })
+      .then((rows) => rows.map((r) => ({ base: toBlogPostBase(r), content: r.content })))
+  }
+  return postsCache
+}
+
 export async function getAllPosts(): Promise<BlogPost[]> {
-  const rows = await prisma.blogPost.findMany({
-    select: BLOG_SELECT,
-    orderBy: { date: 'desc' },
-  })
-  return rows.map((r) => {
-    const { content: _content, ...post } = toBlogPost(r)
-    return post
-  })
+  const rows = await loadAllPosts()
+  return rows.map((r) => r.base)
 }
 
 export async function getPostBySlug(slug: string): Promise<BlogPostWithContent | null> {
-  const row = await prisma.blogPost.findUnique({ where: { slug }, select: BLOG_SELECT })
-  return row ? toBlogPost(row) : null
+  const rows = await loadAllPosts()
+  const row = rows.find((r) => r.base.slug === slug)
+  return row ? { ...row.base, content: row.content } : null
 }
 
 export async function getRelatedPosts(currentSlug: string, category: string, limit = 3): Promise<BlogPost[]> {

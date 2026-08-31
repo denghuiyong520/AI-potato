@@ -58,7 +58,11 @@ model Subcategory {
 
 model Product {
   id     String @id @default(cuid())
-  sku    String @unique
+  // Not @unique: products.json has a handful of real-world duplicate SKUs
+  // (e.g. multiple accessory products share the placeholder SKU "CUSTOM").
+  // `slug` is the actual unique identifier URLs depend on — sku never had
+  // a uniqueness guarantee in the pre-Phase-1 static site either.
+  sku    String
   slug   String @unique // URLs depend on this — must exactly match today's products.json values
 
   titleZh String? @map("title_zh")

@@ -1,4 +1,4 @@
-import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { ArrowRight } from 'lucide-react'
 import { getAllPosts } from '@/lib/blog'
@@ -7,7 +7,10 @@ import BlogCard from '@/components/blog/BlogCard'
 import AnimatedSection, { StaggerContainer, StaggerItem } from '@/components/shared/AnimatedSection'
 
 export default async function LatestBlogSection() {
-  const t = useTranslations('latestBlog')
+  // useTranslations (next-intl's client-style hook) can't be called inside an
+  // async Server Component — getTranslations is the async-safe equivalent,
+  // same pattern already used elsewhere in this codebase (e.g. products/[slug]/page.tsx).
+  const t = await getTranslations('latestBlog')
   const posts = (await getAllPosts()).slice(0, 3)
 
   if (posts.length === 0) return null

@@ -8,6 +8,10 @@
 //
 // Run with: npm run db:backfill   (needs DATABASE_URL / DIRECT_URL in .env.local)
 
+import 'dotenv/config' // loads .env.local (this project's convention — see next line)
+import { config } from 'dotenv'
+config({ path: require('node:path').join(__dirname, '..', '.env.local'), override: true })
+
 import fs from 'node:fs'
 import path from 'node:path'
 import matter from 'gray-matter'
@@ -17,6 +21,27 @@ import productsRaw from '../src/data/products.json'
 
 const prisma = new PrismaClient()
 const FORCE = process.argv.includes('--force')
+
+// Supabase's transaction-mode pooler occasionally recycles a connection
+// mid-run under sustained sequential load (Prisma error P1017 "Server has
+// closed the connection") — transient, not a real failure. Retry each DB
+// call a few times with a short backoff before giving up on that row.
+async function withRetry<T>(fn: () => Promise<T>, label: string, attempts = 4): Promise<T> {
+  let lastErr: unknown
+  for (let i = 0; i < attempts; i++) {
+    try {
+      return await fn()
+    } catch (err) {
+      lastErr = err
+      const isConnErr = err instanceof Error && /P1017|P1001|closed the connection/.test(String((err as { code?: string }).code) + err.message)
+      if (!isConnErr || i === attempts - 1) throw err
+      const delayMs = 500 * (i + 1)
+      console.warn(`  [retry ${i + 1}/${attempts}] ${label} — connection blip, retrying in ${delayMs}ms`)
+      await new Promise((r) => setTimeout(r, delayMs))
+    }
+  }
+  throw lastErr
+}
 
 interface ImportedProductRaw {
   sku: string; slug: string
@@ -35,20 +60,20 @@ interface ImportedProductRaw {
 
 async function backfillCategories() {
   for (const cat of CATEGORY_TREE) {
-    await prisma.category.upsert({
+    await withRetry(() => prisma.category.upsert({
       where: { slug: cat.value },
       update: { label: cat.label },
       create: { slug: cat.value, label: cat.label },
-    })
+    }), `category ${cat.value}`)
   }
   for (const cat of CATEGORY_TREE) {
     for (const sub of cat.subcategories ?? []) {
-      const parent = await prisma.category.findUniqueOrThrow({ where: { slug: cat.value } })
-      await prisma.subcategory.upsert({
+      const parent = await withRetry(() => prisma.category.findUniqueOrThrow({ where: { slug: cat.value } }), `findCategory ${cat.value}`)
+      await withRetry(() => prisma.subcategory.upsert({
         where: { slug: sub.value },
         update: { label: sub.label, categoryId: parent.id },
         create: { slug: sub.value, label: sub.label, categoryId: parent.id },
-      })
+      }), `subcategory ${sub.value}`)
     }
   }
   console.log(`Categories: ${CATEGORY_TREE.length} upserted.`)
@@ -70,7 +95,7 @@ async function backfillProducts() {
     const subcategorySlug = p.subcategory && knownSubcategorySlugs.has(p.subcategory) ? p.subcategory : null
     const needsReview = Array.isArray(p.needsReview) ? p.needsReview.length > 0 : Boolean(p.needsReview)
 
-    const existing = await prisma.product.findUnique({ where: { slug: p.slug } })
+    const existing = await withRetry(() => prisma.product.findUnique({ where: { slug: p.slug } }), `findUnique ${p.slug}`)
     if (existing && existing.updatedAt.getTime() !== existing.createdAt.getTime() && !FORCE) {
       skippedEdited++
       continue
@@ -102,10 +127,10 @@ async function backfillProducts() {
     }
 
     if (existing) {
-      await prisma.product.update({ where: { slug: p.slug }, data })
+      await withRetry(() => prisma.product.update({ where: { slug: p.slug }, data }), `update ${p.slug}`)
       updated++
     } else {
-      await prisma.product.create({ data: { ...data, slug: p.slug } })
+      await withRetry(() => prisma.product.create({ data: { ...data, slug: p.slug } }), `create ${p.slug}`)
       created++
     }
   }
@@ -124,7 +149,7 @@ async function backfillBlog() {
     const { data, content } = matter(raw)
     const slug = file.replace(/\.mdx$/, '')
 
-    const existing = await prisma.blogPost.findUnique({ where: { slug } })
+    const existing = await withRetry(() => prisma.blogPost.findUnique({ where: { slug } }), `findUnique ${slug}`)
     if (existing && existing.updatedAt.getTime() !== existing.createdAt.getTime() && !FORCE) {
       skippedEdited++
       continue
@@ -142,10 +167,10 @@ async function backfillBlog() {
     }
 
     if (existing) {
-      await prisma.blogPost.update({ where: { slug }, data: postData })
+      await withRetry(() => prisma.blogPost.update({ where: { slug }, data: postData }), `update ${slug}`)
       updated++
     } else {
-      await prisma.blogPost.create({ data: { ...postData, slug } })
+      await withRetry(() => prisma.blogPost.create({ data: { ...postData, slug } }), `create ${slug}`)
       created++
     }
   }
