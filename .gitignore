@@ -34,3 +34,6 @@ scripts/deploy.mjs
 *.njsproj
 *.sln
 *.sw?
+
+.vercel
+.env*

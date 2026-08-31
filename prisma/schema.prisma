@@ -149,9 +149,10 @@ model BlogPost {
 // (plain text, default 'new') — not something this migration added. Kept as
 // a String (not a Prisma enum, which would require a native Postgres enum
 // type and an ALTER we don't need) so the existing column is used as-is,
-// zero risk to the live insert path. Allowed values, enforced at the
-// application layer (admin-api), by convention:
-// new | contacted | quoted | won | lost | spam
+// zero risk to the live insert path. A real Postgres CHECK constraint
+// (inquiries_status_check, pre-existing, confirmed via pg_get_constraintdef)
+// enforces exactly these four values — a simple inbox model, not a sales
+// pipeline: new | read | replied | archived
 
 model Inquiry {
   id           String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
