@@ -107,8 +107,18 @@ export async function POST(req: NextRequest) {
     const cleanEmail   = truncate(email, MAX_TEXT_LEN.email).toLowerCase()
     const cleanPhone   = phone    ? truncate(phone, MAX_TEXT_LEN.phone)     : undefined
     const cleanCompany = company  ? truncate(company, MAX_TEXT_LEN.company) : undefined
+    const cleanWhatsapp = whatsapp ? truncate(whatsapp, MAX_TEXT_LEN.phone) : undefined
     const cleanMessage = truncate(message, MAX_TEXT_LEN.message)
     const sourceUrl = req.headers.get('referer') || undefined
+
+    // Same files that get emailed below, re-encoded as base64 data: URLs so
+    // the admin backend has them too — previously attachments were only
+    // ever emailed, invisible to anyone who only checks the admin panel.
+    const attachmentsForDb = attachments.map((a) => ({
+      filename: a.filename,
+      contentType: a.contentType,
+      dataUrl: `data:${a.contentType};base64,${a.content.toString('base64')}`,
+    }))
 
     // ── 1. Save to Supabase (always attempted first — the durable record) ────
     const supabase = createClient()
@@ -128,8 +138,12 @@ export async function POST(req: NextRequest) {
         budget:        budget             || null,
         product_sku:   productSku         || null,
         product_title: productTitle       || null,
+        product_url:   productUrl         || null,
+        quantity:      quantity           || null,
+        whatsapp:      cleanWhatsapp      || null,
         message:       cleanMessage,
         source_url:    sourceUrl          || null,
+        attachments:   attachmentsForDb.length > 0 ? attachmentsForDb : null,
       })
 
     if (dbError) {
@@ -144,7 +158,7 @@ export async function POST(req: NextRequest) {
     try {
       await sendInquiryNotification({
         type, name: cleanName, email: cleanEmail, phone: cleanPhone,
-        whatsapp: whatsapp ? truncate(whatsapp, MAX_TEXT_LEN.phone) : undefined,
+        whatsapp: cleanWhatsapp,
         countryIso, company: cleanCompany, platform, budget,
         productSku, productTitle, productUrl, quantity,
         message: cleanMessage, sourceUrl,

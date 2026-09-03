@@ -100,6 +100,14 @@ model Product {
   supplier     String?
   sourceFolder String? @map("source_folder")
 
+  // Inquiry-pipeline cost inputs (Phase 6, internal-only, same never-select-
+  // publicly rule as supplier/sourceFolder above). Plain numbers (not the
+  // free-text `price` field) because the quote-calculation agent does real
+  // arithmetic on these.
+  procurementCostUsd     Float? @map("procurement_cost_usd")
+  moq                    Int?   @map("moq")
+  suggestedExportPriceUsd Float? @map("suggested_export_price_usd")
+
   // Nullable SEO overrides. Left null on every backfilled row so the existing
   // buildEnDescription()/buildProductJsonLd() derivation keeps running exactly
   // as today until an admin explicitly sets one — this is what makes the
@@ -157,8 +165,16 @@ model BlogPost {
 model Inquiry {
   id           String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   type         String
+  // Phase 6f: 'website' (the public form — always has email) | 'whatsapp'
+  // (created automatically when a WhatsApp conversation reads as a genuine
+  // sales inquiry — see whatsappInquiry.ts — has phone but usually no email).
+  channel      String   @default("website")
   name         String
-  email        String
+  // Nullable as of Phase 6f — WhatsApp-originated inquiries have a phone
+  // number, not an email. The public website form still always sends one
+  // (enforced at the app level in potato-apparel's /api/inquiries route);
+  // this only widens what the DB allows, never narrows it.
+  email        String?
   phone        String?
   countryIso   String?  @map("country_iso")
   company      String?
@@ -166,10 +182,63 @@ model Inquiry {
   budget       String?
   productSku   String?  @map("product_sku")
   productTitle String?  @map("product_title")
+  productUrl   String?  @map("product_url")
+  // Free-text as submitted (e.g. a quantity range from the sample-request
+  // form) — not every form collects this, only some (SampleRequestForm).
+  quantity     String?
+  whatsapp     String?
   message      String   @db.Text
   sourceUrl    String?  @map("source_url")
   status       String   @default("new")
   createdAt    DateTime @default(now()) @map("created_at")
+
+  // Uploaded design files from the contact form (InquiryForm.tsx), stored as
+  // [{filename, contentType, dataUrl}] — dataUrl is a base64 data: URL, same
+  // pattern already used for inbound WhatsApp media (whatsapp_messages.media_url).
+  // Previously these were only ever emailed, never persisted — an inquiry
+  // read only from the admin backend (not email) had no way to see them.
+  // Capped by the API route: max 10 files, 8MB/file, 20MB combined.
+  attachments  Json?
+
+  // AI ops (Phase 5): AI drafts a reply, admin must explicitly hit /send
+  // before anything emails — replySentAt == null is the approval gate.
+  aiDraftReply       String?   @db.Text @map("ai_draft_reply")
+  aiDraftGeneratedAt DateTime? @map("ai_draft_generated_at")
+  replySentAt        DateTime? @map("reply_sent_at")
+  replySentBody      String?   @db.Text @map("reply_sent_body")
+  replyError         String?   @map("reply_error")
+
+  // Inquiry pipeline (Phase 6): parse -> match product -> calculate quote ->
+  // draft PI. Each step's full reasoning is logged as an AutomationRun row
+  // (automation: 'inquiryPipeline') rather than duplicated here — these
+  // columns hold only the current/latest structured result, editable by an
+  // admin before anything is sent. matchedProductId is a soft reference
+  // (no FK) — same looseness as the pre-existing productSku/productTitle.
+  pipelineParsed     Json?     @map("pipeline_parsed")
+  matchedProductId   String?   @map("matched_product_id")
+  quoteData          Json?     @map("quote_data")
+  piDraft            String?   @db.Text @map("pi_draft")
+  piDraftGeneratedAt DateTime? @map("pi_draft_generated_at")
+  // Same gate pattern as replySentAt — piSentAt == null means the PI/payment
+  // details have not gone to the customer yet, regardless of autonomy level.
+  piSentAt           DateTime? @map("pi_sent_at")
+
+  // CRM pipeline (Phase 6c) — deliberately a SEPARATE column from `status`
+  // above, not a repurposing of it: `status` has a real Postgres CHECK
+  // constraint limiting it to the 4 pre-existing inbox values and is read by
+  // the public-facing insert path; widening it would need touching that
+  // constraint. `dealStage` is a new, unconstrained string this app owns
+  // outright: new | qualified | quoted | negotiating | won | lost.
+  dealStage          String    @default("new") @map("deal_stage")
+  dealValueUsd       Float?    @map("deal_value_usd")
+  nextActionAt       DateTime? @map("next_action_at")
+  tags               String[]  @default([])
+  // AI-computed 0-100 priority score + a short human-readable reason —
+  // never a customer-facing field, purely to help triage which leads to
+  // work first, so it's safe to compute fully automatically (no send gate).
+  leadScore          Int?      @map("lead_score")
+  leadScoreReasoning String?   @db.Text @map("lead_score_reasoning")
+  leadScoredAt       DateTime? @map("lead_scored_at")
 
   @@map("inquiries")
 }
@@ -202,4 +271,194 @@ model Setting {
   updatedAt DateTime @updatedAt @map("updated_at")
 
   @@map("settings")
+}
+
+// ─── AI operations ─────────────────────────────────────────────────────────
+// Swappable model/relay config for the AI-ops features (Phase 5). Any number
+// of providers can be saved; exactly one is `isActive` at a time and that's
+// the one src/lib/ai.ts calls. Endpoint contract is OpenAI's Chat Completions
+// shape (POST {baseUrl}/v1/chat/completions, Bearer auth) — the schema
+// virtually every relay/proxy and first-party provider accepts, so switching
+// providers or models is just editing this row, no code change.
+
+model AiProvider {
+  id        String   @id @default(cuid())
+  name      String
+  note      String?
+  baseUrl   String   @map("base_url")
+  apiKey    String   @map("api_key")
+  model     String
+  isActive  Boolean  @default(false) @map("is_active")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  // Phase 6e, currently UNUSED by rag.ts: originally added for embeddings-
+  // based retrieval, but neither configured relay proxies /v1/embeddings and
+  // the owner has no embeddings-capable API key to add elsewhere — retrieval
+  // runs on pgroonga full-text search instead (see KnowledgeChunk below),
+  // which needs no API key at all. Left in place in case a real embeddings
+  // key becomes available later; not read by any code path today.
+  embeddingModel String? @map("embedding_model")
+
+  @@map("ai_providers")
+}
+
+// Periodic AI-written business summaries (Phase 5, fully automatic — no
+// approval gate, since nothing here is customer-facing).
+model Report {
+  id          String   @id @default(cuid())
+  kind        String // 'weekly_summary' for now; room for more kinds later
+  periodStart DateTime @map("period_start")
+  periodEnd   DateTime @map("period_end")
+  summary     String   @db.Text // AI-written analysis
+  stats       Json // the raw aggregated numbers fed to the AI, for auditability
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  @@index([kind, periodStart])
+  @@map("reports")
+}
+
+// Shared run history for all four AI-ops automations, regardless of trigger
+// source ('schedule' | 'event' | 'manual') — every executeAutomation() call
+// writes one row here, so "did it actually run" is a SQL query, not a UI claim.
+model AutomationRun {
+  id         String    @id @default(cuid())
+  automation String // 'blog' | 'product' | 'report' | 'inquiryReply'
+  trigger    String // 'schedule' | 'event' | 'manual'
+  status     String // 'running' | 'success' | 'skipped' | 'error'
+  summary    String?   @db.Text
+  detail     Json?
+  startedAt  DateTime  @default(now()) @map("started_at")
+  finishedAt DateTime? @map("finished_at")
+
+  @@index([automation, startedAt])
+  @@map("automation_runs")
+}
+
+// One row per callAi() request, for visibility into which automation is
+// actually consuming tokens (an "AI Cost Center" MVP). Deliberately does NOT
+// store an estimated dollar cost — pricing varies per relay/provider and
+// isn't something this app can know reliably, so it only tracks the token
+// counts the provider's own response reports. Written best-effort from
+// ai.ts; a logging failure must never break the underlying AI call.
+model AiUsageLog {
+  id               String   @id @default(cuid())
+  source           String // e.g. 'blog', 'product', 'seoIntelligence', 'inquiries.translate'
+  providerName     String   @map("provider_name")
+  model            String
+  promptTokens     Int      @default(0) @map("prompt_tokens")
+  completionTokens Int      @default(0) @map("completion_tokens")
+  totalTokens      Int      @default(0) @map("total_tokens")
+  createdAt        DateTime @default(now()) @map("created_at")
+
+  @@index([source, createdAt])
+  @@map("ai_usage_logs")
+}
+
+// ─── WhatsApp (Phase 6b) ────────────────────────────────────────────────────
+// One contact = one phone number, with the full message thread underneath —
+// unlike Inquiry (a one-shot form submission), a WhatsApp conversation is
+// ongoing, so this is a separate model rather than forcing it into Inquiry.
+// linkedInquiryId is a soft reference (no FK), same looseness as
+// Inquiry.matchedProductId — a WhatsApp contact may originate from, or later
+// get linked to, a website inquiry, but neither side enforces the other.
+
+model WhatsAppContact {
+  id              String    @id @default(cuid())
+  phone           String    @unique // E.164 with leading +, e.g. "+639672907580"
+  name            String?
+  linkedInquiryId String?   @map("linked_inquiry_id")
+  lastMessageAt   DateTime? @map("last_message_at")
+  // Follow-up cron (3-day / 7-day etc.) state — 0 = none sent yet.
+  followUpStage   Int       @default(0) @map("follow_up_stage")
+  nextFollowUpAt  DateTime? @map("next_follow_up_at")
+  createdAt       DateTime  @default(now()) @map("created_at")
+
+  messages WhatsAppMessage[]
+
+  @@map("whatsapp_contacts")
+}
+
+model WhatsAppMessage {
+  id          String   @id @default(cuid())
+  contactId   String   @map("contact_id")
+  contact     WhatsAppContact @relation(fields: [contactId], references: [id], onDelete: Cascade)
+  direction   String // 'in' | 'out'
+  body        String   @db.Text
+  mediaUrl    String?  @map("media_url")
+  waMessageId String?  @map("wa_message_id") // WhatsApp's own id — dedup guard for redelivered webhooks
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  @@index([contactId, createdAt])
+  @@map("whatsapp_messages")
+}
+
+// ─── Knowledge library (Phase 6d) ───────────────────────────────────────────
+// Admin-editable reference material (pricing policy, FAQs, good past
+// replies, product notes) shared by every reply-drafting prompt — inquiry
+// email replies, quote-aware replies, and WhatsApp auto-replies all pull
+// from the same set of snippets. v1 injects the whole active library into
+// context rather than doing real semantic retrieval (see getKnowledgeContext
+// in admin-api) — simple and honest about what it is; worth revisiting with
+// embeddings/pgvector once the library is too large to fit in one prompt.
+model KnowledgeSnippet {
+  id        String   @id @default(cuid())
+  title     String
+  content   String   @db.Text
+  category  String?
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([active])
+  @@map("knowledge_snippets")
+}
+
+// ─── Google Drive knowledge sync + full-text retrieval (Phase 6e) ──────────
+// Real relevance-ranked retrieval, replacing the flat char-capped injection
+// described above on KnowledgeSnippet. Company files live permanently in
+// Google Drive already — this never stores a copy of the original file, only
+// chunked text, so "learning" a huge library costs a few KB per chunk, not
+// the file size. Retrieval runs on a pgroonga full-text index on `content`
+// (see the migration) rather than embeddings — no embeddings-capable API key
+// was available, and pgroonga needs none, runs entirely inside Postgres, and
+// handles Chinese/English text natively. Still provider-agnostic in the same
+// spirit as embeddings would have been: this table has nothing to do with
+// which AiProvider drafts the actual reply, so swapping models never touches
+// the knowledge base — the point of doing this as retrieval at all, instead
+// of fine-tuning a model on the company's data.
+model DriveFile {
+  id           String    @id // Google Drive's own file id, used directly as the key
+  name         String
+  mimeType     String    @map("mime_type")
+  modifiedTime DateTime  @map("modified_time") // Drive's own last-modified stamp — the change signal driveSync diffs against
+  status       String    @default("pending") // pending | synced | error | unsupported
+  chunkCount   Int       @default(0) @map("chunk_count")
+  errorMessage String?   @map("error_message")
+  lastSyncedAt DateTime? @map("last_synced_at")
+  createdAt    DateTime  @default(now()) @map("created_at")
+
+  @@map("drive_files")
+}
+
+// sourceId is a soft reference to a DriveFile.id or KnowledgeSnippet.id
+// (distinguished by sourceType) — same soft-reference looseness already used
+// elsewhere in this schema (matchedProductId, linkedInquiryId). A pgroonga
+// index on `content` (added by raw SQL in the migration, since Prisma has no
+// native pgroonga support) is what src/lib/rag.ts queries via $queryRaw for
+// retrieval — plain inserts otherwise, no special column needed for that.
+// An unused `embedding vector(1536)` column also exists on this table from
+// an earlier embeddings-based design (see AiProvider.embeddingModel) — left
+// in place, currently written or read by nothing.
+model KnowledgeChunk {
+  id         String   @id @default(cuid())
+  sourceType String   @map("source_type") // 'drive' | 'upload'
+  sourceId   String   @map("source_id")
+  title      String
+  content    String   @db.Text
+  chunkIndex Int      @map("chunk_index")
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  @@index([sourceId])
+  @@map("knowledge_chunks")
 }
