@@ -36,6 +36,16 @@ function getTransporter(): Transporter {
       // (see Poste.io → System settings → TLS certificate → Let's Encrypt).
       rejectUnauthorized: false,
     },
+    // Left at nodemailer's defaults (up to a 10-minute socketTimeout) this
+    // left a real request with no visible bound: the admin-api side of this
+    // same Poste.io box was found hanging 15+ minutes on a single sendMail()
+    // with no timeout configured, twice, during an unrelated batch job. A
+    // slow/stuck SMTP response here would just as easily blow past Vercel's
+    // function timeout, turning an already-saved inquiry into what looks
+    // like a failed submission to the customer. Fail fast instead.
+    connectionTimeout: 15_000,
+    greetingTimeout: 15_000,
+    socketTimeout: 20_000,
   })
 
   return transporter

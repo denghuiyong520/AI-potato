@@ -151,25 +151,23 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Failed to save inquiry' }, { status: 500 })
     }
 
-    // ── 2. Send the internal notification over SMTP ───────────────────────────
-    // This is NOT best-effort: if it fails, the frontend must be told the
-    // truth (the lead is still safe in Supabase as a backup, but sales won't
-    // see it in their inbox unless someone checks the DB).
-    try {
-      await sendInquiryNotification({
-        type, name: cleanName, email: cleanEmail, phone: cleanPhone,
-        whatsapp: cleanWhatsapp,
-        countryIso, company: cleanCompany, platform, budget,
-        productSku, productTitle, productUrl, quantity,
-        message: cleanMessage, sourceUrl,
-      }, attachments)
-    } catch (err) {
-      console.error('[inquiries] SMTP notification failed:', err)
-      return NextResponse.json(
-        { error: 'Your inquiry was saved but the notification email failed to send. Our team will still follow up — you can also reach us directly at sales@potatoapparel.com.' },
-        { status: 502 },
-      )
-    }
+    // ── 2. Send the internal notification over SMTP (best-effort) ────────────
+    // The durable record is already committed in step 1 — the admin panel
+    // (backed by the same table via admin-api) shows it regardless of what
+    // happens here. Treating this as blocking used to mean a slow/flaky
+    // Poste.io response turned an already-saved inquiry into what looked
+    // like a failed submission: the customer would see an error and often
+    // resubmit (duplicate rows), while the one thing that actually mattered
+    // — the lead being lost track of — wasn't even true, it was sitting in
+    // the DB the whole time, just unannounced. Log failures for visibility,
+    // but never block the customer's success response on this step.
+    sendInquiryNotification({
+      type, name: cleanName, email: cleanEmail, phone: cleanPhone,
+      whatsapp: cleanWhatsapp,
+      countryIso, company: cleanCompany, platform, budget,
+      productSku, productTitle, productUrl, quantity,
+      message: cleanMessage, sourceUrl,
+    }, attachments).catch((err) => console.error('[inquiries] SMTP notification failed:', err))
 
     // ── 3. Best-effort confirmation email to the customer ─────────────────────
     sendCustomerAutoReply(cleanEmail, cleanName).catch((err) =>
