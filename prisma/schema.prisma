@@ -192,6 +192,11 @@ model Inquiry {
   status       String   @default("new")
   createdAt    DateTime @default(now()) @map("created_at")
 
+  // Dedup key for inquiries created from a Chatwoot conversation message
+  // (see admin-api's chatwootWebhook.ts) -- mirrors how the email/WhatsApp
+  // paths dedupe on their own stable external ids.
+  chatwootMessageId Int? @unique @map("chatwoot_message_id")
+
   // Uploaded design files from the contact form (InquiryForm.tsx), stored as
   // [{filename, contentType, dataUrl}] — dataUrl is a base64 data: URL, same
   // pattern already used for inbound WhatsApp media (whatsapp_messages.media_url).
