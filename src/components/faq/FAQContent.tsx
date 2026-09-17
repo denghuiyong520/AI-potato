@@ -122,7 +122,7 @@ export default function FAQContent() {
             <Link href="/contact" className="bg-white text-violet-700 font-semibold px-6 py-3 rounded-full hover:bg-violet-50 transition-colors flex items-center gap-2">
               Contact Sales Team <ArrowRight size={15} />
             </Link>
-            <a href="https://wa.me/447907131539" target="_blank" rel="noopener noreferrer" className="border border-white/30 text-white font-semibold px-6 py-3 rounded-full hover:border-white transition-colors">
+            <a href="https://wa.me/8617666229998" target="_blank" rel="noopener noreferrer" className="border border-white/30 text-white font-semibold px-6 py-3 rounded-full hover:border-white transition-colors">
               WhatsApp Us
             </a>
           </div>

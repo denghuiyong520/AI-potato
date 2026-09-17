@@ -255,7 +255,7 @@ export default function SampleRequestForm() {
       {status === 'error' && (
         <p className="text-center text-sm text-red-500">
           {errorMsg || 'Unable to send your inquiry. Please try again or contact us directly at sales@potatoapparel.com.'}{' '}
-          <a href="https://wa.me/447907131539" className="underline">WhatsApp us directly</a>.
+          <a href="https://wa.me/8617666229998" className="underline">WhatsApp us directly</a>.
         </p>
       )}
 

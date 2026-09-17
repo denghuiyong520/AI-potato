@@ -633,7 +633,7 @@ export default function InquiryForm() {
                 sales@potatoapparel.com
               </a>
               <a
-                href="https://wa.me/447907131539"
+                href="https://wa.me/8617666229998"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 bg-[#25D366]/10 hover:bg-[#25D366]/20 border border-[#25D366]/30 text-[#1ebe5d] text-xs font-semibold px-4 py-2 rounded-full transition-colors"

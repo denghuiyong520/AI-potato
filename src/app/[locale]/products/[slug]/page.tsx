@@ -326,7 +326,7 @@ export default async function ImportedProductDetailPage({
                     category={product.category}
                   />
                   <a
-                    href="https://wa.me/447907131539"
+                    href="https://wa.me/8617666229998"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 bg-[#25D366] text-white font-semibold text-sm px-4 py-3 rounded-full hover:bg-[#1ebe5d] transition-colors shadow-sm"

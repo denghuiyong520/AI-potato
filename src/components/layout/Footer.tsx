@@ -72,7 +72,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="https://wa.me/447907131539"
+                href="https://wa.me/8617666229998"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
@@ -131,8 +131,8 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <MessageCircle size={15} className="text-cream-500 mt-0.5 shrink-0" />
-                <a href="https://wa.me/447907131539" target="_blank" rel="noopener noreferrer" className="text-sm text-cream-400 hover:text-cream-100 transition-colors">
-                  +44 7907 131539
+                <a href="https://wa.me/8617666229998" target="_blank" rel="noopener noreferrer" className="text-sm text-cream-400 hover:text-cream-100 transition-colors">
+                  +86 17666229998
                 </a>
               </li>
               <li className="flex items-start gap-3">
@@ -165,7 +165,7 @@ export default function Footer() {
                 {t('ctaButton')}
               </Link>
               <a
-                href="https://wa.me/447907131539"
+                href="https://wa.me/8617666229998"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center text-xs font-semibold px-5 py-2.5 border border-cream-700 text-cream-400 rounded-full hover:border-cream-500 hover:text-cream-200 transition-colors w-full"

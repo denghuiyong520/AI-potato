@@ -44,8 +44,8 @@ export default async function ContactPage({
     {
       icon:  MessageCircle,
       label: t('info.whatsapp'),
-      value: '+44 7907 131539',
-      href:  'https://wa.me/447907131539',
+      value: '+86 17666229998',
+      href:  'https://wa.me/8617666229998',
     },
     {
       icon:  MapPin,
@@ -144,7 +144,7 @@ export default async function ContactPage({
                     </a>
                     {/* WhatsApp */}
                     <a
-                      href="https://wa.me/447907131539"
+                      href="https://wa.me/8617666229998"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-xs text-[#25D366] hover:text-white hover:bg-[#25D366] border border-[#25D366]/30 hover:border-[#25D366] rounded-full px-3 py-1.5 transition-all"

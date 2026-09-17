@@ -3,8 +3,8 @@ import { Link } from '@/i18n/navigation'
 import { ArrowRight } from 'lucide-react'
 import AnimatedSection from '@/components/shared/AnimatedSection'
 
-// WhatsApp link — +44 7907 131539
-const WHATSAPP_URL = 'https://wa.me/447907131539'
+// WhatsApp link — +86 17666229998
+const WHATSAPP_URL = 'https://wa.me/8617666229998'
 
 export default function BottomCTASection() {
   const t = useTranslations('bottomCta')

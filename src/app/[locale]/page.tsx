@@ -89,7 +89,7 @@ const organizationSchema = {
   contactPoint: [
     {
       '@type': 'ContactPoint',
-      telephone: '+44-7907-131539',
+      telephone: '+86-17666229998',
       contactType: 'sales',
       availableLanguage: ['English', 'Chinese'],
     },

@@ -3,8 +3,8 @@
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 
-// WhatsApp contact: +44 7907 131539
-const WHATSAPP_URL = 'https://wa.me/447907131539'
+// WhatsApp contact: +86 17666229998
+const WHATSAPP_URL = 'https://wa.me/8617666229998'
 
 export default function WhatsAppButton() {
   const t = useTranslations('whatsapp')

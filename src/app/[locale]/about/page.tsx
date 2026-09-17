@@ -48,7 +48,7 @@ export default async function AboutPage({
     description: 'Professional OEM/ODM apparel manufacturer based in China.',
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+44-7907-131539',
+      telephone: '+86-17666229998',
       email: 'sales@potatoapparel.com',
       contactType: 'Sales',
     },

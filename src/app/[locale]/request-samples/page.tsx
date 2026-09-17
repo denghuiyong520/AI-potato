@@ -226,7 +226,7 @@ export default function RequestSamplesPage() {
             <p className="text-gray-500 text-sm mb-4">Prefer to talk first?</p>
             <div className="flex flex-wrap gap-3 justify-center">
               <a
-                href="https://wa.me/447907131539?text=Hi!%20I%27d%20like%20to%20request%20samples%20for%20my%20clothing%20brand."
+                href="https://wa.me/8617666229998?text=Hi!%20I%27d%20like%20to%20request%20samples%20for%20my%20clothing%20brand."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-[#25D366] text-white font-semibold text-sm px-6 py-3 rounded-full hover:bg-[#22be5c] transition-colors"

@@ -158,7 +158,7 @@ export default function OrderSuccessPage() {
             {t('continueShopping')} <ArrowRight size={14} />
           </Link>
           <a
-            href="https://wa.me/447907131539"
+            href="https://wa.me/8617666229998"
             target="_blank"
             rel="noopener noreferrer"
             className="flex-1 flex items-center justify-center gap-2 border border-cream-300 text-ink font-semibold text-sm px-6 py-3.5 rounded-full hover:bg-cream-50 transition-colors"
