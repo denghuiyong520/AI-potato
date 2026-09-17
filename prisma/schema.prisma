@@ -194,8 +194,18 @@ model Inquiry {
 
   // Dedup key for inquiries created from a Chatwoot conversation message
   // (see admin-api's chatwootWebhook.ts) -- mirrors how the email/WhatsApp
-  // paths dedupe on their own stable external ids.
+  // paths dedupe on their own stable external ids. Holds the MOST RECENT
+  // message's id once chatwootConversationId below is in play (a thread's
+  // Inquiry row is updated in place, not re-created, on every reply).
   chatwootMessageId Int? @unique @map("chatwoot_message_id")
+
+  // Groups every message in the same Chatwoot conversation into ONE Inquiry
+  // row instead of one per message -- see createInquiryFromMessage.ts. A
+  // customer who writes back repeatedly updates this same row (status reset
+  // to 'new', message appended) rather than fragmenting into unrelated rows.
+  chatwootConversationId Int? @unique @map("chatwoot_conversation_id")
+
+  updatedAt DateTime @updatedAt @map("updated_at")
 
   // Uploaded design files from the contact form (InquiryForm.tsx), stored as
   // [{filename, contentType, dataUrl}] — dataUrl is a base64 data: URL, same
