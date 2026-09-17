@@ -102,7 +102,7 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        'fixed top-0 inset-x-0 z-[60] bg-[#111111] transition-shadow duration-300',
+        'relative z-10 bg-[#111111] transition-shadow duration-300',
         scrolled && 'shadow-[0_2px_24px_rgba(0,0,0,0.6)]',
       )}
     >
